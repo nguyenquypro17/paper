@@ -1,0 +1,28 @@
+{
+    "Extraction Tau": 0.5,
+    "Hard Threshold": 0.66,
+    "Complexity": {
+        "Conjunctive Rule Count": 6,
+        "Total Literals": 16,
+        "Binarized # Concepts": 12
+    },
+    "Offline": {
+        "Soft AF": 99.99602543720191,
+        "Hard Completeness": 100.0,
+        "Hard AF": 99.90461049284579
+    },
+    "Live": {
+        "Mode": "Single-Seed",
+        "Seed": 42,
+        "Soft": {
+            "Success Rate": 100.0,
+            "Average Reward": 0.9679249989986419,
+            "Trigger Rate": 100.0
+        },
+        "Hard": {
+            "Success Rate": 100.0,
+            "Average Reward": 0.9676749986410141,
+            "Trigger Rate": 100.0
+        }
+    }
+}

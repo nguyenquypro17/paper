@@ -1,0 +1,66 @@
+
+== doorkey: SAE %G2 < CNN in 12/12 | SAE %G1 > CNN in 8/12
+  0.33/0.67 th=0.7 tl=0.6 gap=0.05 | G2 sae= 36.5 cnn= 77.6 | G1 sae= 29.6 cnn=  7.5 pca=  9.0
+  0.33/0.67 th=0.7 tl=0.6 gap=0.1 | G2 sae= 36.5 cnn= 77.6 | G1 sae= 18.9 cnn=  7.5 pca=  6.0
+  0.33/0.67 th=0.7 tl=0.65 gap=0.05 | G2 sae= 36.5 cnn= 77.6 | G1 sae= 29.6 cnn=  7.5 pca=  9.0
+  0.33/0.67 th=0.7 tl=0.65 gap=0.1 | G2 sae= 36.5 cnn= 77.6 | G1 sae= 18.9 cnn=  7.5 pca=  6.0
+  0.33/0.67 th=0.75 tl=0.6 gap=0.05 | G2 sae= 18.9 cnn= 73.1 | G1 sae= 34.6 cnn= 11.9 pca=  4.5
+  0.33/0.67 th=0.75 tl=0.6 gap=0.1 | G2 sae= 18.9 cnn= 73.1 | G1 sae= 25.2 cnn= 11.9 pca=  4.5
+  0.33/0.67 th=0.75 tl=0.65 gap=0.05 | G2 sae= 18.9 cnn= 73.1 | G1 sae= 34.6 cnn= 11.9 pca=  4.5
+  0.33/0.67 th=0.75 tl=0.65 gap=0.1 | G2 sae= 18.9 cnn= 73.1 | G1 sae= 25.2 cnn= 11.9 pca=  4.5
+  0.33/0.67 th=0.8 tl=0.6 gap=0.05 | G2 sae= 11.3 cnn= 44.8 | G1 sae= 28.9 cnn= 34.3 pca=  6.0
+  0.33/0.67 th=0.8 tl=0.6 gap=0.1 | G2 sae= 11.3 cnn= 44.8 | G1 sae= 26.4 cnn= 29.9 pca=  6.0
+  0.33/0.67 th=0.8 tl=0.65 gap=0.05 | G2 sae= 11.3 cnn= 44.8 | G1 sae= 28.9 cnn= 34.3 pca=  6.0
+  0.33/0.67 th=0.8 tl=0.65 gap=0.1 | G2 sae= 11.3 cnn= 44.8 | G1 sae= 26.4 cnn= 29.9 pca=  6.0
+
+== dyobs: SAE %G2 < CNN in 12/12 | SAE %G1 > CNN in 8/12
+  0.33/0.67 th=0.7 tl=0.6 gap=0.05 | G2 sae= 38.5 cnn= 77.8 | G1 sae= 29.7 cnn= 11.1 pca= 33.3
+  0.33/0.67 th=0.7 tl=0.6 gap=0.1 | G2 sae= 38.5 cnn= 77.8 | G1 sae= 29.7 cnn=  8.3 pca= 29.2
+  0.33/0.67 th=0.7 tl=0.65 gap=0.05 | G2 sae= 38.5 cnn= 77.8 | G1 sae= 29.7 cnn= 11.1 pca= 33.3
+  0.33/0.67 th=0.7 tl=0.65 gap=0.1 | G2 sae= 38.5 cnn= 77.8 | G1 sae= 29.7 cnn=  8.3 pca= 29.2
+  0.33/0.67 th=0.75 tl=0.6 gap=0.05 | G2 sae= 30.8 cnn= 68.1 | G1 sae= 34.1 cnn= 19.4 pca= 31.9
+  0.33/0.67 th=0.75 tl=0.6 gap=0.1 | G2 sae= 30.8 cnn= 68.1 | G1 sae= 28.6 cnn= 18.1 pca= 29.2
+  0.33/0.67 th=0.75 tl=0.65 gap=0.05 | G2 sae= 30.8 cnn= 68.1 | G1 sae= 34.1 cnn= 19.4 pca= 31.9
+  0.33/0.67 th=0.75 tl=0.65 gap=0.1 | G2 sae= 30.8 cnn= 68.1 | G1 sae= 28.6 cnn= 18.1 pca= 29.2
+  0.33/0.67 th=0.8 tl=0.6 gap=0.05 | G2 sae= 20.9 cnn= 47.2 | G1 sae= 34.1 cnn= 37.5 pca= 26.4
+  0.33/0.67 th=0.8 tl=0.6 gap=0.1 | G2 sae= 20.9 cnn= 47.2 | G1 sae= 28.6 cnn= 33.3 pca= 20.8
+  0.33/0.67 th=0.8 tl=0.65 gap=0.05 | G2 sae= 20.9 cnn= 47.2 | G1 sae= 34.1 cnn= 37.5 pca= 26.4
+  0.33/0.67 th=0.8 tl=0.65 gap=0.1 | G2 sae= 20.9 cnn= 47.2 | G1 sae= 28.6 cnn= 33.3 pca= 20.8
+
+== cartpole: SAE %G2 < CNN in 28/36 | SAE %G1 > CNN in 0/36
+  0.33/0.67 th=0.7 tl=0.6 gap=0.05 | G2 sae=  0.3 cnn=  5.8 | G1 sae= 17.9 cnn= 51.9 pca=  5.9
+  0.33/0.67 th=0.7 tl=0.6 gap=0.1 | G2 sae=  0.3 cnn=  5.8 | G1 sae= 12.0 cnn= 50.3 pca=  5.3
+  0.33/0.67 th=0.7 tl=0.65 gap=0.05 | G2 sae=  0.3 cnn=  5.8 | G1 sae= 17.9 cnn= 51.9 pca=  5.9
+  0.33/0.67 th=0.7 tl=0.65 gap=0.1 | G2 sae=  0.3 cnn=  5.8 | G1 sae= 12.0 cnn= 50.3 pca=  5.3
+  0.33/0.67 th=0.75 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  1.9 | G1 sae=  7.6 cnn= 49.0 pca=  5.3
+  0.33/0.67 th=0.75 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  1.9 | G1 sae=  6.9 cnn= 48.1 pca=  4.7
+  0.33/0.67 th=0.75 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  1.9 | G1 sae=  7.6 cnn= 49.0 pca=  5.3
+  0.33/0.67 th=0.75 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  1.9 | G1 sae=  6.9 cnn= 48.1 pca=  4.7
+  0.33/0.67 th=0.8 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.0 cnn= 41.2 pca=  3.4
+  0.33/0.67 th=0.8 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.0 cnn= 40.6 pca=  3.4
+  0.33/0.67 th=0.8 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.0 cnn= 41.2 pca=  3.4
+  0.33/0.67 th=0.8 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.0 cnn= 40.6 pca=  3.4
+  0.25/0.75 th=0.7 tl=0.6 gap=0.05 | G2 sae=  1.7 cnn=  9.4 | G1 sae= 16.5 cnn= 50.0 pca=  5.6
+  0.25/0.75 th=0.7 tl=0.6 gap=0.1 | G2 sae=  1.7 cnn=  9.4 | G1 sae= 10.0 cnn= 48.1 pca=  4.3
+  0.25/0.75 th=0.7 tl=0.65 gap=0.05 | G2 sae=  1.7 cnn=  9.4 | G1 sae= 16.5 cnn= 50.0 pca=  5.6
+  0.25/0.75 th=0.7 tl=0.65 gap=0.1 | G2 sae=  1.7 cnn=  9.4 | G1 sae= 10.0 cnn= 48.1 pca=  4.3
+  0.25/0.75 th=0.75 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  2.6 | G1 sae=  8.2 cnn= 51.9 pca=  5.3
+  0.25/0.75 th=0.75 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  2.6 | G1 sae=  6.2 cnn= 51.0 pca=  4.3
+  0.25/0.75 th=0.75 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  2.6 | G1 sae=  8.2 cnn= 51.9 pca=  5.3
+  0.25/0.75 th=0.75 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  2.6 | G1 sae=  6.2 cnn= 51.0 pca=  4.3
+  0.25/0.75 th=0.8 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.7 cnn= 45.8 pca=  3.7
+  0.25/0.75 th=0.8 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.7 cnn= 44.8 pca=  3.7
+  0.25/0.75 th=0.8 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.7 cnn= 45.8 pca=  3.7
+  0.25/0.75 th=0.8 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  0.0 | G1 sae=  1.7 cnn= 44.8 pca=  3.7
+  0.20/0.80 th=0.7 tl=0.6 gap=0.05 | G2 sae=  3.8 cnn= 13.0 | G1 sae= 17.2 cnn= 46.8 pca=  5.6
+  0.20/0.80 th=0.7 tl=0.6 gap=0.1 | G2 sae=  3.8 cnn= 13.0 | G1 sae=  9.6 cnn= 44.8 pca=  4.3
+  0.20/0.80 th=0.7 tl=0.65 gap=0.05 | G2 sae=  3.8 cnn= 13.0 | G1 sae= 17.2 cnn= 46.8 pca=  5.6
+  0.20/0.80 th=0.7 tl=0.65 gap=0.1 | G2 sae=  3.8 cnn= 13.0 | G1 sae=  9.6 cnn= 44.8 pca=  4.3
+  0.20/0.80 th=0.75 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  3.2 | G1 sae=  9.3 cnn= 53.9 pca=  5.6
+  0.20/0.80 th=0.75 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  3.2 | G1 sae=  6.2 cnn= 52.9 pca=  4.7
+  0.20/0.80 th=0.75 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  3.2 | G1 sae=  9.3 cnn= 53.9 pca=  5.6
+  0.20/0.80 th=0.75 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  3.2 | G1 sae=  6.2 cnn= 52.9 pca=  4.7
+  0.20/0.80 th=0.8 tl=0.6 gap=0.05 | G2 sae=  0.0 cnn=  0.3 | G1 sae=  1.7 cnn= 49.7 pca=  4.0
+  0.20/0.80 th=0.8 tl=0.6 gap=0.1 | G2 sae=  0.0 cnn=  0.3 | G1 sae=  1.7 cnn= 48.7 pca=  4.0
+  0.20/0.80 th=0.8 tl=0.65 gap=0.05 | G2 sae=  0.0 cnn=  0.3 | G1 sae=  1.7 cnn= 49.7 pca=  4.0
+  0.20/0.80 th=0.8 tl=0.65 gap=0.1 | G2 sae=  0.0 cnn=  0.3 | G1 sae=  1.7 cnn= 48.7 pca=  4.0

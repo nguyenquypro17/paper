@@ -1,0 +1,41 @@
+Using device: cuda
+Loading Logic Model from outputs/lucid_model_dyobs_43/sae_logic_joint_model.pt...
+Loading offline dataset from held_out_dyobs_data.pt...
+
+[+] Rules Extracted at tau=0.5 (Saved to experiments/lucid/eval_dyobs_43/extracted_rules_tau_0.5.json)
+
+[+] Computing Offline Metrics on dataset (24403 samples)...
+
+======================================================================
+LUCID COMPREHENSIVE EVALUATION (Extraction Tau: 0.5 | Eval Hard Threshold: 0.66)
+======================================================================
+
+--- 1. COMPLEXITY METRICS ---
+Conjunctive Rule Count: 5
+Binarized Concepts    : 5
+Total Literals        : 6
+
+--- 2. OFFLINE DATASET METRICS ---
+LUCID SOFT - Action Fidelity (vs PPO): 100.0000%
+LUCID HARD - Rule Completeness       : 100.0000%
+LUCID HARD - Action Fidelity         : 99.9262%
+Fallback Action                      : 'Forward'
+
+--- 3. LIVE ENVIRONMENT METRICS ---
+MiniGrid observation shape: (3, 7, 7), using 3 input channels
+Mode: SINGLE-SEED (Seed 42, 100 episodes)
+Playing 100 eps (Seed 42):   0%|          | 0/100 [00:00<?, ?it/s]Playing 100 eps (Seed 42):   1%|          | 1/100 [00:00<00:11,  8.97it/s]Playing 100 eps (Seed 42):   8%|▊         | 8/100 [00:00<00:02, 40.68it/s]Playing 100 eps (Seed 42):  18%|█▊        | 18/100 [00:00<00:01, 65.33it/s]Playing 100 eps (Seed 42):  28%|██▊       | 28/100 [00:00<00:00, 76.05it/s]Playing 100 eps (Seed 42):  36%|███▌      | 36/100 [00:00<00:00, 74.85it/s]Playing 100 eps (Seed 42):  46%|████▌     | 46/100 [00:00<00:00, 78.80it/s]Playing 100 eps (Seed 42):  54%|█████▍    | 54/100 [00:00<00:00, 77.34it/s]Playing 100 eps (Seed 42):  62%|██████▏   | 62/100 [00:00<00:00, 70.71it/s]Playing 100 eps (Seed 42):  70%|███████   | 70/100 [00:01<00:00, 65.99it/s]Playing 100 eps (Seed 42):  77%|███████▋  | 77/100 [00:01<00:00, 66.79it/s]Playing 100 eps (Seed 42):  85%|████████▌ | 85/100 [00:01<00:00, 69.65it/s]Playing 100 eps (Seed 42):  93%|█████████▎| 93/100 [00:01<00:00, 70.29it/s]                                                                           Playing 100 eps (Seed 42):   0%|          | 0/100 [00:00<?, ?it/s]Playing 100 eps (Seed 42):   8%|▊         | 8/100 [00:00<00:01, 74.25it/s]Playing 100 eps (Seed 42):  21%|██        | 21/100 [00:00<00:00, 104.81it/s]Playing 100 eps (Seed 42):  32%|███▏      | 32/100 [00:00<00:00, 97.46it/s] Playing 100 eps (Seed 42):  44%|████▍     | 44/100 [00:00<00:00, 103.23it/s]Playing 100 eps (Seed 42):  55%|█████▌    | 55/100 [00:00<00:00, 98.32it/s] Playing 100 eps (Seed 42):  65%|██████▌   | 65/100 [00:00<00:00, 87.91it/s]Playing 100 eps (Seed 42):  74%|███████▍  | 74/100 [00:00<00:00, 82.54it/s]Playing 100 eps (Seed 42):  84%|████████▍ | 84/100 [00:00<00:00, 86.39it/s]Playing 100 eps (Seed 42):  93%|█████████▎| 93/100 [00:01<00:00, 86.71it/s]                                                                           
+>>> LIVE RESULTS (SINGLE SEED) <<<
+SOFT Success Rate   : 100.0000
+HARD Success Rate   : 100.0000
+----------------------------------------
+SOFT Average Reward :  0.8988
+HARD Average Reward :  0.8988
+----------------------------------------
+SOFT Trigger Rate   : 100.0000
+HARD Trigger Rate   : 100.0000
+----------------------------------------
+
+======================================================================
+[+] All metrics saved to experiments/lucid/eval_dyobs_43/metrics_tau_0.5_hard_0.66.json
+

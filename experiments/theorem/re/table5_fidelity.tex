@@ -1,0 +1,16 @@
+\begin{table}[tp]
+\centering
+\caption{Soft--hard disagreement on held-out rollouts and its upper bounds, in \% of states (selector threshold $\tau=0.66$, concept threshold $\theta=0.66$). \emph{Clean}: states whose rule concepts all satisfy $\min(c_j,1-c_j)<\bar\epsilon$, at the $\bar\epsilon$ of the state-wise bound. Corollary bounds are the minimum over a fixed grid of $\bar\epsilon$ (value in parentheses); each grid point is a valid bound. \emph{Ties}: $\gamma(x)=0$. Theorem~\ref{thm:fidelity} uses the exact soft activations; the corollary uses only the hard truth pattern, cleanliness and data-independent constants (state-wise: strongest violated literal; global: worst case per clause). $^{\ast}$: the smallest non-zero hard margin in the data exceeds $\max_{a\neq a'}(\bar\Delta^G_a+\bar\Delta^G_{a'})$, so the global bound reduces to $\Pr[\text{not clean}]+\Pr[\text{tie}]$.}
+\label{tab:fidelity_validation}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+\multirow{2}{*}{\textbf{Environment}} & \textbf{Clean} & \textbf{Ties} & \textbf{Actual} & \textbf{Bound} & \multicolumn{2}{c}{\textbf{Bound, Corollary}} \\
+\cmidrule(lr){6-7}
+ & \textbf{states} & $\gamma=0$ & $\Pr[\pi^{\mathrm{soft}}\neq\pi^{\mathrm{hard}}]$ & \textbf{Thm.~\ref{thm:fidelity}} & state-wise & global \\
+\midrule
+\textbf{unknown} & 100.00 & 0.00 & 0.00 & 0.00 & 0.00 (0.05) & 4.75 (0.005) \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

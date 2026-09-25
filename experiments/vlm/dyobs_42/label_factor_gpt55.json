@@ -1,0 +1,57 @@
+{
+  "min_auc": 0.8,
+  "factors": [
+    "obstacle_ahead",
+    "obstacle_left",
+    "obstacle_right"
+  ],
+  "aligned_pos": {
+    "C49": "obstacle_left"
+  },
+  "aligned_neg": {
+    "C146": "obstacle_ahead"
+  },
+  "by_namer": {},
+  "manifest": {
+    "time_utc": "2026-09-25T05:16:43+00:00",
+    "argv": [
+      "label_factor.py",
+      "--meta",
+      "experiments/vlm/dyobs_42/meta.json",
+      "--labels",
+      "experiments/vlm/dyobs_42/labels_gpt55_a.json",
+      "--env_name",
+      "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "--out",
+      "experiments/vlm/dyobs_42/label_factor_gpt55.json"
+    ],
+    "args": {
+      "meta": "experiments/vlm/dyobs_42/meta.json",
+      "labels": [
+        "experiments/vlm/dyobs_42/labels_gpt55_a.json"
+      ],
+      "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "min_auc": 0.8,
+      "embedders": [
+        "sentence-transformers/all-MiniLM-L6-v2",
+        "BAAI/bge-base-en-v1.5",
+        "intfloat/e5-base-v2",
+        "thenlper/gte-base"
+      ],
+      "out": "experiments/vlm/dyobs_42/label_factor_gpt55.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  }
+}

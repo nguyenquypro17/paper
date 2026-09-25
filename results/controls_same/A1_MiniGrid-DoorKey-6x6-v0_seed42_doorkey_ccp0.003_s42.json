@@ -1,0 +1,33 @@
+{
+  "arm": "A1",
+  "env_name": "MiniGrid-DoorKey-6x6-v0",
+  "seed": 42,
+  "learner": "tree",
+  "lucid_split_dir": "outputs/lucid_model_doorkey_42",
+  "representation": "sae_recon",
+  "sae_live_dims": 284,
+  "sae_config": {
+    "hidden_dim": 300,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 42
+  },
+  "val_acc": 0.9880159786950732,
+  "fidelity_soft": 98.76198083067092,
+  "fidelity_hard": 98.76198083067092,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 14,
+    "concepts": 14,
+    "units": 15,
+    "depth": 7
+  },
+  "knob": {
+    "max_depth": null,
+    "ccp_alpha": 0.003
+  },
+  "runtime_sec": 69.9
+}

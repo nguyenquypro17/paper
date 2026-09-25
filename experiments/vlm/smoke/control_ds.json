@@ -1,0 +1,72 @@
+{
+  "env": "MiniGrid-DoorKey-6x6-v0",
+  "scorer": "deepseek-flash",
+  "by_namer": {},
+  "factor_control": {
+    "has_key": {
+      "statement": "The agent is carrying the key.",
+      "n": 4,
+      "auc": 1.0,
+      "bacc": 0.75
+    }
+  },
+  "manifest": {
+    "time_utc": "2026-09-25T00:37:42+00:00",
+    "argv": [
+      "vlm_predict.py",
+      "--test_dir",
+      "experiments/vlm/smoke/test",
+      "--labels",
+      "experiments/vlm/smoke/labels.json",
+      "--env_name",
+      "MiniGrid-DoorKey-6x6-v0",
+      "--model",
+      "deepseek-flash",
+      "--only_control",
+      "--cache",
+      "experiments/vlm/smoke/cache_ds.json",
+      "--out",
+      "experiments/vlm/smoke/control_ds.json"
+    ],
+    "args": {
+      "test_dir": "experiments/vlm/smoke/test",
+      "labels": [
+        "experiments/vlm/smoke/labels.json"
+      ],
+      "env_name": "MiniGrid-DoorKey-6x6-v0",
+      "model": "deepseek-flash",
+      "load_4bit": false,
+      "n_distractors": 3,
+      "n_perm": 10000,
+      "seed": 0,
+      "workers": 8,
+      "thinking_budget": 128,
+      "cache": "experiments/vlm/smoke/cache_ds.json",
+      "only_control": true,
+      "allow_same_model": false,
+      "out": "experiments/vlm/smoke/control_ds.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    },
+    "model_id": "deepseek-flash",
+    "generation": {
+      "temperature": 0.0,
+      "thinking": "API default"
+    },
+    "api_model_version": "deepseek-flash",
+    "n_scored_pairs": 4,
+    "prompt_head": "ENVIRONMENT: {env}\n\nThe image shows one state:",
+    "prompt_question": "Statement: \"{label}\"\n\nIs the statement true in this state?\nReply with ONLY an integer from 0 to 100: your probability that the statement is true in this state."
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "namer_a": "gemini-3.1-pro-preview",
+  "namer_b": "gemini-3.1-pro-preview",
+  "concepts": [
+    "C23",
+    "C54",
+    "C87",
+    "C92",
+    "C131",
+    "C170",
+    "C237",
+    "C258",
+    "C294"
+  ],
+  "exact_match": 0.1111111111111111,
+  "by_embedder": {
+    "sentence-transformers/all-MiniLM-L6-v2": {
+      "auc": 0.8179012345679012,
+      "p_perm": 9.999000099990002e-05,
+      "mean_same": 0.6306068301200867,
+      "mean_diff": 0.34161484241485596
+    },
+    "BAAI/bge-base-en-v1.5": {
+      "auc": 0.8225308641975309,
+      "p_perm": 0.00039996000399960006,
+      "mean_same": 0.8166401386260986,
+      "mean_diff": 0.6651681065559387
+    },
+    "intfloat/e5-base-v2": {
+      "auc": 0.7885802469135802,
+      "p_perm": 0.00039996000399960006,
+      "mean_same": 0.9014936089515686,
+      "mean_diff": 0.8299404382705688
+    },
+    "thenlper/gte-base": {
+      "auc": 0.808641975308642,
+      "p_perm": 0.00029997000299970003,
+      "mean_same": 0.90380859375,
+      "mean_diff": 0.8330078125
+    }
+  },
+  "manifest": {
+    "time_utc": "2026-09-24T16:23:03+00:00",
+    "argv": [
+      "label_agreement.py",
+      "--labels_a",
+      "experiments/vlm/doorkey_42/labels_gemini31_a.json",
+      "--labels_b",
+      "experiments/vlm/doorkey_42/labels_gemini31_b.json",
+      "--out",
+      "experiments/vlm/doorkey_42/stability_gemini31.json"
+    ],
+    "args": {
+      "labels_a": "experiments/vlm/doorkey_42/labels_gemini31_a.json",
+      "labels_b": "experiments/vlm/doorkey_42/labels_gemini31_b.json",
+      "embedders": [
+        "sentence-transformers/all-MiniLM-L6-v2",
+        "BAAI/bge-base-en-v1.5",
+        "intfloat/e5-base-v2",
+        "thenlper/gte-base"
+      ],
+      "n_perm": 10000,
+      "out": "experiments/vlm/doorkey_42/stability_gemini31.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  }
+}

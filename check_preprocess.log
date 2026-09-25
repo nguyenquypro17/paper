@@ -1,0 +1,19 @@
+MiniGrid observation shape: (3, 7, 7), using 3 input channels
+
+== doorkey | normalize_images=True
+  saved-raw max diff: 0.0955810546875
+  saved-pre max diff: 1480.3045654296875
+  acc head(raw): 0.8046666383743286
+  acc head(pre): 1.0
+  feature norm raw/pre: 2538.732177734375 6.077136516571045
+MiniGrid observation shape: (3, 7, 7), using 3 input channels
+
+== dyobs | normalize_images=True
+  saved-raw max diff: 0.01035308837890625
+  saved-pre max diff: 90.0902328491211
+  acc head(raw): 0.9276666641235352
+  acc head(pre): 1.0
+  feature norm raw/pre: 158.393798828125 0.6225306391716003
+doorkey {'RPCR': 1.0, 'flip_consistency_rule_vs_sae': 1.0, 'mean_neg_frac_before_clamp': 0.3197629499844833, 'rows_dropped_unflippable': 0}
+dyobs {'RPCR': 1.0, 'flip_consistency_rule_vs_sae': 1.0, 'mean_neg_frac_before_clamp': 0.3172491493860553, 'rows_dropped_unflippable': 0}
+cartpole {'RPCR': 1.0, 'flip_consistency_rule_vs_sae': 1.0, 'mean_neg_frac_before_clamp': 0.330001942664971, 'rows_dropped_unflippable': 0}

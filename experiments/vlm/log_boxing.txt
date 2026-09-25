@@ -1,0 +1,88 @@
+=================== boxing ===================
+Naming (gemini-3.1-pro-preview):   0%|          | 0/41 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):   2%|▏         | 1/41 [02:12<1:28:13, 132.35s/it]Naming (gemini-3.1-pro-preview):   5%|▍         | 2/41 [04:25<1:26:13, 132.65s/it]Naming (gemini-3.1-pro-preview):   7%|▋         | 3/41 [06:40<1:24:53, 134.04s/it]Naming (gemini-3.1-pro-preview):  10%|▉         | 4/41 [08:54<1:22:27, 133.72s/it]Naming (gemini-3.1-pro-preview):  12%|█▏        | 5/41 [11:09<1:20:34, 134.29s/it]Naming (gemini-3.1-pro-preview):  15%|█▍        | 6/41 [13:18<1:17:16, 132.48s/it]Naming (gemini-3.1-pro-preview):  17%|█▋        | 7/41 [15:29<1:14:54, 132.19s/it]Naming (gemini-3.1-pro-preview):  20%|█▉        | 8/41 [17:40<1:12:25, 131.67s/it]Naming (gemini-3.1-pro-preview):  22%|██▏       | 9/41 [19:51<1:10:05, 131.41s/it]Naming (gemini-3.1-pro-preview):  24%|██▍       | 10/41 [22:05<1:08:20, 132.26s/it]Naming (gemini-3.1-pro-preview):  27%|██▋       | 11/41 [24:18<1:06:10, 132.34s/it]Naming (gemini-3.1-pro-preview):  29%|██▉       | 12/41 [27:49<1:15:32, 156.29s/it]Naming (gemini-3.1-pro-preview):  32%|███▏      | 13/41 [30:31<1:13:45, 158.04s/it]Naming (gemini-3.1-pro-preview):  34%|███▍      | 14/41 [32:48<1:08:16, 151.72s/it]Naming (gemini-3.1-pro-preview):  37%|███▋      | 15/41 [35:00<1:03:12, 145.87s/it]Naming (gemini-3.1-pro-preview):  39%|███▉      | 16/41 [37:13<59:08, 141.95s/it]  Naming (gemini-3.1-pro-preview):  41%|████▏     | 17/41 [39:24<55:26, 138.60s/it]Naming (gemini-3.1-pro-preview):  44%|████▍     | 18/41 [41:36<52:26, 136.81s/it]Naming (gemini-3.1-pro-preview):  46%|████▋     | 19/41 [43:49<49:39, 135.42s/it]Naming (gemini-3.1-pro-preview):  49%|████▉     | 20/41 [46:02<47:12, 134.89s/it]Naming (gemini-3.1-pro-preview):  51%|█████     | 21/41 [48:15<44:43, 134.18s/it]Naming (gemini-3.1-pro-preview):  54%|█████▎    | 22/41 [50:30<42:36, 134.58s/it]Naming (gemini-3.1-pro-preview):  56%|█████▌    | 23/41 [52:44<40:17, 134.30s/it]Naming (gemini-3.1-pro-preview):  59%|█████▊    | 24/41 [54:57<37:58, 134.03s/it]Naming (gemini-3.1-pro-preview):  61%|██████    | 25/41 [57:11<35:40, 133.79s/it]Naming (gemini-3.1-pro-preview):  63%|██████▎   | 26/41 [59:25<33:29, 133.94s/it]Naming (gemini-3.1-pro-preview):  66%|██████▌   | 27/41 [1:01:40<31:18, 134.16s/it]Naming (gemini-3.1-pro-preview):  68%|██████▊   | 28/41 [1:03:50<28:48, 132.97s/it]Naming (gemini-3.1-pro-preview):  71%|███████   | 29/41 [1:06:02<26:33, 132.78s/it]Naming (gemini-3.1-pro-preview):  73%|███████▎  | 30/41 [1:08:13<24:15, 132.34s/it]Naming (gemini-3.1-pro-preview):  76%|███████▌  | 31/41 [1:10:26<22:05, 132.56s/it]Naming (gemini-3.1-pro-preview):  78%|███████▊  | 32/41 [1:12:40<19:55, 132.82s/it]Naming (gemini-3.1-pro-preview):  80%|████████  | 33/41 [1:14:52<17:41, 132.68s/it]Naming (gemini-3.1-pro-preview):  83%|████████▎ | 34/41 [1:17:06<15:30, 132.92s/it]Naming (gemini-3.1-pro-preview):  85%|████████▌ | 35/41 [1:19:18<13:15, 132.65s/it]Naming (gemini-3.1-pro-preview):  88%|████████▊ | 36/41 [1:21:32<11:05, 133.11s/it]Naming (gemini-3.1-pro-preview):  90%|█████████ | 37/41 [1:23:43<08:50, 132.56s/it]  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more atNaming (gemini-3.1-pro-preview):  93%|█████████▎| 38/41 [1:25:59<06:40, 133.47s/it]Naming (gemini-3.1-pro-preview):  95%|█████████▌| 39/41 [1:28:09<04:24, 132.46s/it]Naming (gemini-3.1-pro-preview):  98%|█████████▊| 40/41 [1:30:22<02:12, 132.56s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 41/41 [1:32:37<00:00, 133.31s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 41/41 [1:32:37<00:00, 135.54s/it]
+
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+      C5: unparsed
+      C7: unparsed
+     C15: unparsed
+     C16: unparsed
+     C34: unparsed
+     C46: unparsed
+     C55: unparsed
+     C78: unparsed
+     C89: unparsed
+    C103: unparsed
+    C124: unparsed
+    C139: unparsed
+    C188: unparsed
+    C191: unparsed
+    C195: unparsed
+    C202: unparsed
+    C206: unparsed
+    C212: unparsed
+    C221: unparsed
+    C233: unparsed
+    C260: unparsed
+    C262: unparsed
+    C287: unparsed
+    C295: unparsed
+    C297: unparsed
+    C299: unparsed
+    C334: unparsed
+    C346: unparsed
+    C348: unparsed
+    C356: unparsed
+    C381: unparsed
+    C394: unparsed
+    C415: unparsed
+    C422: unparsed
+    C429: unparsed
+    C430: unparsed
+    C435: unparsed
+    C450: unparsed
+    C474: unparsed
+    C492: unparsed
+    C496: unparsed
+[done] 41 concepts, unparsed=41, distinct labels=1 -> experiments/vlm/boxing_42/labels_gemini31_a.json
+Naming (gemini-3.1-pro-preview):   0%|          | 0/41 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):   2%|▏         | 1/41 [02:13<1:28:49, 133.24s/it]

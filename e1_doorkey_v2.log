@@ -1,0 +1,48 @@
+MiniGrid observation shape: (3, 7, 7), using 3 input channels
+{
+  "n_states": 25160,
+  "n_clauses": 120,
+  "n_distinct_clauses": 9,
+  "n_false_clauses": 0,
+  "n_true_clauses": 40,
+  "fallback_action": 2,
+  "fallback_rate": 0.0,
+  "teacher_vs_data": 1.0,
+  "teacher_raw_vs_data": 1.0,
+  "hard_fidelity": 0.9953100158982512,
+  "soft_fidelity": 0.9999602543720191,
+  "hard_z_equals_bool": 1.0,
+  "zero_intervention_max_dh": 0.0,
+  "concepts_in_rules": 8,
+  "rule_concepts_dead": [],
+  "rule_concepts_unflippable_on": [],
+  "rule_concepts_unflippable_off": []
+}
+Rows: 24603 | states without a winning literal clause: 2699/5000
+
+== Levels (necessity; change rate) ==
+  concept n=  4600 | teacher int=0.047 matched=0.007 rule-matched=0.000 noise=0.025 | raw int=0.042 | soft int=0.587 | hard int=0.704 | ||dh||=0.947 vs noise 0.821
+          teacher int-mb_any: +0.006 [+0.002, +0.011]
+          teacher int-noise: +0.022 [+0.017, +0.028]
+   clause n=  4044 | teacher int=0.069 matched=0.005 rule-matched=0.000 noise=0.041 | raw int=0.067 | soft int=1.000 | hard int=1.000 | ||dh||=0.940 vs noise 0.980
+          teacher int-mb_any: +0.011 [+0.003, +0.020]
+          teacher int-noise: +0.027 [+0.020, +0.035]
+   action n=  2301 | teacher int=0.079 matched=0.000 rule-matched=0.000 noise=0.036 | raw int=0.079 | soft int=1.000 | hard int=1.000 | ||dh||=1.007 vs noise 1.158
+          teacher int-mb_any: +0.007 [+0.000, +0.022]
+          teacher int-noise: +0.043 [+0.033, +0.055]
+
+== Sufficiency n=13658 | switch-to-target: hard=0.398 soft=0.394 teacher=0.004 (matched teacher=0.003)
+== Minimal counterfactual: mean=1.33 median=1.0 found=0.81 hist={1: 2702, 2: 1323, 3: 0, 4: 0, 5: 0}
+== Per-concept MWU (teacher int > matched): p=0.203
+
+== Per concept ==
+  c 12 [U,agent_dir] n=  556 nec hard=1.00 teacher=0.00 (base 0.00, noise 0.01) suf teacher=0.01 clauses=1 actions=1
+  c 60 [G1,key_in_front] n=  387 nec hard=1.00 teacher=0.00 (base 0.00, noise 0.00) suf teacher=0.00 clauses=2 actions=1
+  c 64 [G1,key_in_front] n=  387 nec hard=0.00 teacher=0.00 (base 0.00, noise 0.00) suf teacher=nan clauses=1 actions=1
+  c124 [G1,wall_ahead] n=  975 nec hard=0.00 teacher=0.09 (base 0.02, noise 0.05) suf teacher=1.00 clauses=1 actions=1
+  c129 [U,door_in_front] n=  381 nec hard=1.00 teacher=0.00 (base 0.00, noise 0.00) suf teacher=0.00 clauses=2 actions=1
+  c170 [G1,wall_ahead] n=  977 nec hard=1.00 teacher=0.10 (base 0.01, noise 0.05) suf teacher=0.01 clauses=2 actions=1
+  c262 [U,door_in_front] n=  381 nec hard=1.00 teacher=0.00 (base 0.00, noise 0.00) suf teacher=nan clauses=1 actions=1
+  c274 [G2c,key_in_front] n=  556 nec hard=1.00 teacher=0.05 (base 0.00, noise 0.01) suf teacher=0.45 clauses=1 actions=1
+
+Saved to experiments/e1/results_doorkey_v2

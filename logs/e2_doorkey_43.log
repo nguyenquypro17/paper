@@ -1,0 +1,27 @@
+Held-out: (25160, 128), factors=['has_key', 'door_open', 'key_in_front', 'door_in_front', 'wall_ahead', 'agent_dir', 'goal_visible'], concepts in rules=12
+     sae: D=300, alive=199
+     cnn: D=128, alive=77
+  random: D=300, alive=300
+     pca: D=128, alive=77
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/12 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.512
+
+Primary setting:
+     sae: compl=0.824 G1=22.1% G2=11.6% G2c=21.1% G3=33.2% U=12.1% dims=199
+     cnn: compl=0.893 G1=7.8% G2=49.4% G2c=18.2% G3=20.8% U=3.9% dims=77
+  random: compl=0.847 G1=17.0% G2=1.9% G2c=5.4% G3=42.6% U=33.0% dims=300
+     pca: compl=0.848 G1=7.8% G2=5.2% G2c=2.6% G3=57.1% U=27.3% dims=77
+  Concepts in rules by group: {'G1': 5, 'G2': 1, 'G2c': 2, 'G3': 0, 'U': 4}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+  (dims kept: best parent AUC >= 0.65)
+     sae: second=0.748 purity=0.138 best=0.835 | kept 133/199 (66.8%)
+     cnn: second=0.815 purity=0.092 best=0.936 | kept 61/77 (79.2%)
+  random: second=0.670 purity=0.067 best=0.740 | kept 516/899 (57.4%)
+     pca: second=0.671 purity=0.055 best=0.726 | kept 33/77 (42.9%)
+  SAE vs    cnn: 2nd lower p=1.64e-07 (CLES=0.27) | purity higher p=2.27e-01 (CLES=0.53)
+  SAE vs random: 2nd lower p=1.00e+00 (CLES=0.65) | purity higher p=1.67e-03 (CLES=0.58)
+  SAE vs    pca: 2nd lower p=9.93e-01 (CLES=0.64) | purity higher p=1.06e-02 (CLES=0.63)
+
+Saved to experiments/e2/results_doorkey_43

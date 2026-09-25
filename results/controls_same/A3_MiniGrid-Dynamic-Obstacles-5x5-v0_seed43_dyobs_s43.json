@@ -1,0 +1,111 @@
+{
+  "arm": "A3",
+  "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "seed": 43,
+  "learner": "dnf",
+  "lucid_split_dir": "outputs/lucid_model_dyobs_43",
+  "representation": "raw",
+  "val_acc": 1.0,
+  "fidelity_soft": 100.0,
+  "fidelity_hard": 89.04109589041096,
+  "coverage_offline": 100.0,
+  "fidelity_hard_pure": 89.04109589041096,
+  "coverage_pure": 89.04109589041096,
+  "complexity": {
+    "literals": 39,
+    "concepts": 25,
+    "units": 4
+  },
+  "knob": {
+    "l0_penalty": 0.0001,
+    "n_clauses_per_action": 10,
+    "tau": 0.5
+  },
+  "rules": {
+    "TurnLeft": [
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]",
+      "(\u00acf_2 \u2227 \u00acf_13 \u2227 \u00acf_22 \u2227 \u00acf_26 \u2227 \u00acf_36 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 \u00acf_81 \u2227 f_102 \u2227 \u00acf_109 \u2227 f_121) [bias=5.00]"
+    ],
+    "TurnRight": [
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]",
+      "(f_7 \u2227 f_25 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_100 \u2227 f_123) [bias=5.00]"
+    ],
+    "Forward": [
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_36 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_36 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]",
+      "(\u00acf_16 \u2227 \u00acf_25 \u2227 \u00acf_32 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_94 \u2227 \u00acf_96 \u2227 \u00acf_102 \u2227 \u00acf_114) [bias=5.00]"
+    ],
+    "Pickup": [
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]"
+    ],
+    "Drop": [
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]"
+    ],
+    "Toggle": [
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]"
+    ],
+    "Done": [
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.20]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.19]",
+      "(True) [bias=-0.20]"
+    ]
+  },
+  "runtime_sec": 349.9
+}

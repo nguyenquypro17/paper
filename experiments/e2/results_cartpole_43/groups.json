@@ -1,0 +1,2271 @@
+{
+  "primary": {
+    "scheme": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "t_high": 0.75,
+    "t_low": 0.65,
+    "t_gap": 0.1
+  },
+  "concepts": {
+    "1": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7510365705322399,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.17529687327770305,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00041352035667510575
+    },
+    "3": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.501409986200852,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 8.98685974438651e-05,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.0015080975110967243
+    },
+    "7": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003389655435422,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 3.8967943350232126e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0002757875393370912
+    },
+    "8": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6219337200730731,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.09104572148839107,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.006728734062030105
+    },
+    "10": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5252345091821905,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.009854796375630581,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.04251386071725044
+    },
+    "14": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5589728116534507,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.041874590075340556,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.02842847281188273
+    },
+    "18": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7132615514016373,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.09337645360377322,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.1155748884397184
+    },
+    "20": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010943816155137,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.000104279012669517,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "23": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002442296708918,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 4.234470795783096e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00035537620547449616
+    },
+    "26": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006867081204893,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00017663191855721294,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0008665235079168088
+    },
+    "27": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "28": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7324980825476494,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.06117867484945283,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.11412722872722972
+    },
+    "33": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.7755802789995556,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.14440704742998567,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.18036000020768808
+    },
+    "34": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5153312990382458,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.007627040546912545,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.016382898654999364
+    },
+    "35": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5555035053145091,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.009987866965329606,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.06613081383751082
+    },
+    "36": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010943171899662,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00019427758845413923,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.002173822601341078
+    },
+    "38": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.530785479334215,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.013314237937119389,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0011304720408547148
+    },
+    "39": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "44": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7930529100926442,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.22343306884012326,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00041352035667510575
+    },
+    "45": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.546015180740427,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.007680328812720516,
+      "best_child": "cart_pos<q0.33",
+      "nmi_max": 0.021019279249679494
+    },
+    "47": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5011230017175321,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00010296091590000778,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "49": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5817072495696165,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.03470974958201878,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.10747988106291222
+    },
+    "50": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.501724417992679,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0012734549730578637,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.002474098927564323
+    },
+    "52": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.9344573741970483,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.29047548244402777,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.006011582112306498
+    },
+    "53": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "57": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.760206889869793,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.11783931360437372,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.16389861111885481
+    },
+    "59": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5507620304812193,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.040873835109401346,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.04585420472380789
+    },
+    "60": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5053032382046164,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0030214189664061752,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.009123620246132396
+    },
+    "70": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7554977700782816,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.13741046543771895,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.18056839182068204
+    },
+    "71": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5070781809854454,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00305979141443935,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.004898724893381653
+    },
+    "72": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5004500162006841,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0006360388920715028
+    },
+    "75": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "77": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7055431050265351,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0838924527161683,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0005510737096155233
+    },
+    "78": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6371234125779502,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.029099158806455416,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.08785417165687734
+    },
+    "79": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003302946228035,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.0282622323518638e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0007771537872704529
+    },
+    "81": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5206155043990939,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.013669363470718343,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0018923621319727956
+    },
+    "82": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500390013800588,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 9.000540018000436e-05,
+      "best_child": "cart_pos<q0.33",
+      "nmi_max": 0.0006360388920715028
+    },
+    "85": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5654618480893313,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.05431921122768002,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.03623151906638375
+    },
+    "87": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5034350640771568,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0009445306644960683,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.005975167405033579
+    },
+    "88": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5021292697870992,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0002700846019081382,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00165697476420837
+    },
+    "89": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006301314031322,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.00036013680302415807,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0010050303855574881
+    },
+    "91": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7686071467578208,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.15254690946022675,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.15726874333987007
+    },
+    "93": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500480019200768,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0005510737096155233
+    },
+    "98": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8015484930451371,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.27818614257943786,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.15445136252919472
+    },
+    "99": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6885206001628197,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.12396094091798704,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0018923621319727956
+    },
+    "102": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5009995737378397,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 9.953413632757258e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0017534547347795141
+    },
+    "112": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5005284713964857,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00013846119596971906,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0010869203195214244
+    },
+    "113": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003302946228035,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.0282622323518638e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006220479362645581
+    },
+    "115": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "117": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5057170889727194,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0031651455318090216,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.005474558482553499
+    },
+    "118": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001981767736821,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00010816417335801631,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00046678758762775605
+    },
+    "120": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500210003000228,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 5.999699998804342e-05,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00020337917231925604
+    },
+    "123": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5004500378011161,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_ang_vel",
+      "purity": 9.002340054009572e-05,
+      "best_child": "cart_vel<q0.33",
+      "nmi_max": 0.0006054519254430039
+    },
+    "124": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5118392516801368,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.006141720124947625,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.006847793918708635
+    },
+    "128": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "129": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5011230017175321,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00019296271600799386,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "130": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5012551195666535,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00011507396482934862,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "134": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "138": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "140": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5319009292441056,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.022398636390646653,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.03358724139056709
+    },
+    "141": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5034699903033488,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0018807745177616964,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.003930494156345162
+    },
+    "142": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7466796769908836,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.06360968990426452,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.14247123376748588
+    },
+    "150": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5009621993408448,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 9.21627394168123e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0018821316814615228
+    },
+    "151": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5566742595305301,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0447555479467634,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.06183615358752893
+    },
+    "152": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003300654015721,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 3.0053401092078325e-05,
+      "best_child": "cart_pos<q0.33",
+      "nmi_max": 0.00047216706143610757
+    },
+    "153": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000805671930391,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 2.056479294298974e-05,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.00016145151886594916
+    },
+    "156": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5013586324727088,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00021851126937266763,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0027605751472263703
+    },
+    "158": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "159": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5109126682978153,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.006298351607790131,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.009246417417011233
+    },
+    "161": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.740454238077125,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.09571375355164202,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.14075089755616288
+    },
+    "162": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7292120568334287,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.17857493805054336,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.15582247903184165
+    },
+    "166": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "167": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "169": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5835282478317793,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.023731786254710507,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00020337917231925604
+    },
+    "172": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6930206289669958,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.08062233091111604,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.0
+    },
+    "173": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.514344051292501,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.01139483270577002,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.019482158031212265
+    },
+    "174": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "177": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5015566538671294,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0007763922612731289,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0010204415582883096
+    },
+    "180": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.7609388141451311,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.13412717421088305,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.1693163613931118
+    },
+    "181": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.7604820747083939,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.12062712189745373,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.16149606736256678
+    },
+    "182": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5362321074711351,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0198227524709077,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.053078998114716135
+    },
+    "183": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5008587660192891,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00016873661814909013,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0020128834430659455
+    },
+    "184": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010371414114769,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00010691520620864647,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0018923621319727956
+    },
+    "187": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.51179358912595,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0038653413546519966,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.010241420935741295
+    },
+    "190": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8372794890681177,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.21510579309645927,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00013799416727845666
+    },
+    "191": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5557647756260176,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.041549466292542525,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0627769694738746
+    },
+    "192": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003015987260235,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.00012158792566352439,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00047216706143610757
+    },
+    "193": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.7611381040222563,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.11754814130813007,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.15885867029592576
+    },
+    "195": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5043779660716725,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0016769472491352522,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.008223840971509874
+    },
+    "198": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5070227576607714,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 8.894674767645494e-05,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.010152393585799495
+    },
+    "199": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.646164730611544,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.040763909107121576,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.04402485958377319
+    },
+    "202": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 1.2113048929340842e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "205": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003016100952378,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.00012160289494977938,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00047216706143610757
+    },
+    "215": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5011230017175321,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00019296271600799386,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "219": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5579299286449169,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.04312834420138667,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.04045481271049651
+    },
+    "220": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5007927070947285,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 7.267829357637812e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.001858889586070093
+    },
+    "221": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500120004800192,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00027582966451417725
+    },
+    "222": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000805671930391,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 2.056479294298974e-05,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.00016145151886594916
+    },
+    "224": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5604848133446547,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.03600792738735403,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0
+    },
+    "225": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500120004800192,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 6.000240009595981e-05,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.00027582966451417725
+    },
+    "228": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001034257420793,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 1.3422141935337528e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015261554445044893
+    },
+    "231": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5011230017175321,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00010296091590000778,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00262758725927679
+    },
+    "233": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5280834524915166,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.020106283341751796,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.04724152877672529
+    },
+    "236": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5123169911496765,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.008668930185538826,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.015217378876081185
+    },
+    "239": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7624334552790524,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.1198027741764851,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.1305012706349497
+    },
+    "241": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010656250829242,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0001955956816401816,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0018923621319727956
+    },
+    "244": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003963535473642,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.633914678824457e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0007771537872704529
+    },
+    "247": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500210008400336,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_pos_mid",
+      "nmi_max": 0.00030475812884095675
+    },
+    "253": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5078637236807646,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0033329358613836124,
+      "best_child": "cart_pos<q0.33",
+      "nmi_max": 0.008760219085727359
+    },
+    "256": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5015193552648962,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00013930006268814132,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0033932133559887653
+    },
+    "257": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006032353494277,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.325334935575189e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006054519254430039
+    },
+    "258": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003963535473642,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.633914678824457e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006220479362645581
+    },
+    "259": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 7.199711937744269e-09,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0
+    },
+    "260": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500433720364883,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 4.37101643669946e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006054519254430039
+    },
+    "262": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001034295318175,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.088909995105585e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00016145151886594916
+    },
+    "264": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5147021903678062,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00948439256539857,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.024858785493854826
+    },
+    "268": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6312544563941315,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0237587075931589,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.040315308602346445
+    },
+    "271": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5015305382119887,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00017983799690379776,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0017764463724688566
+    },
+    "272": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5043509066216132,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.002159319588119213,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.005429976258030222
+    },
+    "276": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "277": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "278": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.502708415906989,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0007879502961404272,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0032403261732757717
+    },
+    "282": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003302946228035,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.0282622323518638e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006220479362645581
+    },
+    "284": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5616934871190972,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.05333702518317329,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00398141770575675
+    },
+    "285": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002999400033596,
+      "best_factor": "pole_ang_vel",
+      "second_factor": "cart_vel",
+      "purity": 5.30947294988815e-05,
+      "best_child": "pole_ang_vel_mid",
+      "nmi_max": 0.00035537620547449616
+    },
+    "290": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5146268996412702,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.009321239523823244,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0045634084161224045
+    },
+    "291": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5065297376692515,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.003859679465951338,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.009123620246132396
+    },
+    "292": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7993527624947321,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.19665349402720333,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "296": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003302946228035,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.00012027002214354265,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006220479362645581
+    },
+    "297": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5012638094360825,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0001237602341864763,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00231290856877238
+    },
+    "299": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.50015000600024,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 9.198281689437593e-06,
+      "best_child": "pole_angle_mid",
+      "nmi_max": 0.0002540928639679346
+    },
+    "300": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5057078268528395,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.004144175178555143,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0048284649320344125
+    },
+    "303": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5132591047927031,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.006227058946160491,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.010938503859745879
+    },
+    "304": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5082480889683778,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.003243358869772006,
+      "best_child": "cart_pos<q0.33",
+      "nmi_max": 0.00035533903506129494
+    },
+    "305": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6322492318904371,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.008368298912402317,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.0
+    },
+    "306": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8402141220208803,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.2910617053332246,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.005067473703585607
+    },
+    "307": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7219952396493555,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.18552961350766017,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.25504890962334803
+    },
+    "308": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7086473139131961,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.06281758440194207,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.08920226637453967
+    },
+    "319": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.751199977800516,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.11462762104412294,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.14824433941425308
+    },
+    "320": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5011317522227705,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0002915386178262702,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.002031959710275973
+    },
+    "321": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500119997600048,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 3.8870379253208576e-05,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0002324811068875711
+    },
+    "322": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500180007200288,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 1.0800216054818179e-08,
+      "best_child": "pole_angle_mid",
+      "nmi_max": 0.00015261554445044893
+    },
+    "323": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5037082928238755,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0012482484210194489,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.005521793733969538
+    },
+    "324": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001208507895585,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 3.084718941448461e-05,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.00024205569737493642
+    },
+    "330": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5176377328577091,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.013830656713140543,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.012231164726560917
+    },
+    "333": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003900498013081,
+      "best_factor": "cart_vel",
+      "second_factor": "cart_pos",
+      "purity": 6.00366007801334e-05,
+      "best_child": "cart_vel<q0.33",
+      "nmi_max": 0.0005747247277499186
+    },
+    "334": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5047832785598698,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0027112571177833056,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.007340199934122655
+    },
+    "335": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5032148727149386,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0009649789152627042,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0037952689503416336
+    },
+    "336": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5009796435052503,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00010953850245409846,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0013328700833963147
+    },
+    "337": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.608865107676047,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.09465998676226461,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.02445208841708888
+    },
+    "338": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003676917582269,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0001276641574828874,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006054519254430039
+    },
+    "341": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7625957393248631,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.12619698164059046,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.15268132300279647
+    },
+    "344": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "345": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500180007200288,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00041352035667510575
+    },
+    "347": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500390015600624,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 5.992859861991828e-05,
+      "best_child": "cart_pos_mid",
+      "nmi_max": 0.00047820518136806997
+    },
+    "351": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5027779272829452,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0004972132668403795,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0027628100931659126
+    },
+    "356": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.50015000600024,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 3.002999889611946e-05,
+      "best_child": "cart_pos_mid",
+      "nmi_max": 0.0002540928639679346
+    },
+    "359": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7336342992896876,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 0.09810866346855063,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.13430416858420746
+    },
+    "360": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5056866118990393,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0015451394662774343,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0014479849606306159
+    },
+    "362": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5007353153011683,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00016531950079634594,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.001073478553875763
+    },
+    "365": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 1.2113048929340842e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0003113665705025144
+    },
+    "368": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8955205401947238,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.2729213949137389,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.30818812992229955
+    },
+    "373": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5162129062710957,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0128909434291814,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.018888039901201713
+    },
+    "377": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5083119218450864,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0030576167547812227,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.010430897210348865
+    },
+    "378": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6337352954161363,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.035230820047825295,
+      "best_child": "cart_pos_mid",
+      "nmi_max": 0.0
+    },
+    "382": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5308341086947969,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.011287452946044607,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.032696819362306555
+    },
+    "384": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.755305730318851,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 0.16223757608131162,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.17516971584536153
+    },
+    "385": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "386": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 1.2113048929340842e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0
+    },
+    "389": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006001068026161,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.00018003240079200733,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.0012369312697840568
+    },
+    "390": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5157977315672695,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.013668139544135705,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00765233628789361
+    },
+    "391": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500090012600324,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00027582966451417725
+    },
+    "392": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 5.039847345744697e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "393": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6825971856897916,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 0.14988931110613357,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.0
+    },
+    "401": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.501585414189457,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00014535658715286726,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0032403261732757717
+    },
+    "402": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5051591587873031,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0002705274107647204,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.0010050303855574881
+    },
+    "403": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002699712020158,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 8.996400172778252e-05,
+      "best_child": "pole_angle_mid",
+      "nmi_max": 0.00027582966451417725
+    },
+    "404": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7286123799953323,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 0.10005318950867526,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.134213479918763
+    },
+    "407": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5009708551026311,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0001908599021031021,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0012791655720037949
+    },
+    "410": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5328569967662209,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.023281154441713747,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.046779689157558126
+    },
+    "411": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6343618945453804,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.033899462416367876,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.04333872266739184
+    },
+    "412": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500120004800192,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_ang_vel",
+      "purity": 4.004318176886734e-05,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00015577612719380737
+    },
+    "413": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7506387196559681,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.11583932996033464,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.12997270314184092
+    },
+    "414": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7656518816781012,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.18934444226826697,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.08096500413238121
+    },
+    "416": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "419": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500180018000504,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00015261554445044893
+    },
+    "422": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5139821931879776,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.007865479031167855,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.01572401744259502
+    },
+    "423": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.764847343158741,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.08291196775043919,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0009321099365469278
+    },
+    "425": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001034409010318,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.089726774816118e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "426": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010170027432929,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00020691814095274985,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0014540798139252619
+    },
+    "427": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500060002400096,
+      "best_factor": "cart_vel",
+      "second_factor": "pole_angle",
+      "purity": 0.0,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00013799416727845666
+    },
+    "429": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5017548988560971,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0003448586541651144,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.003350058746670331
+    },
+    "436": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7340545988792213,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_vel",
+      "purity": 0.12650495700034403,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.11586419555853772
+    },
+    "439": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7259503760621582,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.07294682266868746,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.0942873114783475
+    },
+    "440": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7094510474188023,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.023792853706401496,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00027582966451417725
+    },
+    "445": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5028801800059043,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0009892169851311028,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0024834170351907218
+    },
+    "446": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8223816382906711,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.2407520885995812,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0013961167308284119
+    },
+    "447": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 1.2113048929340842e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "448": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006867081204893,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00017663191855721294,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00090929314212395
+    },
+    "449": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5007639998287341,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0003440334290700786,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.001304541730061442
+    },
+    "454": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5018603084076564,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0008100846023401109,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.002751989373264458
+    },
+    "457": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5012351135393024,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00012507453763432874,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.002074130378847234
+    },
+    "459": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7235665055089634,
+      "best_factor": "pole_angle",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.0855570864101739,
+      "best_child": "pole_angle>q0.67",
+      "nmi_max": 0.10848735950936439
+    },
+    "460": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.502970027002916,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_ang_vel",
+      "purity": 0.001348702175122396,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0024382772934705946
+    },
+    "471": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5717942739429143,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.058936969586541266,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.04348540413018317
+    },
+    "474": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5017063106241085,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0002661702201482985,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0025968715475640633
+    },
+    "476": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5048369071435115,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0015478957606526178,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.003992735651669824
+    },
+    "478": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "480": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003015949362853,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.0001215553353492993,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00047216706143610757
+    },
+    "482": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5000660589245607,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 6.056524464725932e-06,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "487": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5032102814081963,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.0013036045102385874,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0034203320827320975
+    },
+    "488": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5008300814917234,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00017005149059534652,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0015921394964221877
+    },
+    "491": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5016505574124687,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00045036900774042543,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.0034128891955837307
+    },
+    "492": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001321178491214,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 1.2113048929340842e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0003113665705025144
+    },
+    "493": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5007277941810926,
+      "best_factor": "cart_vel",
+      "second_factor": "cart_pos",
+      "purity": 7.448592611036808e-06,
+      "best_child": "cart_vel>0",
+      "nmi_max": 0.0008525144059907253
+    },
+    "499": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010282582654055,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 9.821926388142721e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0020277979855389426
+    },
+    "500": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006407196488272,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00025059064593502267,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0006220479362645581
+    },
+    "501": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001034257420793,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 1.3413141755291846e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00027582966451417725
+    },
+    "504": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006032580878563,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.00024320768656027614,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.0011619613695232215
+    },
+    "505": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5561437637201894,
+      "best_factor": "cart_pos",
+      "second_factor": "cart_vel",
+      "purity": 0.049989099963790196,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.036553010246854596
+    },
+    "506": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7571869289957001,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 0.11749808892773306,
+      "best_child": "pole_angle>0",
+      "nmi_max": 0.00015577612719380737
+    },
+    "507": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5679451777579113,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 0.05214554895269552,
+      "best_child": "cart_pos>q0.67",
+      "nmi_max": 0.06258072529078654
+    },
+    "508": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002400096003841,
+      "best_factor": "cart_vel",
+      "second_factor": "cart_pos",
+      "purity": 7.050598505353722e-05,
+      "best_child": "cart_vel>q0.67",
+      "nmi_max": 0.00046678758762775605
+    },
+    "509": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001981767736821,
+      "best_factor": "cart_pos",
+      "second_factor": "pole_angle",
+      "purity": 1.8169573394066774e-05,
+      "best_child": "cart_pos>0",
+      "nmi_max": 0.00046678758762775605
+    },
+    "511": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500180007200288,
+      "best_factor": "pole_angle",
+      "second_factor": "cart_pos",
+      "purity": 9.000540018000436e-05,
+      "best_child": "pole_angle<q0.33",
+      "nmi_max": 0.00041352035667510575
+    }
+  },
+  "in_rule_groups": {
+    "G1": 6,
+    "G2": 0,
+    "G2c": 0,
+    "G3": 1,
+    "U": 2
+  },
+  "dead_concepts_in_rules": []
+}

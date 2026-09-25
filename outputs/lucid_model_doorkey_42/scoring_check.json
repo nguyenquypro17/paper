@@ -1,0 +1,16 @@
+{
+  "run_dir": "outputs/lucid_model_doorkey_42",
+  "split": "val",
+  "n_states": 2504,
+  "coverage_pct": 46.96485623003195,
+  "conflict_rate_pct": 0.0,
+  "conflict_rate_among_covered_pct": 0.0,
+  "mean_actions_fired": 0.4696485623003195,
+  "multi_clause_same_action_pct": 66.66666666666666,
+  "fidelity_weighted_pct": 99.76038338658148,
+  "fidelity_unweighted_pct": 99.76038338658148,
+  "fidelity_drop_pct": 0.0,
+  "tie_rate_unweighted_pct": 0.0,
+  "agreement_weighted_vs_unweighted_pct": 100.0,
+  "fallback_action": "Action_2"
+}

@@ -1,0 +1,33 @@
+{
+  "arm": "A1",
+  "env_name": "BoxingNoFrameskip-v4",
+  "seed": 44,
+  "learner": "tree",
+  "lucid_split_dir": "outputs/lucid_model_boxing_44",
+  "representation": "sae_recon",
+  "sae_live_dims": 493,
+  "sae_config": {
+    "hidden_dim": 512,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 44
+  },
+  "val_acc": 0.43541919239018934,
+  "fidelity_soft": 43.65767681289167,
+  "fidelity_hard": 43.65767681289167,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 3,
+    "concepts": 3,
+    "units": 4,
+    "depth": 3
+  },
+  "knob": {
+    "max_depth": null,
+    "ccp_alpha": 0.03
+  },
+  "runtime_sec": 1403.1
+}

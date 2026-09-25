@@ -1,0 +1,16 @@
+{
+  "run_dir": "outputs/lucid_model_cartpole_44",
+  "split": "val",
+  "n_states": 5000,
+  "coverage_pct": 94.32000000000001,
+  "conflict_rate_pct": 0.06,
+  "conflict_rate_among_covered_pct": 0.06361323155216285,
+  "mean_actions_fired": 0.9438,
+  "multi_clause_same_action_pct": 100.0,
+  "fidelity_weighted_pct": 98.32,
+  "fidelity_unweighted_pct": 98.32,
+  "fidelity_drop_pct": 0.0,
+  "tie_rate_unweighted_pct": 0.0,
+  "agreement_weighted_vs_unweighted_pct": 100.0,
+  "fallback_action": "Left"
+}

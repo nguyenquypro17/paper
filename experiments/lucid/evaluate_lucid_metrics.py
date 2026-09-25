@@ -1,4 +1,3 @@
-
 """
 evaluate_lucid_metrics.py
 Comprehensive evaluation script for LUCID (Soft and Hard) rules.
@@ -15,16 +14,105 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
+import ale_py
+import gymnasium as gym
+gym.register_envs(ale_py)
+
 from stable_baselines3 import PPO
+from stable_baselines3.common.env_util import make_atari_env
+from stable_baselines3.common.vec_env import VecFrameStack, VecTransposeImage, DummyVecEnv
+
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 if ROOT_DIR not in sys.path:
     sys.path.append(ROOT_DIR)
-# Import môi trường và model architecture
-from check_success_rules import make_vec_env
-from train_joint import SAELogicAgentV3, SAELogicConfig
 
-ALL_ACTION_NAMES = ["TurnLeft", "TurnRight", "Forward", "Pickup", "Drop", "Toggle", "Done"]
-CARTPOLE_ACTIONS = ["Left", "Right"]
+# Import model architecture
+from train_joint import SAELogicAgentV3, SAELogicConfig
+from utils_env import make_env_by_name
+
+# ============================================================================
+# PATCHED RULE EXTRACTION
+# ============================================================================
+def patched_extract_rules(model, action_names, threshold=0.3):
+    """
+    Extracts logical rules from the learned weights of the logic layer.
+    Universal truth clauses (all a > threshold) are explicitly retained as '(True)'.
+    Logical contradictions (p > threshold AND n > threshold) are explicitly output as '(False)'.
+    """
+    logic_layer = model.logic_layer
+    feature_names = [f"f_{i}" for i in range(logic_layer.n_features)]
+    
+    p, n = logic_layer._get_selection_probs()
+    p, n = p.detach().cpu().numpy(), n.detach().cpu().numpy()
+    cb = torch.clamp(logic_layer.clause_weight, max=5.0).detach().cpu().numpy()
+
+    rules = {}
+    for a in range(logic_layer.n_actions):
+        clauses = []
+        for c in range(logic_layer.n_clauses_per_action):
+            idx = a * logic_layer.n_clauses_per_action + c
+            lits = []
+            is_false = False
+            
+            for i in range(logic_layer.n_features):
+                if p[idx, i] > threshold and n[idx, i] > threshold:
+                    is_false = True
+                    break
+                elif p[idx, i] > threshold:
+                    lits.append(f"{feature_names[i]}")
+                elif n[idx, i] > threshold:
+                    lits.append(f"¬{feature_names[i]}")
+            
+            if is_false:
+                clauses.append(f"(False) [bias={cb[idx]:.2f}]")
+            elif lits:
+                clauses.append(f"({' ∧ '.join(lits)}) [bias={cb[idx]:.2f}]")
+            else:
+                # Universal Truth / Base Score Prior
+                clauses.append(f"(True) [bias={cb[idx]:.2f}]")
+                
+        rules[action_names[a]] = clauses
+    return rules
+
+
+# ============================================================================
+# ENVIRONMENT FACTORY
+# ============================================================================
+def make_eval_env(env_name: str, seed: int = 42):
+    is_atari = "NoFrameskip" in env_name or "Boxing" in env_name or "Pong" in env_name
+    is_minigrid = "MiniGrid" in env_name
+
+    if is_atari:
+        # Disable clip_reward to ensure accurate match score evaluations
+        env = make_atari_env(env_name, n_envs=1, seed=seed, wrapper_kwargs={"clip_reward": False})
+        env = VecFrameStack(env, n_stack=4)
+        return VecTransposeImage(env)
+    elif is_minigrid:
+        import minigrid
+        from minigrid.wrappers import ImgObsWrapper
+        def _init():
+            e = gym.make(env_name, render_mode="rgb_array")
+            e = ImgObsWrapper(e)
+            e.reset(seed=seed)
+            return e
+        env = DummyVecEnv([_init])
+        return VecTransposeImage(env)
+    else:
+        def _init():
+            e = make_env_by_name(
+                env_name,
+                render_mode="rgb_array",
+                seed=seed,
+            )
+            return e
+
+        env = DummyVecEnv([_init])
+
+        # SB3 CnnPolicy expects channel-first images.
+        if len(env.observation_space.shape) == 3:
+            env = VecTransposeImage(env)
+
+        return env
 
 # ============================================================================
 # CORE LOADING & DATA HANDLING
@@ -45,11 +133,11 @@ def load_model_and_data(model_path: str, features_path: str, device: str):
     print(f"Loading offline dataset from {features_path}...")
     data = torch.load(features_path, map_location='cpu', weights_only=False)
     features = data['features']
-    actions = data['actions']
+    actions = data['actions'].long().view(-1).numpy()
     return model, features, actions, config
 
 @torch.no_grad()
-def get_z_binary(model, features_tensor, device, batch_size=1024):
+def get_z_binary(model, features_tensor, device, batch_size=256):
     model.eval()
     all_z_bin = []
     n = len(features_tensor)
@@ -75,7 +163,8 @@ def calculate_lucid_complexity(rules):
         cleaned_clauses = []
         for clause in clauses:
             c_clean = re.sub(r'\s*\[bias=[^\]]*\]', '', clause).strip()
-            if c_clean and c_clean != "(no active clauses)":
+            # Ignore "(True)" and "(False)" clauses as they do not increase logic complexity
+            if c_clean and c_clean not in ["(no active clauses)", "(True)", "(False)"]:
                 cleaned_clauses.append(c_clean)
                 
         unique_clauses = set(cleaned_clauses)
@@ -95,7 +184,7 @@ def calculate_lucid_complexity(rules):
 # ============================================================================
 # OFFLINE EVALUATIONS
 # ============================================================================
-def evaluate_offline_soft(model, features_tensor, actions_tensor, device, batch_size=1024):
+def evaluate_offline_soft(model, features_tensor, actions_np, device, batch_size=256):
     model.eval()
     matches = 0
     n = len(features_tensor)
@@ -107,19 +196,20 @@ def evaluate_offline_soft(model, features_tensor, actions_tensor, device, batch_
             z_normed = model.normalize_z(z_sparse)
             z_bin = model.bottleneck(z_normed)
             logits = model.logic_layer(z_bin)
-            preds = logits.argmax(dim=1).cpu()
-            matches += (preds == actions_tensor[i:i+batch_size]).sum().item()
+            preds = logits.argmax(dim=1).cpu().numpy()
+            matches += (preds == actions_np[i:i+batch_size]).sum()
     return (matches / n) * 100.0
 
-def evaluate_offline_hard(rules_dict, z_binary, true_actions, action_names, tau=0.5):
+def evaluate_offline_hard(rules_dict, z_binary, actions_np, action_names, hard_threshold=0.66):
     n_samples = len(z_binary)
-    z_bool = z_binary > tau  # Sử dụng trực tiếp tau làm ngưỡng strict boolean
+    # Separation of thresholds: applying hard_threshold specifically to feature binarization
+    z_bool = z_binary > hard_threshold
     n_actions = len(action_names)
     
     parsed_rules_list = {act: [] for act in action_names}
     for act_name, clauses in rules_dict.items():
         for clause in clauses:
-            if clause == "(no active clauses)": continue
+            if clause in ["(no active clauses)", "(False)"]: continue
             pos_feats = [int(x) for x in re.findall(r'(?<![¬])f_(\d+)', clause)]
             neg_feats = [int(x) for x in re.findall(r'¬f_(\d+)', clause)]
             bias_match = re.search(r'\[bias=([-\d.]+)\]', clause)
@@ -140,8 +230,7 @@ def evaluate_offline_hard(rules_dict, z_binary, true_actions, action_names, tau=
             action_scores[:, act_idx] += clause_is_true.astype(float) * sig_weight
             overall_coverage |= clause_is_true
 
-    actions_np = true_actions.numpy()
-    most_frequent_action_idx = np.bincount(actions_np).argmax()
+    most_frequent_action_idx = int(np.bincount(actions_np).argmax())
     predicted_actions = np.full(n_samples, -1, dtype=int)
     
     for i in range(n_samples):
@@ -167,7 +256,7 @@ class SoftRuleAgent:
     def predict(self, obs, device="cpu"):
         device = next(self.ppo_cnn.parameters()).device
         obs_t = torch.as_tensor(obs).float().to(device)
-        features = self.ppo_cnn(obs_t)
+        features = self.ppo_cnn(obs_t.float() / 255.0)
         features_norm = self.logic_model.normalize_input(features)
         z_sparse, _ = self.logic_model.sae.encode(features_norm)
         z_normed = self.logic_model.normalize_z(z_sparse)
@@ -177,12 +266,12 @@ class SoftRuleAgent:
         return act, {"triggered": True}
 
 class HardRuleAgent:
-    def __init__(self, ppo_cnn, logic_model, rules_dict, action_names, fallback_action_idx, tau=0.5):
+    def __init__(self, ppo_cnn, logic_model, rules_dict, action_names, fallback_action_idx, hard_threshold=0.66):
         self.ppo_cnn = ppo_cnn
         self.logic_model = logic_model
         self.action_names = action_names
         self.fallback_action_idx = fallback_action_idx
-        self.tau = tau
+        self.hard_threshold = hard_threshold
         self.parsed_rules = self._parse_rules_with_bias(rules_dict)
 
     def _parse_rules_with_bias(self, rules_dict):
@@ -190,7 +279,7 @@ class HardRuleAgent:
         for act_name, clauses in rules_dict.items():
             parsed[act_name] = []
             for clause in clauses:
-                if clause == "(no active clauses)": continue
+                if clause in ["(no active clauses)", "(False)"]: continue
                 pos_feats = [int(x) for x in re.findall(r'(?<![¬])f_(\d+)', clause)]
                 neg_feats = [int(x) for x in re.findall(r'¬f_(\d+)', clause)]
                 bias_match = re.search(r'\[bias=([-\d.]+)\]', clause)
@@ -203,14 +292,15 @@ class HardRuleAgent:
         device = next(self.ppo_cnn.parameters()).device
         obs_t = torch.as_tensor(obs).float().to(device)
         
-        features = self.ppo_cnn(obs_t)
+        features = self.ppo_cnn(obs_t.float() / 255.0)
         features_norm = self.logic_model.normalize_input(features)
         z_sparse, _ = self.logic_model.sae.encode(features_norm)
         z_normed = self.logic_model.normalize_z(z_sparse)
         z_bin = self.logic_model.bottleneck(z_normed)
 
-        z_bool = (z_bin[0] > self.tau).cpu().numpy()
-        action_scores = {act: -999.0 for act in self.action_names}
+        # Evaluating logical rule strictly using the hard threshold
+        z_bool = (z_bin[0] > self.hard_threshold).cpu().numpy()
+        action_scores = {act: 0.0 for act in self.action_names}
         triggered_any_rule = False
 
         for act_name, clauses in self.parsed_rules.items():
@@ -233,14 +323,14 @@ class HardRuleAgent:
                 action_scores[act_name] = act_score
 
         if not triggered_any_rule:
-            return [self.fallback_action_idx], {"triggered": False}
+            return np.array([self.fallback_action_idx]), {"triggered": False}
 
         best_act_name = max(action_scores, key=action_scores.get)
         best_act_idx = self.action_names.index(best_act_name)
-        return [best_act_idx], {"triggered": True}
+        return np.array([best_act_idx]), {"triggered": True}
 
-def evaluate_live_game(agent, env_name, n_episodes=100, seed=42):
-    env = make_vec_env(env_name, seed=seed)
+def evaluate_live_game(agent, env_name, n_episodes=100, seed=42, max_steps=27000):
+    env = make_eval_env(env_name, seed=seed)
     successes = 0
     total_rewards = []
     triggered_steps = 0
@@ -249,19 +339,25 @@ def evaluate_live_game(agent, env_name, n_episodes=100, seed=42):
     for ep in tqdm(range(n_episodes), desc=f"Playing {n_episodes} eps (Seed {seed})", leave=False):
         obs = env.reset()
         ep_reward = 0.0
+        ep_steps = 0
+        done = False
         
-        for _ in range(500):
+        while not done and ep_steps < max_steps:
             action, info = agent.predict(obs, device=agent.logic_model.device)
             if info["triggered"]: triggered_steps += 1
             total_steps += 1
+            ep_steps += 1
             
-            obs, reward, done, _ = env.step(action)
-            ep_reward += reward[0]
+            obs, reward, dones, infos = env.step(action)
+            ep_reward += float(reward[0])
+            done = bool(dones[0])
+
+            if done and "episode" in infos[0]:
+                ep_reward = float(infos[0]["episode"]["r"])
             
-            if done[0]:
-                if reward[0] > 0: successes += 1
-                break
-                
+        if ep_reward > 0: 
+            successes += 1
+            
         total_rewards.append(ep_reward)
     env.close()
     
@@ -271,13 +367,13 @@ def evaluate_live_game(agent, env_name, n_episodes=100, seed=42):
         "Trigger Rate": (triggered_steps / total_steps) * 100 if total_steps > 0 else 0.0
     }
 
-def run_multi_seed_evaluation(agent, env_name, episodes_per_seed, agent_name="Agent"):
+def run_multi_seed_evaluation(agent, env_name, episodes_per_seed, agent_name="Agent", max_steps=27000):
     seeds = [42, 43, 44, 45, 46]
     all_results = {seed: {} for seed in seeds}
     
     print(f"\nEvaluating {agent_name} across 5 seeds (Total {episodes_per_seed * 5} eps)...")
     for seed in seeds:
-        metrics = evaluate_live_game(agent, env_name, n_episodes=episodes_per_seed, seed=seed)
+        metrics = evaluate_live_game(agent, env_name, n_episodes=episodes_per_seed, seed=seed, max_steps=max_steps)
         all_results[seed] = metrics
     
     aggregated = {}
@@ -294,24 +390,50 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, required=True)
     parser.add_argument("--features_path", type=str, required=True)
-    parser.add_argument("--threshold", type=float, default=0.5, help="Rule extraction tau")
+    parser.add_argument("--threshold", type=float, default=0.5, help="Rule extraction threshold (tau)")
+    parser.add_argument("--hard_threshold", type=float, default=0.66, help="Binarization threshold for Hard Logic evaluation")
     parser.add_argument("--env_name", type=str, default="", help="If provided, runs live game eval")
     parser.add_argument("--ppo_path", type=str, default="", help="Path to base PPO model")
     parser.add_argument("--episodes", type=int, default=100, help="Number of total live episodes")
+    parser.add_argument("--max_steps", type=int, default=27000, help="Max steps per episode (27000 recommended for Pong)")
     parser.add_argument("--seed", type=int, default=42, help="Seed for single-seed mode")
     parser.add_argument("--multi-seed", action="store_true", help="Run 5 seeds (1/5 episodes each)")
     parser.add_argument("--save_dir", type=str, default="experiments/lucid/results", help="Directory to save JSON metrics and rules")
     args = parser.parse_args()
+    
+    # Pre-flight check
+    if not args.env_name:
+        print("[Warning] No --env_name provided. Action labels will fallback to generic 'Action_i'.")
 
     os.makedirs(args.save_dir, exist_ok=True)
     device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
     print(f"Using device: {device}")
     
     # 1. LOAD MODELS AND RULES
-    model, features, actions_tensor, config = load_model_and_data(args.model_path, args.features_path, device)
-    action_names = CARTPOLE_ACTIONS if config.n_actions == 2 else ALL_ACTION_NAMES[:config.n_actions]
+    model, features, actions_np, config = load_model_and_data(args.model_path, args.features_path, device)
     
-    rules = model.logic_layer.extract_rules(action_names=action_names, threshold=args.threshold)
+    # Environment-based Action Labelling 
+    n_actions = config.n_actions
+    if "Pong" in args.env_name:
+        action_names = ["NOOP", "FIRE", "RIGHT", "LEFT", "RIGHTFIRE", "LEFTFIRE"]
+    elif "MiniGrid" in args.env_name:
+        action_names = ["TurnLeft", "TurnRight", "Forward", "Pickup", "Drop", "Toggle", "Done"]
+    elif "CartPole" in args.env_name:
+        action_names = ["Left", "Right"]
+    elif "Boxing" in args.env_name:
+        action_names = ["NOOP", "FIRE", "UP", "RIGHT", "LEFT", "DOWN", "UPRIGHT", "UPLEFT", 
+                        "DOWNRIGHT", "DOWNLEFT", "UPFIRE", "RIGHTFIRE", "LEFTFIRE", "DOWNFIRE", 
+                        "UPRIGHTFIRE", "UPLEFTFIRE", "DOWNRIGHTFIRE", "DOWNLEFTFIRE"]
+    else:
+        action_names = [f"Action_{i}" for i in range(n_actions)]
+
+    # Validate action names length to prevent config mismatch crashes
+    if len(action_names) != n_actions:
+        print(f"[Warning] Mismatch: env_name '{args.env_name}' implies {len(action_names)} actions, but config requires {n_actions}. Falling back to default labels.")
+        action_names = [f"Action_{i}" for i in range(n_actions)]
+    
+    rules = patched_extract_rules(model, action_names=action_names, threshold=args.threshold)
+    
     rules_path = os.path.join(args.save_dir, f"extracted_rules_tau_{args.threshold}.json")
     with open(rules_path, 'w') as f:
         json.dump(rules, f, indent=4)
@@ -322,15 +444,15 @@ def main():
     
     # 3. OFFLINE DATA METRICS
     print(f"\n[+] Computing Offline Metrics on dataset ({len(features)} samples)...")
-    soft_af_offline = evaluate_offline_soft(model, features, actions_tensor, device)
+    soft_af_offline = evaluate_offline_soft(model, features, actions_np, device)
     z_binary = get_z_binary(model, features, device)
     fallback_idx, hard_completeness, hard_af_offline = evaluate_offline_hard(
-        rules, z_binary, actions_tensor, action_names, tau=args.threshold
+        rules, z_binary, actions_np, action_names, hard_threshold=args.hard_threshold
     )
     
-    # Print Section 1 & 2
+    # Formatting the print statements
     print(f"\n{'='*70}")
-    print(f"LUCID COMPREHENSIVE EVALUATION (Tau: {args.threshold})")
+    print(f"LUCID COMPREHENSIVE EVALUATION (Extraction Tau: {args.threshold} | Eval Hard Threshold: {args.hard_threshold})")
     print(f"{'='*70}")
     print("\n--- 1. COMPLEXITY METRICS ---")
     print(f"Conjunctive Rule Count: {comp_metrics['Conjunctive Rule Count']}")
@@ -344,7 +466,8 @@ def main():
     print(f"Fallback Action                      : '{action_names[fallback_idx]}'")
 
     final_metrics = {
-        "Tau": args.threshold,
+        "Extraction Tau": args.threshold,
+        "Hard Threshold": args.hard_threshold,
         "Complexity": comp_metrics,
         "Offline": {
             "Soft AF": soft_af_offline,
@@ -361,14 +484,14 @@ def main():
         ppo_cnn.eval()
 
         soft_agent = SoftRuleAgent(ppo_cnn, model)
-        hard_agent = HardRuleAgent(ppo_cnn, model, rules, action_names, fallback_idx, tau=args.threshold)
+        hard_agent = HardRuleAgent(ppo_cnn, model, rules, action_names, fallback_idx, hard_threshold=args.hard_threshold)
 
         if args.multi_seed:
             eps_per_seed = max(1, args.episodes // 5)
             print(f"Mode: MULTI-SEED (5 seeds, {eps_per_seed} episodes/seed)")
             
-            soft_live = run_multi_seed_evaluation(soft_agent, args.env_name, eps_per_seed, "LUCID SOFT")
-            hard_live = run_multi_seed_evaluation(hard_agent, args.env_name, eps_per_seed, "LUCID HARD")
+            soft_live = run_multi_seed_evaluation(soft_agent, args.env_name, eps_per_seed, "LUCID SOFT", max_steps=args.max_steps)
+            hard_live = run_multi_seed_evaluation(hard_agent, args.env_name, eps_per_seed, "LUCID HARD", max_steps=args.max_steps)
 
             print("\n>>> LIVE RESULTS (AGGREGATED MEAN ± STD) <<<")
             for metric in ["Success Rate", "Average Reward", "Trigger Rate"]:
@@ -379,8 +502,8 @@ def main():
             final_metrics["Live"] = {"Mode": "Multi-Seed", "Soft": soft_live, "Hard": hard_live}
         else:
             print(f"Mode: SINGLE-SEED (Seed {args.seed}, {args.episodes} episodes)")
-            soft_live = evaluate_live_game(soft_agent, args.env_name, args.episodes, args.seed)
-            hard_live = evaluate_live_game(hard_agent, args.env_name, args.episodes, args.seed)
+            soft_live = evaluate_live_game(soft_agent, args.env_name, args.episodes, args.seed, max_steps=args.max_steps)
+            hard_live = evaluate_live_game(hard_agent, args.env_name, args.episodes, args.seed, max_steps=args.max_steps)
 
             print("\n>>> LIVE RESULTS (SINGLE SEED) <<<")
             for metric in ["Success Rate", "Average Reward", "Trigger Rate"]:
@@ -395,7 +518,7 @@ def main():
 
     print(f"\n{'='*70}")
     
-    metrics_path = os.path.join(args.save_dir, f"metrics_tau_{args.threshold}.json")
+    metrics_path = os.path.join(args.save_dir, f"metrics_tau_{args.threshold}_hard_{args.hard_threshold}.json")
     with open(metrics_path, "w") as f:
         json.dump(final_metrics, f, indent=4)
     print(f"[+] All metrics saved to {metrics_path}\n")

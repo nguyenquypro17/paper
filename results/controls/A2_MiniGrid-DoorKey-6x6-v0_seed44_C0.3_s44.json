@@ -1,0 +1,30 @@
+{
+  "arm": "A2",
+  "env_name": "MiniGrid-DoorKey-6x6-v0",
+  "seed": 44,
+  "learner": "linear",
+  "representation": "sae_recon",
+  "sae_live_dims": 282,
+  "sae_config": {
+    "hidden_dim": 300,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 44
+  },
+  "val_acc": 0.9972033559728326,
+  "fidelity_soft": 99.84019176987616,
+  "fidelity_hard": 99.84019176987616,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 179,
+    "concepts": 96,
+    "units": 5
+  },
+  "knob": {
+    "C": 0.3
+  },
+  "runtime_sec": 362.1
+}

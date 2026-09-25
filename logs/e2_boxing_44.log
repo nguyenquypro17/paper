@@ -1,0 +1,31 @@
+Held-out: (72615, 512), factors=['player_x', 'player_y', 'enemy_x', 'enemy_y', 'rel_x', 'rel_y'], concepts in rules=48
+     sae: D=512, alive=226
+     cnn: D=512, alive=360
+  random: D=512, alive=512
+     pca: D=512, alive=360
+  scheme (0.3333333333333333, 0.6666666666666666): skipped rare factors [('player_x<q0.33', 0), ('player_x>0', 0), ('player_y>0', 0), ('rel_x>0', 72615)]
+  scheme (0.25, 0.75): skipped rare factors [('player_x<q0.25', 0), ('player_x>0', 0), ('player_y>0', 0), ('rel_x>0', 72615)]
+  scheme (0.2, 0.8): skipped rare factors [('player_x<q0.20', 0), ('player_x>0', 0), ('player_y>0', 0), ('rel_x>0', 72615)]
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/36 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.534
+
+Primary setting:
+     sae: compl=0.692 G1=2.2% G2=0.0% G2c=0.0% G3=83.6% U=14.2% dims=226
+     cnn: compl=0.786 G1=7.8% G2=9.7% G2c=0.0% G3=40.3% U=42.2% dims=360
+  random: compl=0.657 G1=0.7% G2=0.0% G2c=0.0% G3=91.6% U=7.7% dims=512
+     pca: compl=0.754 G1=3.3% G2=0.6% G2c=0.0% G3=80.6% U=15.6% dims=360
+  Concepts in rules by group: {'G1': 1, 'G2': 0, 'G2c': 0, 'G3': 33, 'U': 13}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+  (dims kept: best parent AUC >= 0.65)
+     sae: second=0.646 purity=0.056 best=0.693 | kept 37/226 (16.4%)
+     cnn: second=0.693 purity=0.051 best=0.747 | kept 215/360 (59.7%)
+  random: second=0.610 purity=0.074 best=0.683 | kept 129/1536 (8.4%)
+     pca: second=0.530 purity=0.149 best=0.680 | kept 70/360 (19.4%)
+  SAE vs    cnn: 2nd lower p=1.64e-08 (CLES=0.22) | purity higher p=1.42e-01 (CLES=0.56)
+  SAE vs random: 2nd lower p=1.00e+00 (CLES=0.76) | purity higher p=9.81e-01 (CLES=0.39)
+  SAE vs    pca: 2nd lower p=1.00e+00 (CLES=0.82) | purity higher p=1.00e+00 (CLES=0.17)
+  WARNING: rule concepts dead on held-out: [420]
+
+Saved to experiments/e2/results_boxing_44

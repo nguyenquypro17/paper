@@ -1,0 +1,33 @@
+{
+  "arm": "A1",
+  "env_name": "PixelCartPole-v1",
+  "seed": 44,
+  "learner": "tree",
+  "lucid_split_dir": "outputs/lucid_model_cartpole_44",
+  "representation": "sae_recon",
+  "sae_live_dims": 332,
+  "sae_config": {
+    "hidden_dim": 512,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 44
+  },
+  "val_acc": 0.9148888888888889,
+  "fidelity_soft": 90.4,
+  "fidelity_hard": 90.4,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 6,
+    "concepts": 6,
+    "units": 7,
+    "depth": 5
+  },
+  "knob": {
+    "max_depth": null,
+    "ccp_alpha": 0.01
+  },
+  "runtime_sec": 146.8
+}

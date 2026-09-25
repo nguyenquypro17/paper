@@ -1,0 +1,100 @@
+{
+  "n_states": 99474,
+  "n_clauses": 60,
+  "n_distinct_clauses": 20,
+  "n_false_clauses": 0,
+  "n_true_clauses": 3,
+  "fallback_action": 3,
+  "fallback_rate": 0.0,
+  "teacher_vs_data": 0.9995978848744396,
+  "teacher_raw_vs_data": 0.9995978848744396,
+  "hard_fidelity": 0.9984216981321753,
+  "soft_fidelity": 0.9988640247702917,
+  "hard_z_equals_bool": 1.0,
+  "zero_intervention_max_dh": 0.0,
+  "concepts_in_rules": 17,
+  "rule_concepts_dead": [],
+  "rule_concepts_unflippable_on": [],
+  "rule_concepts_unflippable_off": [],
+  "strengths": [
+    50.0,
+    75.0,
+    90.0,
+    95.0,
+    99.0
+  ],
+  "primary_strength": 50.0
+}
+Rows: 104967 | states without a winning literal clause: 4/5000
+  strength q=50: suff. teacher->target int=0.058 dirb=0.020 noise=0.018 diff=+0.038 [+0.036,+0.040] ||dh||=0.618 | concept nec teacher int=0.054 dirb=0.035 noise=0.052 ||dh||=0.842
+  strength q=75: suff. teacher->target int=0.099 dirb=0.034 noise=0.030 diff=+0.066 [+0.064,+0.068] ||dh||=1.055 | concept nec teacher int=0.054 dirb=0.035 noise=0.052 ||dh||=0.842
+  strength q=90: suff. teacher->target int=0.145 dirb=0.049 noise=0.048 diff=+0.095 [+0.092,+0.098] ||dh||=1.714 | concept nec teacher int=0.054 dirb=0.035 noise=0.052 ||dh||=0.842
+  strength q=95: suff. teacher->target int=0.168 dirb=0.061 noise=0.059 diff=+0.107 [+0.103,+0.110] ||dh||=2.278 | concept nec teacher int=0.054 dirb=0.035 noise=0.052 ||dh||=0.842
+  strength q=99: suff. teacher->target int=0.207 dirb=0.081 noise=0.077 diff=+0.127 [+0.123,+0.130] ||dh||=3.546 | concept nec teacher int=0.054 dirb=0.035 noise=0.052 ||dh||=0.842
+
+Row sanity: {'RPCR': 1.0, 'flip_consistency_rule_vs_sae': 1.0, 'mean_neg_frac_before_clamp': 0.3547281154434251, 'rows_dropped_unflippable': 0}
+
+Share of flips that turn a concept ON (only these depend on --strengths):
+  necessity concept: 0.000
+  necessity  clause: 0.000
+  necessity  action: 0.000
+  sufficiency       : 1.000
+
+== Levels at primary strength q=50 (necessity; teacher change rate) ==
+  concept n= 14592 | int=0.054 dirb=0.035 noise=0.052 | raw int=0.156 soft=0.010 hard=0.011 | ||dh|| int=0.842 dirb=0.782 noise=0.901
+          coverage: mb_any=0.01 mb_rule=0.06 dirb=1.00 noise=1.00
+          int - dirb  : +0.019 [+0.015, +0.023] n=14592 | int=0.054 vs dirb=0.035
+          int - noise : +0.002 [-0.001, +0.006] n=14592 | int=0.054 vs noise=0.052
+          int - mb_any: +0.005 [-0.041, +0.048] n=187 | int=0.080 vs mb_any=0.075 (paired subset only)
+   clause n= 15683 | int=0.057 dirb=0.036 noise=0.059 | raw int=0.175 soft=0.013 hard=0.014 | ||dh|| int=0.868 dirb=0.874 noise=1.000
+          coverage: mb_any=0.01 mb_rule=0.06 dirb=1.00 noise=1.00
+          int - dirb  : +0.021 [+0.018, +0.025] n=15683 | int=0.057 vs dirb=0.036
+          int - noise : -0.002 [-0.006, +0.002] n=15683 | int=0.057 vs noise=0.059
+          int - mb_any: -0.049 [-0.109, +0.010] n=183 | int=0.049 vs mb_any=0.098 (paired subset only)
+   action n=  4996 | int=0.078 dirb=0.086 noise=0.122 | raw int=0.238 soft=0.772 hard=0.869 | ||dh|| int=0.662 dirb=1.371 noise=1.553
+          coverage: mb_any=0.00 mb_rule=0.00 dirb=1.00 noise=1.00
+          int - dirb  : -0.008 [-0.016, +0.001] n=4996 | int=0.078 vs dirb=0.086
+          int - noise : -0.044 [-0.055, -0.034] n=4996 | int=0.078 vs noise=0.122
+          int - mb_any: +nan [+nan, +nan] n=0 | int=nan vs mb_any=nan (paired subset only)
+
+== Strength curve (teacher change rate; int - dirb with 95% CI) ==
+  concept q=  50 | int=0.054 dirb=0.035 noise=0.052 | int-dirb +0.019 [+0.015, +0.023] | int-noise +0.002 [-0.001, +0.006] | ||dh||=0.842
+  concept q=  75 | int=0.054 dirb=0.035 noise=0.052 | int-dirb +0.019 [+0.015, +0.023] | int-noise +0.002 [-0.001, +0.006] | ||dh||=0.842
+  concept q=  90 | int=0.054 dirb=0.035 noise=0.052 | int-dirb +0.019 [+0.015, +0.023] | int-noise +0.002 [-0.001, +0.006] | ||dh||=0.842
+  concept q=  95 | int=0.054 dirb=0.035 noise=0.052 | int-dirb +0.019 [+0.015, +0.023] | int-noise +0.002 [-0.001, +0.006] | ||dh||=0.842
+  concept q=  99 | int=0.054 dirb=0.035 noise=0.052 | int-dirb +0.019 [+0.015, +0.023] | int-noise +0.002 [-0.001, +0.006] | ||dh||=0.842
+   clause q=  50 | int=0.057 dirb=0.036 noise=0.059 | int-dirb +0.021 [+0.018, +0.025] | int-noise -0.002 [-0.006, +0.002] | ||dh||=0.868
+   clause q=  75 | int=0.057 dirb=0.036 noise=0.059 | int-dirb +0.021 [+0.018, +0.025] | int-noise -0.002 [-0.006, +0.002] | ||dh||=0.868
+   clause q=  90 | int=0.057 dirb=0.036 noise=0.059 | int-dirb +0.021 [+0.018, +0.025] | int-noise -0.002 [-0.006, +0.002] | ||dh||=0.868
+   clause q=  95 | int=0.057 dirb=0.036 noise=0.059 | int-dirb +0.021 [+0.018, +0.025] | int-noise -0.002 [-0.006, +0.002] | ||dh||=0.868
+   clause q=  99 | int=0.057 dirb=0.036 noise=0.059 | int-dirb +0.021 [+0.018, +0.025] | int-noise -0.002 [-0.006, +0.002] | ||dh||=0.868
+   action q=  50 | int=0.078 dirb=0.086 noise=0.122 | int-dirb -0.008 [-0.016, +0.001] | int-noise -0.044 [-0.055, -0.034] | ||dh||=0.662
+   action q=  75 | int=0.078 dirb=0.086 noise=0.122 | int-dirb -0.008 [-0.016, +0.001] | int-noise -0.044 [-0.055, -0.034] | ||dh||=0.662
+   action q=  90 | int=0.078 dirb=0.086 noise=0.122 | int-dirb -0.008 [-0.016, +0.001] | int-noise -0.044 [-0.055, -0.034] | ||dh||=0.662
+   action q=  95 | int=0.078 dirb=0.086 noise=0.122 | int-dirb -0.008 [-0.016, +0.001] | int-noise -0.044 [-0.055, -0.034] | ||dh||=0.662
+   action q=  99 | int=0.078 dirb=0.086 noise=0.122 | int-dirb -0.008 [-0.016, +0.001] | int-noise -0.044 [-0.055, -0.034] | ||dh||=0.662
+
+== Sufficiency n=69696 | switch-to-target: hard=0.011 soft=0.006 teacher=0.058 (dirb teacher=0.020, matched teacher=0.036)
+== Minimal counterfactual: mean=1.88 median=2.0 found=0.23 hist={1: 136, 2: 997, 3: 0, 4: 0, 5: 0}
+== Per-concept MWU (teacher int > dirb): p=0.926
+
+== Per concept (primary strength) ==
+  c 12 [None,None] n=  438 nec hard=0.01 teacher=0.17 (dirb 0.04, noise 0.05, matched 0.00 cov 0.01) suf teacher=0.05 clauses=1 actions=1
+  c 52 [None,None] n=  627 nec hard=0.01 teacher=0.06 (dirb 0.01, noise 0.03, matched 0.25 cov 0.01) suf teacher=0.11 clauses=1 actions=1
+  c 62 [None,None] n= 1133 nec hard=0.04 teacher=0.00 (dirb 0.04, noise 0.06, matched 0.00 cov 0.02) suf teacher=0.00 clauses=2 actions=1
+  c 71 [None,None] n=  788 nec hard=0.00 teacher=0.00 (dirb 0.02, noise 0.03, matched 0.12 cov 0.01) suf teacher=0.01 clauses=1 actions=1
+  c108 [None,None] n= 1173 nec hard=0.01 teacher=0.03 (dirb 0.04, noise 0.05, matched 0.00 cov 0.01) suf teacher=0.05 clauses=1 actions=1
+  c111 [None,None] n=  744 nec hard=0.01 teacher=0.13 (dirb 0.05, noise 0.10, matched 0.27 cov 0.01) suf teacher=0.07 clauses=1 actions=1
+  c120 [None,None] n=  732 nec hard=0.00 teacher=0.01 (dirb 0.06, noise 0.08, matched 0.00 cov 0.01) suf teacher=0.01 clauses=1 actions=1
+  c228 [None,None] n= 1135 nec hard=0.01 teacher=0.00 (dirb 0.03, noise 0.04, matched 0.08 cov 0.01) suf teacher=0.01 clauses=1 actions=1
+  c242 [None,None] n=  628 nec hard=0.02 teacher=0.00 (dirb 0.02, noise 0.04, matched 0.00 cov 0.01) suf teacher=0.00 clauses=1 actions=1
+  c270 [None,None] n= 1169 nec hard=0.01 teacher=0.01 (dirb 0.05, noise 0.06, matched 0.11 cov 0.02) suf teacher=0.03 clauses=1 actions=1
+  c281 [None,None] n=  627 nec hard=0.01 teacher=0.04 (dirb 0.02, noise 0.03, matched 0.00 cov 0.01) suf teacher=0.01 clauses=1 actions=1
+  c300 [None,None] n= 1153 nec hard=0.01 teacher=0.00 (dirb 0.03, noise 0.06, matched 0.14 cov 0.01) suf teacher=0.00 clauses=1 actions=1
+  c310 [None,None] n= 1152 nec hard=0.00 teacher=0.03 (dirb 0.02, noise 0.04, matched 0.04 cov 0.02) suf teacher=0.14 clauses=1 actions=1
+  c322 [None,None] n=  736 nec hard=0.00 teacher=0.04 (dirb 0.03, noise 0.04, matched 0.00 cov 0.01) suf teacher=0.03 clauses=1 actions=1
+  c359 [None,None] n=  796 nec hard=0.01 teacher=0.01 (dirb 0.02, noise 0.04, matched 0.10 cov 0.01) suf teacher=0.01 clauses=1 actions=1
+  c386 [None,None] n=  441 nec hard=0.02 teacher=0.00 (dirb 0.05, noise 0.06, matched 0.00 cov 0.02) suf teacher=0.00 clauses=1 actions=1
+  c435 [None,None] n= 1120 nec hard=0.03 teacher=0.38 (dirb 0.04, noise 0.05, matched 0.10 cov 0.02) suf teacher=0.51 clauses=2 actions=1
+
+Saved to experiments/e1/results_pong_42

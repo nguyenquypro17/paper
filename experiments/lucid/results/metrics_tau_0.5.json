@@ -1,0 +1,44 @@
+{
+    "Tau": 0.5,
+    "Complexity": {
+        "Conjunctive Rule Count": 112,
+        "Total Literals": 3704,
+        "Binarized # Concepts": 187
+    },
+    "Offline": {
+        "Soft AF": 99.98829539089215,
+        "Hard Completeness": 52.311242277048095,
+        "Hard AF": 60.408323649162696
+    },
+    "Live": {
+        "Mode": "Multi-Seed",
+        "Soft": {
+            "Success Rate": {
+                "mean": 100.0,
+                "std": 0.0
+            },
+            "Average Reward": {
+                "mean": 93.02,
+                "std": 0.6120457499239763
+            },
+            "Trigger Rate": {
+                "mean": 100.0,
+                "std": 0.0
+            }
+        },
+        "Hard": {
+            "Success Rate": {
+                "mean": 25.0,
+                "std": 4.47213595499958
+            },
+            "Average Reward": {
+                "mean": -1.1099999999999999,
+                "std": 0.5704384278780664
+            },
+            "Trigger Rate": {
+                "mean": 37.22418296830025,
+                "std": 0.5198414132876801
+            }
+        }
+    }
+}

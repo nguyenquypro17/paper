@@ -1,0 +1,84 @@
+{
+  "env": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "namer": "gpt-5.5-2026-04-23",
+  "concepts": {
+    "C32": {
+      "label": "blue_ball_right_no_goal_ahead_left",
+      "evidence": "All ON images show a blue ball to the agent's right on its row and no green goal directly ahead or to the left/front-left, whereas most OFF images place the goal in those ahead/left regions or shift the relevant objects leftward.",
+      "raw": "Step 1:\n- ON 1: Agent is at the bottom; a blue ball is to the agent’s right on the same row, with no green goal visible.\n- ON 2: Agent is at the bottom; one blue ball is directly in front, another blue ball is to the right on the same row, and the green goal is ahead-right.\n- ON 3: Agent is at the bottom; a blue ball is immediately to the right on the same row, with no green goal visible.\n- OFF 1: Agent is at the bottom; a blue ball is to the right on the same row, another blue ball is farther ahead-right, and the green goal is far ahead-right.\n- OFF 2: Agent is at the bottom-right of the visible floor; two blue balls are ahead-left, and the green goal is farther ahead-left.\n- OFF 3: Agent is at the bottom; one blue ball is directly in front, another is to the right on the same row, and the green goal is straight ahead beyond the front ball.\n- OFF 4: Agent is at the bottom; two blue balls are to the right on the same row, and the green goal is directly in front.\n- OFF 5: Agent is at the bottom; one blue ball is directly in front, another is ahead-right, and the green goal is ahead-left.\n- OFF 6: Agent is at the bottom; blue balls are ahead-right and farther ahead-right, while the green goal is straight ahead.\n- OFF 7: Agent is at the bottom-right of the visible floor; blue balls are ahead-left and far ahead-left, and the green goal is to the left on the same row.\n- OFF 8: Agent is at the bottom; one blue ball is immediately right, another is ahead-right, and the green goal is farther ahead-right.\n\nStep 2:\nThe concept appears to be active when there is a blue ball on the agent’s right side on the same row, while the green goal is not directly ahead or on the agent’s left/front-left side. Most OFF cases either put the goal in front/left of the agent or have the main objects clustered away to the left.\n\n{{\"label\": \"blue_ball_right_no_goal_ahead_left\", \"evidence\": \"All ON images show a blue ball to the agent's right on its row and no green goal directly ahead or to the left/front-left, whereas most OFF images place the goal in those ahead/left regions or shift the relevant objects leftward.\"}}"
+    },
+    "C49": {
+      "label": "blue_ball_not_only_on_right",
+      "evidence": "All ON images show at least one blue ball directly ahead of the agent or to its left, while most OFF images show blue balls only on the right side.",
+      "raw": "Step 1:\n\nON 1: Green goal is far to the agent’s left; blue balls are at far front-left and nearer front-left.  \nON 2: Green goal is straight ahead; one blue ball is directly ahead and another is far right beside the agent.  \nON 3: Green goal is front-left; two blue balls are just ahead, one front-left and one directly ahead.  \nON 4: Green goal is far front-left; blue balls are directly ahead and left beside the agent.  \nON 5: Green goal is far left beside the agent; blue balls are far front-left and directly ahead.  \nON 6: Green goal is far front-right; blue balls are directly ahead and front-right.  \nON 7: Green goal is front-left; blue balls are directly ahead and far front-right.  \nON 8: Green goal is far front-left; two blue balls are in the far-left column, one ahead and one beside the agent.  \n\nOFF 1: Green goal is straight ahead; both blue balls are on the far right, one ahead and one beside the agent.  \nOFF 2: No green goal is visible; one blue ball is far right beside the agent.  \nOFF 3: Green goal is directly ahead; two blue balls are to the right beside the agent.  \nOFF 4: Green goal is front-right; blue balls are directly ahead and far right beside the agent.  \nOFF 5: Green goal is far front-right; blue balls are front-right and far right beside the agent.  \nOFF 6: Green goal is straight ahead; blue balls are front-right and far right beside the agent.  \nOFF 7: Green goal is front-right; two blue balls are in the right column, one far ahead and one beside the agent.  \nOFF 8: Green goal is far front-right; two blue balls are in the right column, one far ahead and one beside the agent.  \n\nStep 2:\n\nThe concept appears to be ON when at least one blue ball is visible in the agent’s forward/central lane or on the agent’s left side, rather than all visible blue balls being only to the right. Most OFF examples have the blue balls entirely on the agent’s right side, with only one apparent exception.\n\n{\"label\": \"blue_ball_not_only_on_right\", \"evidence\": \"All ON images show at least one blue ball directly ahead of the agent or to its left, while most OFF images show blue balls only on the right side.\"}"
+    },
+    "C133": {
+      "label": "goal_absent_or_right_of_agent",
+      "evidence": "All ON images have no visible green goal or a goal only to the right/front-right, while most OFF images place the goal directly ahead or on the agent's left side.",
+      "raw": "Step 1 — visible layout for each image:\n\n- ON 1: Agent at bottom; one blue ball immediately to the agent’s right; no green goal visible.\n- ON 2: Agent at bottom; one blue ball two cells to the agent’s right; no green goal visible.\n- ON 3: Agent at bottom-left of the visible patch; one blue ball directly in front, another two cells to the right; green goal is front-right/far right.\n\n- OFF 1: Agent at bottom-left; one blue ball two cells right, another farther ahead-right; green goal far ahead-right.\n- OFF 2: Agent at bottom-right; two blue balls ahead-left; green goal farther ahead-left.\n- OFF 3: Agent at bottom-left; one blue ball directly in front, another two cells right; green goal directly farther in front.\n- OFF 4: Agent at bottom-left; green goal directly in front; two blue balls to the right.\n- OFF 5: Agent near bottom-centre; one blue ball directly in front, another farther front-right; green goal farther front-left.\n- OFF 6: Agent at bottom-left; green goal directly farther in front; blue balls front-right and farther front-right.\n- OFF 7: Agent at bottom-right; green goal to the left on the same row; blue balls directly/front-left and far front-left.\n- OFF 8: Agent at bottom-left; blue balls immediately right and front-right; green goal farther front-right.\n\nStep 2 — distinguishing property:\n\nThe concept appears to be ON when the green goal is not in the agent’s forward or left-side area: it is either absent or only off to the right/front-right. Most OFF examples instead show the green goal directly ahead or to the agent’s left.\n\n{\"label\":\"goal_absent_or_right_of_agent\",\"evidence\":\"All ON images have no visible green goal or a goal only to the right/front-right, while most OFF images place the goal directly ahead or on the agent's left side.\"}"
+    },
+    "C146": {
+      "label": "goal_visible_balls_on_right",
+      "evidence": "All ON images show a visible green goal and all blue balls to the agent's right, while OFF images either lack the goal or include a blue ball directly ahead or on the left.",
+      "raw": "Step 1 — image descriptions:\n\nON 1: Green goal is two cells ahead and two cells right; blue balls are two ahead/one right and two right of the agent.  \nON 2: Green goal is one cell directly ahead; blue balls are one ahead/right and immediately right.  \nON 3: Green goal is two cells directly ahead; blue balls are two ahead/right and two cells right.  \nON 4: Green goal is two cells directly ahead; blue balls are one ahead/right and two cells right.  \nON 5: Green goal is one cell directly ahead; blue balls are immediately right and two cells right.  \nON 6: Green goal is one ahead/two right; blue balls are one ahead/right and immediately right.  \nON 7: Green goal is two cells directly ahead; blue balls are two ahead/two right and immediately right.  \nON 8: Green goal is two ahead/two right; blue balls are two ahead/right and immediately right.\n\nOFF 1: No green goal is visible; one blue ball is immediately right of the agent.  \nOFF 2: Green goal is two cells left of the agent; blue balls are ahead-left and farther ahead-left.  \nOFF 3: Green goal is two ahead/two right; blue balls are directly ahead and two cells right.  \nOFF 4: Green goal is one ahead/two right; blue balls are directly ahead and two cells right.  \nOFF 5: Green goal is two ahead/one left; blue balls are one ahead/left and directly ahead.  \nOFF 6: Green goal is two cells left of the agent; blue balls are far ahead-left and directly ahead.  \nOFF 7: Green goal is two cells directly ahead; blue balls are directly ahead and two cells right.  \nOFF 8: Green goal is two ahead/two left; blue balls are ahead-left and farther ahead-left.\n\nStep 2 — distinguishing property:\n\nThe concept is ON when the green goal is visible and every visible blue ball is on the agent’s right side, with no blue ball directly ahead or to the left.\n\n{\"label\":\"goal_visible_balls_on_right\", \"evidence\":\"All ON images show a visible green goal and all blue balls to the agent's right, while OFF images either lack the goal or include a blue ball directly ahead or on the left.\"}"
+    }
+  },
+  "manifest": {
+    "time_utc": "2026-09-25T05:06:38+00:00",
+    "argv": [
+      "vlm_name.py",
+      "--img_dir",
+      "experiments/vlm/dyobs_42/naming",
+      "--env_name",
+      "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "--model",
+      "gpt-5.5-2026-04-23",
+      "--thinking_budget",
+      "1024",
+      "--max_concepts",
+      "10",
+      "--seed",
+      "0",
+      "--budget_usd",
+      "5",
+      "--out",
+      "experiments/vlm/dyobs_42/labels_gpt55_a.json"
+    ],
+    "args": {
+      "img_dir": "experiments/vlm/dyobs_42/naming",
+      "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "model": "gpt-5.5-2026-04-23",
+      "load_4bit": false,
+      "max_new_tokens": 2000,
+      "thinking_budget": 1024,
+      "max_concepts": 10,
+      "seed": 0,
+      "budget_usd": 5.0,
+      "price_in": null,
+      "price_out": null,
+      "out": "experiments/vlm/dyobs_42/labels_gpt55_a.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    },
+    "model_id": "gpt-5.5-2026-04-23",
+    "generation": {
+      "reasoning_effort": "medium",
+      "temperature": "API default (reasoning model)",
+      "budget_usd": 5.0,
+      "price_in": 5.0,
+      "price_out": 30.0
+    },
+    "api_model_version": "gpt-5.5-2026-04-23"
+  }
+}

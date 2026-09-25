@@ -1,0 +1,26 @@
+Held-out: (25000, 512), factors=['cart_pos', 'cart_vel', 'pole_angle', 'pole_ang_vel'], concepts in rules=6
+     sae: D=512, alive=282
+     cnn: D=512, alive=305
+  random: D=512, alive=512
+     pca: D=512, alive=313
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/36 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.509
+
+Primary setting:
+     sae: compl=0.707 G1=8.9% G2=0.0% G2c=0.0% G3=74.5% U=16.7% dims=282
+     cnn: compl=0.741 G1=46.2% G2=1.3% G2c=0.0% G3=38.4% U=14.1% dims=305
+  random: compl=0.664 G1=2.3% G2=0.0% G2c=0.0% G3=82.9% U=14.8% dims=512
+     pca: compl=0.732 G1=4.8% G2=0.0% G2c=0.0% G3=86.9% U=8.3% dims=313
+  Concepts in rules by group: {'G1': 3, 'G2': 0, 'G2c': 0, 'G3': 0, 'U': 3}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+     sae: second=0.503 purity=0.002 best=0.505
+     cnn: second=0.579 purity=0.129 best=0.748
+  random: second=0.534 purity=0.022 best=0.565
+     pca: second=0.533 purity=0.007 best=0.542
+  SAE vs    cnn: 2nd lower p=6.27e-21 (CLES=0.28) | purity higher p=1.00e+00 (CLES=0.24)
+  SAE vs random: 2nd lower p=9.43e-31 (CLES=0.29) | purity higher p=1.00e+00 (CLES=0.34)
+  SAE vs    pca: 2nd lower p=1.42e-23 (CLES=0.26) | purity higher p=1.00e+00 (CLES=0.40)
+
+Saved to experiments/e2/results_cartpole_v2

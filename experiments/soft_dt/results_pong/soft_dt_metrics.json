@@ -1,0 +1,8 @@
+{
+    "Rule Set Cardinality": 64,
+    "Binarized Concepts": 63,
+    "Total Literals (Global)": 946,
+    "Total Literals (DNF Equivalent)": 5766,
+    "Tree Depth": 6,
+    "Action Fidelity": 0.8884715051927442
+}

@@ -1,0 +1,46 @@
+{
+ "y": [
+  0,
+  1,
+  1,
+  1,
+  0,
+  1,
+  0,
+  1,
+  0,
+  0,
+  0,
+  1
+ ],
+ "images": [
+  "000.png",
+  "001.png",
+  "002.png",
+  "003.png",
+  "004.png",
+  "005.png",
+  "006.png",
+  "007.png",
+  "008.png",
+  "009.png",
+  "010.png",
+  "011.png"
+ ],
+ "state_idx": [
+  131,
+  2033,
+  458,
+  272,
+  16,
+  74,
+  36,
+  677,
+  86,
+  1894,
+  194,
+  736
+ ],
+ "factor": "obstacle_left",
+ "statement": "A blue ball is in the cell directly to the left of the agent."
+}

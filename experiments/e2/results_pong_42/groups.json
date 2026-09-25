@@ -1,0 +1,2571 @@
+{
+  "primary": {
+    "scheme": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "t_high": 0.75,
+    "t_low": 0.65,
+    "t_gap": 0.1
+  },
+  "concepts": {
+    "2": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5354260060461961,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.019247444829044058,
+      "best_child": "player_y>0",
+      "nmi_max": 0.029498880857920698
+    },
+    "3": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5120834620505317,
+      "best_factor": "ball_y",
+      "second_factor": "player_y",
+      "purity": 0.0024789577069045388,
+      "best_child": "ball_y>q0.67",
+      "nmi_max": 0.008726646484825004
+    },
+    "4": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5545041711771959,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.0034443984526054683,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.010352659558696922
+    },
+    "8": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5781796285152849,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.017085690736819203,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.02537460399770161
+    },
+    "10": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5066695221195618,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.0004565090168435759,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.013555845469086152
+    },
+    "11": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.576874712467413,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.01574473888397554,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.09197496298662951
+    },
+    "12": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6007344670771679,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.01590446680399593,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.06033416649749778
+    },
+    "13": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5404125484777821,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.004778825164103773,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.04860584798549281
+    },
+    "15": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7571838085389423,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.12698142871600926,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "16": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6047366388522613,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.01814362142204784,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.0
+    },
+    "19": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6857680995678643,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.05651409563860432,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "24": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.568490491458534,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.003417926489925338,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0
+    },
+    "25": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5202210340483274,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.001522408277104259,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0
+    },
+    "27": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5025045479961662,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.00029689540755184485,
+      "best_child": "player_y_mid",
+      "nmi_max": 0.002868120325376984
+    },
+    "29": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5747920521576166,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.015141235697033184,
+      "best_child": "player_y>0",
+      "nmi_max": 0.015981543441497405
+    },
+    "33": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.652157947194842,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.008581242828518132,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "39": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7925753855487381,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.12208062723266355,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "45": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7194199501445852,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.19800249823922345,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.1548909455802713
+    },
+    "48": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.550914897756665,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.004940961859431381,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.007134818028071155
+    },
+    "52": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5730045347422404,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.005820563340982354,
+      "best_child": "ball_vx_mid",
+      "nmi_max": 0.036775190713766504
+    },
+    "54": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5271359329477096,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.012566069441962369,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.004246962198858759
+    },
+    "57": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5410698477675011,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.021062397216612627,
+      "best_child": "player_y>0",
+      "nmi_max": 0.0012357275204168134
+    },
+    "60": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5619232723667889,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.001038409168673371,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.02682025667113333
+    },
+    "62": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6207659814844919,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.04722680965130177,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0630272602076025
+    },
+    "63": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5259380378657487,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0028103521690021616,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.009664749298160146
+    },
+    "65": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5111163874742414,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0006590175531894227,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.012431684932807835
+    },
+    "68": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5395337075320468,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.016429914330460482,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.0
+    },
+    "70": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5543011032504589,
+      "best_factor": "player_y",
+      "second_factor": "ball_vy",
+      "purity": 0.013918083569313011,
+      "best_child": "player_y>0",
+      "nmi_max": 0.02999663206428676
+    },
+    "71": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5822472665763168,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.00014476567384547057,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.03979923783904927
+    },
+    "74": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.537356782437271,
+      "best_factor": "rel_y",
+      "second_factor": "ball_x",
+      "purity": 0.002595156927796438,
+      "best_child": "rel_y_mid",
+      "nmi_max": 0.03344808245298591
+    },
+    "77": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5496803960394572,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.02904064396665107,
+      "best_child": "player_y>0",
+      "nmi_max": 0.07574742857572715
+    },
+    "80": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5957581503844207,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.050984913051200786,
+      "best_child": "player_y>0",
+      "nmi_max": 0.03365125638211965
+    },
+    "83": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5038951081122527,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 3.4925741432045854e-05,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.006912785341109328
+    },
+    "87": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5410359090059617,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_y",
+      "purity": 0.005563511743049698,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.048115288037742954
+    },
+    "88": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5855190490917787,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.013141730254712991,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.0011912604612967469
+    },
+    "91": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5345478245145154,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.0011008930086817692,
+      "best_child": "ball_vy>0",
+      "nmi_max": 0.0016939102972833874
+    },
+    "92": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5765615351765219,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.00902608891821699,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "93": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.9988723233943685,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.46999783588792965,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.6796866920942897
+    },
+    "96": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5695402169179549,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.025226626028535648,
+      "best_child": "player_y_mid",
+      "nmi_max": 0.036069195820174975
+    },
+    "97": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5053029660713014,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 4.1826886294837884e-05,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.008979982193222926
+    },
+    "98": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5676471734350912,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.01207307584589945,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.07408741489699384
+    },
+    "100": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6134194611037694,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.04114350139540579,
+      "best_child": "ball_vx_mid",
+      "nmi_max": 0.05759881659852433
+    },
+    "101": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5513994023913056,
+      "best_factor": "player_y",
+      "second_factor": "ball_y",
+      "purity": 0.006270363245494681,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.05705458922981012
+    },
+    "105": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5399793709014186,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.012927311843918043,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.017555611207461054
+    },
+    "107": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5556646859500074,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.016645753075652858,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.07893347617027469
+    },
+    "108": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5926615022008643,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.004779471345516151,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.03257646303518466
+    },
+    "110": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5161289954853734,
+      "best_factor": "ball_y",
+      "second_factor": "player_y",
+      "purity": 0.003357080185041328,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.0026875322590599305
+    },
+    "111": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5645871404109231,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.00048523658213595056,
+      "best_child": "ball_y_mid",
+      "nmi_max": 0.024790257244970516
+    },
+    "112": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6327473171336584,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.024294221221356382,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0
+    },
+    "113": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6896972035973642,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vx",
+      "purity": 0.008078609800966863,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.0
+    },
+    "116": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5445747115126068,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.00117188624465292,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.008273903471847047
+    },
+    "117": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5126612296437167,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.0008374409990880016,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.013187400481912777
+    },
+    "119": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.565988882390188,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.0007753978198676847,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.037637560669850426
+    },
+    "120": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5604191598781808,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 6.059592651419532e-05,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.02484637323660566
+    },
+    "122": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5963794789222033,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.02378794451834476,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.09546939224506502
+    },
+    "124": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5442658632716,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vx",
+      "purity": 0.0016349908534679658,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.038474270741945635
+    },
+    "126": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5297840282781824,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.0057392778478897455,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.043240960612565535
+    },
+    "129": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5307353595674353,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.0027827548317026496,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.05126918522281936
+    },
+    "131": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5153102856483553,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.00030278116344772954,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0026543247037523502
+    },
+    "133": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5174879250645678,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.007525592914013224,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.021364791921799704
+    },
+    "136": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.510952271665507,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.002400261878374388,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.00872475634847405
+    },
+    "140": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5346800253881238,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.004137074550799591,
+      "best_child": "player_y>0",
+      "nmi_max": 0.0016157636757683882
+    },
+    "141": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5300468794075579,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.009956314352145501,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.01786599699231633
+    },
+    "143": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5399308072580509,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_y",
+      "purity": 0.009454978128330849,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.01720770824962531
+    },
+    "147": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5633928903570955,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.014583503262636466,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.04654468332623832
+    },
+    "149": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5447918943850345,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.0017984851185424144,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.030914845216967246
+    },
+    "152": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5318833873028771,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.015900976504703013,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.02905448141517839
+    },
+    "153": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.556815834767642,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.006335653705738409,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.035961975015999195
+    },
+    "155": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.542422270060265,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.006059854852003443,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.01071872981886319
+    },
+    "157": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5140939272935656,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.0019288968053214894,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.013043994723006321
+    },
+    "159": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5610573796999466,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.008635628821654362,
+      "best_child": "ball_vx_mid",
+      "nmi_max": 0.026274376149416585
+    },
+    "160": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5346987951807229,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.003759568661385937,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.034096133884688344
+    },
+    "164": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5886221561395728,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.009095254014053755,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.06465538273305074
+    },
+    "165": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5213434560573766,
+      "best_factor": "player_y",
+      "second_factor": "ball_y",
+      "purity": 0.005956914877702113,
+      "best_child": "player_y>0",
+      "nmi_max": 0.019557282122760186
+    },
+    "167": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6572685954260357,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.07020920582240786,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 3.625251117930523e-05
+    },
+    "171": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5423482892084402,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.009064359713271908,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.017291110334187676
+    },
+    "174": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5290352919041075,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0020909984672613513,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.0047017845582141
+    },
+    "175": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5446901687815965,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.009494001450283451,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.004627229481640952
+    },
+    "176": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5629887472032254,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.01271596068870251,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.014355377874796987
+    },
+    "177": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5277607305118853,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.0005212204609327253,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.03192067729107183
+    },
+    "179": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5400180528526622,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.019555582083154,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.023845927402200397
+    },
+    "182": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.659321490171635,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0009561604931117573,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.0
+    },
+    "183": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5490691128254898,
+      "best_factor": "rel_y",
+      "second_factor": "ball_y",
+      "purity": 0.00019942095632330403,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.053874416528622626
+    },
+    "185": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.529104991394148,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0031534874039700345,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0404772064787551
+    },
+    "187": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5583193739647764,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0010056139174012824,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.05909064068936013
+    },
+    "189": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5306789397575118,
+      "best_factor": "rel_y",
+      "second_factor": "ball_y",
+      "purity": 6.356358037873377e-05,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.018802105872211435
+    },
+    "190": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5080345512925555,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.0027944634914929267,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.011099417001990866
+    },
+    "191": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6703729672635017,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0529755939175498,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "192": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5848335554536934,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.02073356646341129,
+      "best_child": "player_y>0",
+      "nmi_max": 0.005101603569686969
+    },
+    "194": {
+      "group": "G2",
+      "in_rules": false,
+      "auc_max": 0.7639314897157554,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.010103209630365817,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0
+    },
+    "195": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5694459463684536,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.0022476652350896797,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "196": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5163866828284035,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.0014443594516743152,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.005316999667297079
+    },
+    "197": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5251290745684811,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.00902116201020875,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.014116897858710878
+    },
+    "200": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6802636841266483,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.02245306940638414,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0
+    },
+    "202": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5429946471541521,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.015298591983483711,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0350578972304327
+    },
+    "204": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5609124750134729,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.006277729770992835,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.07780920024292531
+    },
+    "205": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6385262038610124,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.023800790346540923,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "207": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5295660174819813,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 8.228858548020579e-05,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.009115129532598843
+    },
+    "208": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6316312310415626,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.009888870502852365,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.0
+    },
+    "213": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.547741986217816,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.004457365179596606,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0054229836608253095
+    },
+    "215": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5616111362508884,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 2.499977517445018e-05,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.024004909080525796
+    },
+    "216": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5818605495039377,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.006136537986513146,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.0
+    },
+    "218": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5059634951042278,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.0030506802519381093,
+      "best_child": "player_y>0",
+      "nmi_max": 0.005961799299473457
+    },
+    "219": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.579196388827485,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.028947003765179335,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.04985778717791608
+    },
+    "220": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5436498119719334,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.0027601395204642776,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.04290656688138091
+    },
+    "221": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5260849562950467,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.005167011371239316,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.01399563354507298
+    },
+    "223": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5196133324796287,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 0.004484335658397232,
+      "best_child": "ball_y>q0.67",
+      "nmi_max": 0.016355589230096324
+    },
+    "224": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5522011861764293,
+      "best_factor": "rel_y",
+      "second_factor": "ball_y",
+      "purity": 0.0025231543685328983,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.06819686251801461
+    },
+    "225": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.551709860450851,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 0.00014391966298710201,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.02811219397285574
+    },
+    "226": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5385838165014215,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.01280917095109102,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0032166878802374625
+    },
+    "227": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5225283130610517,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.00027889502443534386,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0035012780886734133
+    },
+    "228": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5856062611302303,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0032878933901310248,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.028660511847521532
+    },
+    "231": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.682717364285213,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.025122198243733407,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.0016157636757683882
+    },
+    "234": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5442532267977873,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0008789941474461882,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.0299303978269841
+    },
+    "237": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5333179283877403,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.0013491734053805438,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.028939921365773065
+    },
+    "238": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5552403587813038,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.00819666354054105,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0
+    },
+    "241": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5062930780838254,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.0017500083688399837,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.011186489549234558
+    },
+    "242": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5674305432917542,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.005573352163193213,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.03213191411550591
+    },
+    "245": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5722880031086268,
+      "best_factor": "rel_y",
+      "second_factor": "ball_y",
+      "purity": 0.012311869715331936,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.049294693934608426
+    },
+    "246": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5441978097529834,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.007760562789420611,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.04904304001744242
+    },
+    "247": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5003786574870912,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 4.2224895948517194e-05,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0008983873000731572
+    },
+    "248": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5289252350348459,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.004017978234142849,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.010329164454401334
+    },
+    "249": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5059193375249195,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 5.307612674321227e-05,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.005285756685643324
+    },
+    "251": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5144456371722128,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.002624328497385142,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.02583967801486323
+    },
+    "252": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.520089427563135,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.0049916985629189226,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.006112279580932104
+    },
+    "254": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5451573262853049,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.009802165522851847,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.029026764740205553
+    },
+    "255": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5377672660606074,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vx",
+      "purity": 0.011144939853508284,
+      "best_child": "ball_x>q0.67",
+      "nmi_max": 0.025607013273803797
+    },
+    "257": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5513453768817631,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.003918757391412564,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.05322922634562109
+    },
+    "258": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5496213425129087,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.004020127745897217,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.08175071372128138
+    },
+    "260": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5409982788296042,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.0017836579143390985,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.010990343141066318
+    },
+    "263": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5571379462751068,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.01003268311721206,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.04893429151559811
+    },
+    "265": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5435592214598539,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0008975363842864681,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.053968931851625025
+    },
+    "266": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5042202996412746,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.0023222261858318882,
+      "best_child": "player_y>0",
+      "nmi_max": 0.01120743017496105
+    },
+    "267": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5487602370138404,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0036631217615831213,
+      "best_child": "ball_y>q0.67",
+      "nmi_max": 0.04969868729416225
+    },
+    "269": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5227307241420507,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.004053055315920262,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.004702487519427119
+    },
+    "270": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5962759955673009,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.010897490743132288,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.03600095862189997
+    },
+    "271": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5287719831258572,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.00934059741605231,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.022886032570819292
+    },
+    "272": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6084180226577233,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.02995768077447214,
+      "best_child": "ball_vx>0",
+      "nmi_max": 0.0519511835230377
+    },
+    "276": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5664685950007367,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.02206824106785521,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.04191611612264476
+    },
+    "280": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5112069170424471,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.0027261426869695793,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0056763619254893306
+    },
+    "281": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5670376499857495,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.007487787346723951,
+      "best_child": "ball_vx_mid",
+      "nmi_max": 0.03227167932806709
+    },
+    "282": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5702469940399584,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.006034245156876117,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.00040902274001905156
+    },
+    "286": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5474083253990247,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.008781989852365668,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.03345157065063775
+    },
+    "287": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5924379174566058,
+      "best_factor": "rel_y",
+      "second_factor": "ball_x",
+      "purity": 0.0022295683928950094,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.0
+    },
+    "288": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5330452793135166,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.007143297910239377,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.0042077464656303885
+    },
+    "290": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5683459733937546,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.010199391405815383,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.03562587259885202
+    },
+    "292": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5038915961213012,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_y",
+      "purity": 0.000763065472886626,
+      "best_child": "ball_vy>0",
+      "nmi_max": 0.003313193663681494
+    },
+    "294": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.586882820345935,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.01429164919507997,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0012357275204168134
+    },
+    "295": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5133994513610467,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.007373068140016037,
+      "best_child": "player_y>0",
+      "nmi_max": 0.029296919779661628
+    },
+    "296": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5220296643247463,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.0012575222105122297,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.01680625090722855
+    },
+    "298": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5559724612736661,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.009869729726762255,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.08082157668766718
+    },
+    "300": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5955981411490144,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.013277851194216317,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.033606010550908574
+    },
+    "302": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5219741451883347,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.010136215240366231,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.010218405887870817
+    },
+    "306": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5455858812855623,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.0016893766058154736,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.05453761288411603
+    },
+    "307": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5273884373562336,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 7.622791165329268e-05,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.021883848924822237
+    },
+    "310": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.620720336940668,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.04558287702434882,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.059078187173145495
+    },
+    "311": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5806729126914661,
+      "best_factor": "player_y",
+      "second_factor": "ball_vy",
+      "purity": 0.00044123228747927623,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.0
+    },
+    "312": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7065174964149217,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.12292983016301662,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "314": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5527784876880129,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.00431370441367962,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.04836538016861153
+    },
+    "317": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6779343609762573,
+      "best_factor": "rel_y",
+      "second_factor": "player_y",
+      "purity": 0.05328000520516618,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.0
+    },
+    "318": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5815641266533405,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.043720255419572696,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.023738198888299564
+    },
+    "319": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5254030519999385,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vx",
+      "purity": 0.002865156954246939,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.004714075974333889
+    },
+    "322": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.559280407404952,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0010345846257545643,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.02406111336788647
+    },
+    "324": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5645892465177349,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.014343255038817837,
+      "best_child": "player_y>0",
+      "nmi_max": 0.036492808842819455
+    },
+    "331": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6190818297045181,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 0.016032556623974403,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.0013232140502674144
+    },
+    "333": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5064145174972583,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.0013778114909670514,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.007463702337242506
+    },
+    "337": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5676655398679692,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.011469356384817608,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.008823278513034574
+    },
+    "339": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.670352819168852,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.0685625352645527,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "343": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5228174460475424,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.00072824400009186,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0024390250392606555
+    },
+    "346": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5169230769230769,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.002534092413610467,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.03159174879345694
+    },
+    "347": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5431490311847313,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.025495601649487942,
+      "best_child": "player_y>0",
+      "nmi_max": 0.009367182599242697
+    },
+    "348": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5438339459031281,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.006594084730867533,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.029779964692728776
+    },
+    "349": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5489845094664372,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.005307406949555671,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.06946156534072757
+    },
+    "352": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5042202996412746,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.0023222261858318882,
+      "best_child": "player_y>0",
+      "nmi_max": 0.005655628319055259
+    },
+    "353": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5329883222230917,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.0058087491899617705,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.010587644242616356
+    },
+    "355": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5145765988645773,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.0036661138983623554,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.012763950157283875
+    },
+    "358": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5404200965836585,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.006346595468222915,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.04753364430522756
+    },
+    "359": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5888438510651188,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.005724289146835426,
+      "best_child": "player_y_mid",
+      "nmi_max": 0.0429081833784509
+    },
+    "361": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.503017976179673,
+      "best_factor": "player_y",
+      "second_factor": "ball_vy",
+      "purity": 0.001295283952197912,
+      "best_child": "player_y>0",
+      "nmi_max": 0.005147530053226958
+    },
+    "362": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5110198219373621,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.0010304693333926807,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.0012109652878292733
+    },
+    "363": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5144209237864745,
+      "best_factor": "ball_y",
+      "second_factor": "rel_y",
+      "purity": 0.00024054344136248407,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.0019966823837723364
+    },
+    "365": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6253900316932524,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.04305049946174111,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "367": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6956783861427115,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.012494432818635937,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.0
+    },
+    "371": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5866302401276758,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.007513761143927877,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.08521510395606992
+    },
+    "372": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5223170354416866,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_y",
+      "purity": 0.0026887441065754913,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.015072386769291776
+    },
+    "373": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5205269000741033,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.0006390959362772008,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.038623340564956886
+    },
+    "375": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5325506445672191,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.010258818078693999,
+      "best_child": "ball_y>q0.67",
+      "nmi_max": 0.034883956492818766
+    },
+    "378": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5144091695396704,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.0024901411306453847,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.03127902414229209
+    },
+    "379": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5838532339852437,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.023063222254900095,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0018324232281356834
+    },
+    "380": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5766265263542962,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vx",
+      "purity": 0.02177881796301384,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.03494896957517338
+    },
+    "381": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6039889570731851,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.0061374922239236795,
+      "best_child": "player_y_mid",
+      "nmi_max": 0.0
+    },
+    "382": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5285232326330318,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0014182612236230963,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.01809935974264914
+    },
+    "386": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5915889713204497,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.006834693359666022,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.06218654557812078
+    },
+    "389": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.535230772964625,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.0002585611730456794,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.030987446663242473
+    },
+    "390": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6204307718637854,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.0079703621427204,
+      "best_child": "ball_vy>0",
+      "nmi_max": 0.0
+    },
+    "397": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6105599907694162,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.016284393694899757,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "400": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5627204416500537,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0028673670459035128,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.033102105873271385
+    },
+    "401": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6027182971141125,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.02072015692683027,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.09074883910581981
+    },
+    "402": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5739090064705842,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.004610828648924592,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.03174925804826167
+    },
+    "404": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.729360900648178,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.20473273661162805,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.27691297924186814
+    },
+    "406": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.562915422231776,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_y",
+      "purity": 0.018174989041296552,
+      "best_child": "ball_vx_mid",
+      "nmi_max": 0.014147809843056844
+    },
+    "408": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5409054115742592,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0022103898687297896,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.04889712153021401
+    },
+    "410": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7731667332540253,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.20441188661844245,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.007732758998834269
+    },
+    "411": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.548673516331851,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.002549202650162563,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.056559915863223155
+    },
+    "413": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6690701289266198,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vx",
+      "purity": 0.013854404891913696,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.0
+    },
+    "414": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5544917399173992,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.005180261572891531,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.031077118422356925
+    },
+    "416": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6308764036554648,
+      "best_factor": "rel_y",
+      "second_factor": "ball_vy",
+      "purity": 0.013097730675463493,
+      "best_child": "rel_y_mid",
+      "nmi_max": 0.0
+    },
+    "418": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5575027490665839,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.010343728199709301,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.043240960612565535
+    },
+    "420": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5146149498175877,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0007152374740596601,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.006102784840445539
+    },
+    "423": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6525331027299065,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.018413498895272107,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.0
+    },
+    "424": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5305455974070619,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.005363411172244037,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.026240268756565904
+    },
+    "425": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5209530997515228,
+      "best_factor": "rel_y",
+      "second_factor": "ball_vx",
+      "purity": 0.00038441021808877096,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.007189161007564414
+    },
+    "428": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5552723562113778,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.008800868750577284,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.050735658878879125
+    },
+    "429": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5045701815624246,
+      "best_factor": "player_y",
+      "second_factor": "ball_y",
+      "purity": 0.0012814964371699045,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.007258713528761228
+    },
+    "431": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5109246485562905,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.003167368196362541,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.00677767228873264
+    },
+    "435": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6155572162574442,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.04134734728477407,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.05655387569135819
+    },
+    "437": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5038095238095238,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_y",
+      "purity": 0.0002687810401780233,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.00781606700558478
+    },
+    "439": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5408199250123961,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0038432327397537325,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.05127499544058945
+    },
+    "441": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5375567706499288,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_x",
+      "purity": 0.003574831345158458,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.036275880718323314
+    },
+    "444": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5195657182538324,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.0039388655151386676,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.0013766285200238367
+    },
+    "449": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5845285434246177,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.004000258314188265,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.02902488187401306
+    },
+    "455": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5326923076923077,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.002492254230752722,
+      "best_child": "ball_vy<q0.33",
+      "nmi_max": 0.04522477820993129
+    },
+    "457": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6702261708926095,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vx",
+      "purity": 0.03642542722398312,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "458": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5371875479220978,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0017000892631579,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.03356583929390397
+    },
+    "459": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5382306241192809,
+      "best_factor": "player_y",
+      "second_factor": "ball_vy",
+      "purity": 0.015649683353818222,
+      "best_child": "player_y>0",
+      "nmi_max": 0.06291471685773324
+    },
+    "460": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6338056791745899,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.005241542007668909,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.0
+    },
+    "462": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5371084337349398,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.004020649818426536,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.029057006953746384
+    },
+    "465": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5729811442593272,
+      "best_factor": "ball_vx",
+      "second_factor": "rel_y",
+      "purity": 0.026753175566165965,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.06548346893568589
+    },
+    "468": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5300266426975062,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 0.0016431767659258467,
+      "best_child": "ball_y>0",
+      "nmi_max": 0.01140063619648615
+    },
+    "469": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5250286666236386,
+      "best_factor": "rel_y",
+      "second_factor": "player_y",
+      "purity": 0.004969874522603113,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.018911232806799908
+    },
+    "470": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5407543578039705,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_x",
+      "purity": 0.000615057503838945,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.02884009225085886
+    },
+    "471": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5530875943755363,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0064756986223917234,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.07229894099606127
+    },
+    "472": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5171822039798892,
+      "best_factor": "player_y",
+      "second_factor": "ball_x",
+      "purity": 0.006086676826378534,
+      "best_child": "player_y>0",
+      "nmi_max": 0.007679088496639202
+    },
+    "476": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.546804990165894,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.0011327986373489418,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.062364669897746444
+    },
+    "477": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5435536142161086,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.01883648059541887,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.025972558411819117
+    },
+    "478": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.522186967359597,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.0003254860206420851,
+      "best_child": "ball_vy_mid",
+      "nmi_max": 0.005415311891891985
+    },
+    "480": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5721406472523695,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.012666963041843116,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.06726327085348306
+    },
+    "481": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5067268000617843,
+      "best_factor": "ball_y",
+      "second_factor": "ball_x",
+      "purity": 0.0003080535662256523,
+      "best_child": "ball_y>q0.67",
+      "nmi_max": 0.002544360474251071
+    },
+    "483": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5497133564064469,
+      "best_factor": "ball_x",
+      "second_factor": "player_y",
+      "purity": 0.01595549358348025,
+      "best_child": "ball_x<q0.33",
+      "nmi_max": 0.03129038733153358
+    },
+    "487": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5380571782073688,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vy",
+      "purity": 0.002670586575364897,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.06227211969402977
+    },
+    "488": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6904160184182719,
+      "best_factor": "player_y",
+      "second_factor": "ball_vy",
+      "purity": 0.05809845434430205,
+      "best_child": "player_y_mid",
+      "nmi_max": 0.0
+    },
+    "489": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5610878996731429,
+      "best_factor": "ball_x",
+      "second_factor": "ball_vx",
+      "purity": 0.013582807553529919,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.0679307533017435
+    },
+    "490": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5142542824609609,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.002454521643313834,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.002313647403589821
+    },
+    "491": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6205070080852481,
+      "best_factor": "ball_y",
+      "second_factor": "ball_vy",
+      "purity": 0.0009498943847793262,
+      "best_child": "ball_y<q0.33",
+      "nmi_max": 0.0008312781094333507
+    },
+    "492": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5481665637719143,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.02641738097406754,
+      "best_child": "player_y>0",
+      "nmi_max": 0.03340429503441538
+    },
+    "495": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5044918170109719,
+      "best_factor": "ball_vy",
+      "second_factor": "ball_vx",
+      "purity": 0.0005637690772151149,
+      "best_child": "ball_vy>0",
+      "nmi_max": 0.00014734007925372227
+    },
+    "496": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6219039822294429,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.047698051949656706,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0025791517419864927
+    },
+    "498": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5211910315749857,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.0022095788890794665,
+      "best_child": "player_y>0",
+      "nmi_max": 0.01244072467910436
+    },
+    "499": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6544036967325,
+      "best_factor": "ball_vy",
+      "second_factor": "player_y",
+      "purity": 0.004982620759469869,
+      "best_child": "ball_vy>q0.67",
+      "nmi_max": 0.0
+    },
+    "500": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6002158011538925,
+      "best_factor": "ball_vx",
+      "second_factor": "player_y",
+      "purity": 0.04707343264271424,
+      "best_child": "ball_vx>q0.67",
+      "nmi_max": 0.0
+    },
+    "503": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.523268065677408,
+      "best_factor": "ball_x",
+      "second_factor": "ball_y",
+      "purity": 0.00567111899294237,
+      "best_child": "ball_x_mid",
+      "nmi_max": 0.0031221773259446322
+    },
+    "504": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5143495018562265,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.00964083061538068,
+      "best_child": "player_y>0",
+      "nmi_max": 0.02205524818021623
+    },
+    "505": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5529937315495823,
+      "best_factor": "ball_x",
+      "second_factor": "rel_y",
+      "purity": 0.006096659178429942,
+      "best_child": "ball_x>0",
+      "nmi_max": 0.03850788909458546
+    },
+    "507": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5103308880518826,
+      "best_factor": "player_y",
+      "second_factor": "ball_vx",
+      "purity": 0.0014343108228718204,
+      "best_child": "player_y>0",
+      "nmi_max": 7.369335883880836e-05
+    },
+    "509": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6029563423856995,
+      "best_factor": "ball_vx",
+      "second_factor": "ball_vy",
+      "purity": 0.018077799875578004,
+      "best_child": "ball_vx<q0.33",
+      "nmi_max": 0.0657456172970884
+    }
+  },
+  "in_rule_groups": {
+    "G1": 0,
+    "G2": 0,
+    "G2c": 0,
+    "G3": 17,
+    "U": 0
+  },
+  "dead_concepts_in_rules": []
+}

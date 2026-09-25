@@ -1,0 +1,516 @@
+#!/usr/bin/env python3
+"""
+E2 — Concept–factor alignment (descriptive, not a score).
+
+Compares 4 representations on the held-out set:
+    sae    : LUCID z_binary (what the DNF rules read)
+    cnn    : raw PPO features (normalized)
+    random : random projection -> ReLU -> top-k (same D, same k), averaged over seeds
+    pca    : PCA components of the normalized features
+
+For every (representation dim j, factor k): AUC (sign-free: max(AUC, 1-AUC)) and NMI.
+Factors: binary as-is, small-integer -> one-vs-rest, continuous -> quantile bins
+(one-vs-rest) + sign. Grouping G1/G2/G3 is done at the PARENT-factor level so that
+bins of the same variable are never counted as "two factors".
+
+All thresholds are swept on a grid; the primary setting is fixed in advance.
+
+Usage:
+    python concept_alignment.py \
+        --model_path ./outputs/lucid_model_doorkey/sae_logic_joint_model.pt \
+        --data_path ./held_out_doorkey_data.pt \
+        --drop_factors goal_visible \
+        --out_dir ./experiments/e2/results_doorkey
+"""
+
+import argparse
+import itertools
+import json
+import os
+import re
+
+import numpy as np
+import torch
+from scipy.stats import rankdata, mannwhitneyu
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+# ----------------------------------------------------------------------------
+# Primary setting (fixed BEFORE looking at results) and sensitivity grid
+# ----------------------------------------------------------------------------
+PRIMARY = dict(scheme=(1 / 3, 2 / 3), t_high=0.75, t_low=0.65, t_gap=0.10)
+GRID = dict(
+    scheme=[(1 / 3, 2 / 3), (0.25, 0.75), (0.20, 0.80)],
+    t_high=[0.70, 0.75, 0.80],
+    t_low=[0.60, 0.65],
+    t_gap=[0.05, 0.10],
+)
+REPS = ["sae", "cnn", "random", "pca"]
+
+
+# ============================================================================
+# Loading
+# ============================================================================
+
+def load_model(model_path, device):
+    """-> (model, config, rules_dict)"""
+    from train_joint import SAELogicConfig, SAELogicAgentV3
+    ckpt = torch.load(model_path, map_location=device, weights_only=False)
+    config = SAELogicConfig(**ckpt["config"])
+    model = SAELogicAgentV3(config, device=device)
+    model.load_state_dict(ckpt["model_state"])
+    model.set_normalization(ckpt["feature_mean"].to(device), ckpt["feature_std"].to(device))
+    if "z_mean" in ckpt:
+        model.z_mean.copy_(ckpt["z_mean"].to(device))
+        model.z_std.copy_(ckpt["z_std"].to(device))
+    model.to(device).eval()
+    return model, config, ckpt["rules"]
+
+
+def load_heldout(data_path, drop_factors):
+    """-> (features (N,d) float32, factors (N,K) float, factor_names list)"""
+    d = torch.load(data_path, map_location="cpu", weights_only=False)
+    feats = d["features"].float().numpy()
+    fac = d["factors"].float().numpy()
+    names = list(d["factor_names"])
+    keep = [i for i, n in enumerate(names) if n not in set(drop_factors)]
+    return feats, fac[:, keep], [names[i] for i in keep]
+
+
+# ============================================================================
+# Representations
+# ============================================================================
+
+@torch.no_grad()
+def get_representations(model, feats, kind, device, seed=0, batch_size=1024):
+    """
+    kind in {sae, cnn, random, pca}
+    -> (R (N,D) float32, binary (N,D) bool) ; binary is used for NMI
+    """
+    x = torch.as_tensor(feats, device=device)
+    x = model.normalize_input(x)
+    thr = model.config.hard_threshold
+
+    if kind == "sae":
+        out = []
+        for i in range(0, len(x), batch_size):
+            zs, _ = model.sae.encode(x[i:i + batch_size])
+            out.append(model.bottleneck(model.normalize_z(zs)).cpu())
+        R = torch.cat(out).numpy()
+        return R, R > thr
+
+    xn = x.cpu().numpy()
+    if kind == "cnn":
+        R = xn
+    elif kind == "random":
+        rng = np.random.default_rng(seed)
+        D, k = model.config.hidden_dim, model.config.k
+        W = rng.standard_normal((D, xn.shape[1])).astype(np.float32) / np.sqrt(xn.shape[1])
+        h = np.maximum(xn @ W.T, 0.0)
+        kth = -np.partition(-h, k - 1, axis=1)[:, k - 1:k]      # k-th largest per row
+        R = np.where(h >= kth, h, 0.0).astype(np.float32)
+    elif kind == "pca":
+        from sklearn.decomposition import PCA
+        R = PCA(random_state=seed).fit_transform(xn).astype(np.float32)
+    else:
+        raise ValueError(kind)
+    return R, binarize_by_median(R)
+
+
+def binarize_by_median(R):
+    med = np.median(R, axis=0, keepdims=True)
+    mn = R.min(axis=0, keepdims=True)
+    # sparse dims: median == min -> "active" means > min
+    return np.where(med > mn, R > med, R > mn)
+
+
+def alive_mask(R, eps=1e-8):
+    """Dims that actually vary on the held-out set."""
+    return R.std(axis=0) > eps
+
+
+# ============================================================================
+# Factors
+# ============================================================================
+
+def prepare_factors(fac, names, scheme, max_discrete=8, min_pos=30):
+    """
+    -> (Y (N,M) bool, child_names list[M], parent list[M], skipped list)
+    binary: as-is | small integer: one-vs-rest | continuous: quantile bins + sign
+    """
+    lo_q, hi_q = scheme
+    cols, cnames, parents, skipped = [], [], [], []
+    for k, name in enumerate(names):
+        v = fac[:, k]
+        u = np.unique(v)
+        cand = []
+        if set(u.tolist()) <= {0.0, 1.0}:
+            cand.append((name, v > 0.5))
+        elif len(u) <= max_discrete and np.allclose(u, np.round(u)):
+            for val in u:
+                cand.append((f"{name}={int(val)}", v == val))
+        else:
+            lo, hi = np.quantile(v, [lo_q, hi_q])
+            cand += [(f"{name}<q{lo_q:.2f}", v < lo),
+                     (f"{name}_mid", (v >= lo) & (v <= hi)),
+                     (f"{name}>q{hi_q:.2f}", v > hi),
+                     (f"{name}>0", v > 0)]
+        for cn, y in cand:
+            npos = int(y.sum())
+            if npos < min_pos or len(y) - npos < min_pos:
+                skipped.append((cn, npos))
+                continue
+            cols.append(y); cnames.append(cn); parents.append(name)
+    return np.stack(cols, 1), cnames, parents, skipped
+
+
+def factor_correlation(Y):
+    """Phi coefficient between binary child factors -> (M,M)"""
+    return np.nan_to_num(np.corrcoef(Y.astype(np.float32), rowvar=False))
+
+
+# ============================================================================
+# Alignment
+# ============================================================================
+
+def auc_matrix(R, Y):
+    """Rank-based (Mann–Whitney) AUC for every (dim, factor). -> (D,M), raw (not folded)"""
+    ranks = rankdata(R, axis=0)                     # ties -> average rank
+    n = len(R)
+    A = np.empty((R.shape[1], Y.shape[1]))
+    for m in range(Y.shape[1]):
+        y = Y[:, m]
+        npos = y.sum(); nneg = n - npos
+        A[:, m] = (ranks[y].sum(0) - npos * (npos + 1) / 2) / (npos * nneg)
+    return A
+
+
+def nmi_matrix(B, Y, eps=1e-12):
+    """NMI (arithmetic normalization) between binary dims and binary factors -> (D,M)"""
+    n = len(B)
+    Bf = B.astype(np.float64); Yf = Y.astype(np.float64)
+    n11 = Bf.T @ Yf
+    n1_ = Bf.sum(0)[:, None]; n_1 = Yf.sum(0)[None, :]
+    cells = [n11, n1_ - n11, n_1 - n11, n - n1_ - n_1 + n11]
+    margins = [(n1_, n_1), (n1_, n - n_1), (n - n1_, n_1), (n - n1_, n - n_1)]
+    mi = np.zeros_like(n11)
+    for c, (a, b) in zip(cells, margins):
+        p = c / n
+        mi += np.where(c > 0, p * np.log((c * n + eps) / (a * b + eps)), 0.0)
+
+    def H(p):
+        p = np.clip(p, eps, 1 - eps)
+        return -(p * np.log(p) + (1 - p) * np.log(1 - p))
+    denom = (H(n1_ / n) + H(n_1 / n)) / 2
+    return np.where(denom > eps, mi / denom, 0.0)
+
+
+def fold(A):
+    return np.maximum(A, 1 - A)
+
+
+def parent_auc(Af, parents):
+    """Max folded AUC over the bins of each parent -> (D,P), parent_names"""
+    pnames = list(dict.fromkeys(parents))
+    P = np.stack([Af[:, [i for i, p in enumerate(parents) if p == pn]].max(1)
+                  for pn in pnames], 1)
+    return P, pnames
+
+
+def completeness(Af):
+    """Per child factor: best dim. -> (M,)"""
+    return Af.max(0)
+
+
+def purity(P):
+    """Per dim: AUC_max - AUC_second at parent level. -> (D,)"""
+    s = np.sort(P, axis=1)
+    return s[:, -1] - (s[:, -2] if P.shape[1] > 1 else 0.5)
+
+
+def group_concepts(P, pnames, parent_corr, t_high, t_low, t_gap, corr_thresh=0.5):
+    """
+    -> list[str] per dim in {G1, G2, G2c, G3, U}
+       G2c = G2 whose top-2 parent factors are correlated (|phi| >= corr_thresh)
+    """
+    order = np.argsort(-P, axis=1)
+    groups = []
+    for j in range(P.shape[0]):
+        a1 = P[j, order[j, 0]]
+        a2 = P[j, order[j, 1]] if P.shape[1] > 1 else 0.5
+        if a1 < t_low:
+            groups.append("G3")
+        elif a2 >= t_high:
+            p1, p2 = pnames[order[j, 0]], pnames[order[j, 1]]
+            groups.append("G2c" if abs(parent_corr[p1][p2]) >= corr_thresh else "G2")
+        elif a1 >= t_high and a1 - a2 >= t_gap:
+            groups.append("G1")
+        else:
+            groups.append("U")
+    return groups
+
+
+def parent_correlation(C, parents):
+    """Max |phi| between any bins of two parents -> dict[p1][p2]"""
+    pnames = list(dict.fromkeys(parents))
+    out = {a: {} for a in pnames}
+    for a in pnames:
+        ia = [i for i, p in enumerate(parents) if p == a]
+        for b in pnames:
+            ib = [i for i, p in enumerate(parents) if p == b]
+            out[a][b] = 1.0 if a == b else float(np.abs(C[np.ix_(ia, ib)]).max())
+    return out
+
+
+def concepts_in_rules(rules):
+    """Concept ids appearing in any non-(False) clause."""
+    ids = set()
+    for clauses in rules.values():
+        for c in clauses:
+            if c.startswith("(False)"):
+                continue
+            ids.update(int(x) for x in re.findall(r"f_(\d+)", c))
+    return ids
+
+
+def summarize(groups, comp):
+    n = max(len(groups), 1)
+    s = {g: 100.0 * sum(x == g for x in groups) / n for g in ["G1", "G2", "G2c", "G3", "U"]}
+    s["completeness"] = float(np.mean(comp))
+    s["n_dims"] = len(groups)
+    return s
+
+
+def polysemanticity_stats(cache_scheme):
+    """
+    Threshold-free: per dim, 2nd-best parent AUC (higher = more polysemantic)
+    and purity (best - 2nd). SAE vs each baseline via one-sided Mann–Whitney U.
+    cache_scheme: {rep: [entry, ...]} -> dict
+    """
+    vals = {}
+    for r, entries in cache_scheme.items():
+        P = np.concatenate([e["P"] for e in entries], 0)
+        srt = np.sort(P, axis=1)
+        vals[r] = dict(second=srt[:, -2], purity=srt[:, -1] - srt[:, -2], best=srt[:, -1])
+    out = {"median": {r: {k: float(np.median(v[k])) for k in v} for r, v in vals.items()},
+           "tests": {}}
+    for b in ["cnn", "random", "pca"]:
+        u2 = mannwhitneyu(vals["sae"]["second"], vals[b]["second"], alternative="less")
+        up = mannwhitneyu(vals["sae"]["purity"], vals[b]["purity"], alternative="greater")
+        n1, n2 = len(vals["sae"]["second"]), len(vals[b]["second"])
+        out["tests"][b] = dict(
+            second_less_p=float(u2.pvalue), second_effect=float(u2.statistic / (n1 * n2)),
+            purity_greater_p=float(up.pvalue), purity_effect=float(up.statistic / (n1 * n2)))
+    return out, vals
+
+
+def plot_poly_hist(vals, path, title):
+    fig, axes = plt.subplots(1, 2, figsize=(10, 3.5))
+    bins = np.linspace(0.5, 1.0, 26)
+    for ax, key, lab in [(axes[0], "second", "2nd-best factor AUC (lower = less polysemantic)"),
+                         (axes[1], "purity", "purity = best - 2nd (higher = purer)")]:
+        b = bins if key == "second" else np.linspace(0, 0.5, 26)
+        for r in ["sae", "cnn"]:
+            ax.hist(vals[r][key], bins=b, alpha=0.55, density=True, label=r)
+        ax.set_xlabel(lab); ax.legend()
+    fig.suptitle(title); fig.tight_layout(); fig.savefig(path, dpi=200); plt.close(fig)
+
+
+# ============================================================================
+# Outputs
+# ============================================================================
+
+def plot_heatmap(Af, dim_ids, cnames, path, title):
+    order = np.lexsort((-Af.max(1), Af.argmax(1)))
+    M = Af[order]
+    h = max(3, 0.18 * len(order) + 1.5)
+    fig, ax = plt.subplots(figsize=(max(6, 0.45 * len(cnames) + 2), h))
+    im = ax.imshow(M, aspect="auto", cmap="viridis", vmin=0.5, vmax=1.0)
+    ax.set_xticks(range(len(cnames))); ax.set_xticklabels(cnames, rotation=60, ha="right", fontsize=7)
+    ax.set_yticks(range(len(order))); ax.set_yticklabels([f"c{dim_ids[i]}" for i in order], fontsize=6)
+    ax.set_title(title); fig.colorbar(im, ax=ax, label="AUC (sign-free)")
+    fig.tight_layout(); fig.savefig(path, dpi=200); plt.close(fig)
+
+
+def to_latex(rows, path):
+    lines = [r"\begin{tabular}{lcccccc}", r"\toprule",
+             r"Representation & Completeness & G1 (\%) & G2 (\%) & G2-corr (\%) & G3 (\%) & \#dims \\",
+             r"\midrule"]
+    for rep in REPS:
+        s = rows[rep]
+        lines.append(f"{rep} & {s['completeness']:.3f} & {s['G1']:.1f} & {s['G2']:.1f} & "
+                     f"{s['G2c']:.1f} & {s['G3']:.1f} & {s['n_dims']:.0f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    open(path, "w").write("\n".join(lines))
+
+
+# ============================================================================
+# Main
+# ============================================================================
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--model_path", required=True)
+    ap.add_argument("--data_path", required=True)
+    ap.add_argument("--out_dir", required=True)
+    ap.add_argument("--drop_factors", nargs="*", default=[])
+    ap.add_argument("--hard_threshold", type=float, default=None,
+                    help="Override config.hard_threshold (binarization for NMI / rules)")
+    ap.add_argument("--n_random", type=int, default=3)
+    ap.add_argument("--min_pos", type=int, default=30)
+    ap.add_argument("--corr_thresh", type=float, default=0.5)
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    os.makedirs(args.out_dir, exist_ok=True)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    np.random.seed(args.seed)
+
+    model, config, rules = load_model(args.model_path, device)
+    if args.hard_threshold is not None:
+        config.hard_threshold = args.hard_threshold
+    feats, fac, fnames = load_heldout(args.data_path, args.drop_factors)
+    rule_ids = concepts_in_rules(rules)
+    print(f"Held-out: {feats.shape}, factors={fnames}, concepts in rules={len(rule_ids)}")
+
+    # --- representations (computed once) ---
+    reps = {"sae": [get_representations(model, feats, "sae", device)],
+            "cnn": [get_representations(model, feats, "cnn", device)],
+            "pca": [get_representations(model, feats, "pca", device, seed=args.seed)],
+            "random": [get_representations(model, feats, "random", device, seed=args.seed + s)
+                       for s in range(args.n_random)]}
+    alive = {r: [alive_mask(R) for R, _ in v] for r, v in reps.items()}
+    for r in REPS:
+        print(f"  {r:>6}: D={reps[r][0][0].shape[1]}, alive={alive[r][0].sum()}")
+
+    # --- AUC / NMI per quantile scheme (thresholds do not change these) ---
+    cache, summary_rows = {}, []
+    schemes = GRID["scheme"] if any(len(np.unique(fac[:, k])) > 8 for k in range(fac.shape[1])) \
+        else [PRIMARY["scheme"]]
+    for scheme in schemes:
+        Y, cnames, parents, skipped = prepare_factors(fac, fnames, scheme, min_pos=args.min_pos)
+        C = factor_correlation(Y)
+        pcorr = parent_correlation(C, parents)
+        if skipped:
+            print(f"  scheme {scheme}: skipped rare factors {skipped}")
+        for r in REPS:
+            cache[(scheme, r)] = []
+            for (R, B), am in zip(reps[r], alive[r]):
+                A = auc_matrix(R[:, am], Y)
+                Af = fold(A)
+                P, pnames = parent_auc(Af, parents)
+                cache[(scheme, r)].append(dict(A=A, Af=Af, P=P, pnames=pnames,
+                                               nmi=nmi_matrix(B[:, am], Y),
+                                               dims=np.where(am)[0]))
+        cache[(scheme, "meta")] = dict(Y=Y, cnames=cnames, parents=parents, C=C, pcorr=pcorr)
+
+        # --- threshold grid ---
+        for t_high, t_low, t_gap in itertools.product(GRID["t_high"], GRID["t_low"], GRID["t_gap"]):
+            row = dict(scheme=f"{scheme[0]:.2f}/{scheme[1]:.2f}",
+                       t_high=t_high, t_low=t_low, t_gap=t_gap)
+            for r in REPS:
+                ss = [summarize(group_concepts(e["P"], e["pnames"], pcorr, t_high, t_low, t_gap,
+                                               args.corr_thresh), completeness(e["Af"]))
+                      for e in cache[(scheme, r)]]
+                row[r] = {k: float(np.mean([s[k] for s in ss])) for k in ss[0]}
+            summary_rows.append(row)
+
+    # --- robustness of the ordering across the grid ---
+    def holds(row):
+        s = row["sae"]
+        return all(s["completeness"] >= row[b]["completeness"] and s["G1"] >= row[b]["G1"]
+                   for b in ["cnn", "random", "pca"])
+    n_hold = sum(holds(r) for r in summary_rows)
+    print(f"\nOrdering SAE >= all baselines (completeness & %G1) holds in "
+          f"{n_hold}/{len(summary_rows)} grid settings")
+
+    # --- sanity: shuffled factors must give AUC ~ 0.5 ---
+    meta = cache[(PRIMARY["scheme"] if PRIMARY["scheme"] in schemes else schemes[0], "meta")]
+    rng = np.random.default_rng(args.seed)
+    R_sae = reps["sae"][0][0][:, alive["sae"][0]]
+    A_shuf = auc_matrix(R_sae, meta["Y"][rng.permutation(len(meta["Y"]))])
+    sanity = dict(shuffled_auc_mean=float(A_shuf.mean()),
+                  shuffled_auc_folded_max=float(fold(A_shuf).max()))
+    print(f"Sanity (shuffled factors): mean AUC={sanity['shuffled_auc_mean']:.3f} "
+          f"(expect ~0.5), max folded={sanity['shuffled_auc_folded_max']:.3f}")
+
+    # --- primary setting outputs ---
+    psch = PRIMARY["scheme"] if PRIMARY["scheme"] in schemes else schemes[0]
+    prow = next(r for r in summary_rows
+                if r["scheme"] == f"{psch[0]:.2f}/{psch[1]:.2f}" and r["t_high"] == PRIMARY["t_high"]
+                and r["t_low"] == PRIMARY["t_low"] and r["t_gap"] == PRIMARY["t_gap"])
+    to_latex(prow, os.path.join(args.out_dir, "table_primary.tex"))
+
+    meta = cache[(psch, "meta")]
+    e = cache[(psch, "sae")][0]
+    groups = group_concepts(e["P"], e["pnames"], meta["pcorr"], PRIMARY["t_high"],
+                            PRIMARY["t_low"], PRIMARY["t_gap"], args.corr_thresh)
+    pur = purity(e["P"])
+    concept_info = {}
+    for i, j in enumerate(e["dims"]):
+        o = np.argsort(-e["P"][i])
+        concept_info[int(j)] = dict(
+            group=groups[i], in_rules=int(j) in rule_ids,
+            auc_max=float(e["P"][i, o[0]]), best_factor=e["pnames"][o[0]],
+            second_factor=e["pnames"][o[1]] if len(o) > 1 else None,
+            purity=float(pur[i]),
+            best_child=meta["cnames"][int(e["Af"][i].argmax())],
+            nmi_max=float(e["nmi"][i].max()))
+    in_rule_groups = {g: sum(1 for v in concept_info.values() if v["in_rules"] and v["group"] == g)
+                      for g in ["G1", "G2", "G2c", "G3", "U"]}
+    dead_in_rules = sorted(rule_ids - set(concept_info))
+
+    json.dump(dict(primary=PRIMARY, concepts=concept_info, in_rule_groups=in_rule_groups,
+                   dead_concepts_in_rules=dead_in_rules),
+              open(os.path.join(args.out_dir, "groups.json"), "w"), indent=2, default=str)
+    json.dump(dict(grid=summary_rows, ordering_holds=f"{n_hold}/{len(summary_rows)}",
+                   sanity=sanity, factor_names=meta["cnames"],
+                   factor_corr=meta["C"].tolist(), drop_factors=args.drop_factors,
+                   hard_threshold=config.hard_threshold),
+              open(os.path.join(args.out_dir, "summary.json"), "w"), indent=2)
+    for r in REPS:
+        for si, er in enumerate(cache[(psch, r)]):
+            np.savez(os.path.join(args.out_dir, f"alignment_{r}{si if r == 'random' else ''}_primary.npz"),
+                     auc=er["A"], nmi=er["nmi"], dims=er["dims"], parent_auc=er["P"],
+                     factors=np.array(meta["cnames"]), parents=np.array(er["pnames"]))
+
+    # --- threshold-free polysemanticity (post-hoc analysis) ---
+    poly, poly_vals = polysemanticity_stats({r: cache[(psch, r)] for r in REPS})
+    json.dump(poly, open(os.path.join(args.out_dir, "polysemanticity.json"), "w"), indent=2)
+    plot_poly_hist(poly_vals, os.path.join(args.out_dir, "hist_polysemanticity.png"),
+                   "SAE vs raw CNN (threshold-free)")
+
+    # heatmaps: concepts used by rules, and all alive concepts
+    in_r = np.array([int(j) in rule_ids for j in e["dims"]])
+    if in_r.any():
+        plot_heatmap(e["Af"][in_r], e["dims"][in_r], meta["cnames"],
+                     os.path.join(args.out_dir, "heatmap_sae_rules.png"),
+                     "LUCID concepts used in rules")
+    plot_heatmap(e["Af"], e["dims"], meta["cnames"],
+                 os.path.join(args.out_dir, "heatmap_sae_alive.png"), "All alive LUCID concepts")
+    ec = cache[(psch, "cnn")][0]
+    plot_heatmap(ec["Af"], ec["dims"], meta["cnames"],
+                 os.path.join(args.out_dir, "heatmap_cnn.png"), "Raw CNN neurons")
+
+    print("\nPrimary setting:")
+    for r in REPS:
+        s = prow[r]
+        print(f"  {r:>6}: compl={s['completeness']:.3f} G1={s['G1']:.1f}% G2={s['G2']:.1f}% "
+              f"G2c={s['G2c']:.1f}% G3={s['G3']:.1f}% U={s['U']:.1f}% dims={s['n_dims']:.0f}")
+    print(f"  Concepts in rules by group: {in_rule_groups}")
+    print("\nThreshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):")
+    for r in REPS:
+        m = poly["median"][r]
+        print(f"  {r:>6}: second={m['second']:.3f} purity={m['purity']:.3f} best={m['best']:.3f}")
+    for b, t in poly["tests"].items():
+        print(f"  SAE vs {b:>6}: 2nd lower p={t['second_less_p']:.2e} (CLES={t['second_effect']:.2f}) | "
+              f"purity higher p={t['purity_greater_p']:.2e} (CLES={t['purity_effect']:.2f})")
+    if dead_in_rules:
+        print(f"  WARNING: rule concepts dead on held-out: {dead_in_rules}")
+    print(f"\nSaved to {args.out_dir}")
+
+
+if __name__ == "__main__":
+    main()

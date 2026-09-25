@@ -164,7 +164,7 @@ class EntmaxDTAgent:
     def predict(self, obs: np.ndarray) -> np.ndarray:
         with torch.no_grad():
             obs_tensor = torch.as_tensor(obs).float().to(self.device)
-            features = self.ppo_model.policy.features_extractor(obs_tensor)
+            features = self.ppo_model.policy.extract_features(obs_tensor, self.ppo_model.policy.features_extractor)
             
             # CHÚ Ý QUAN TRỌNG: Inference trong game phải BẬT max_path=True 
             # để cây trở thành Hard Decision Tree (Bậc thang 0-1)

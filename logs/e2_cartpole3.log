@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/home/hieuquy/XRL/concept_alignment.py", line 555, in <module>
+    main()
+  File "/home/hieuquy/XRL/concept_alignment.py", line 405, in main
+    model, config, rules = load_model(args.model_path, device)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hieuquy/XRL/concept_alignment.py", line 60, in load_model
+    ckpt = torch.load(model_path, map_location=device, weights_only=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hieuquy/.conda/envs/lucid/lib/python3.11/site-packages/torch/serialization.py", line 1425, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hieuquy/.conda/envs/lucid/lib/python3.11/site-packages/torch/serialization.py", line 751, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hieuquy/.conda/envs/lucid/lib/python3.11/site-packages/torch/serialization.py", line 732, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'outputs/lucid_model_cartpole3/sae_logic_joint_model.pt'

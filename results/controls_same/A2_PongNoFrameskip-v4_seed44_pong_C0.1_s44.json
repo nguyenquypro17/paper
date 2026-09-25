@@ -1,0 +1,31 @@
+{
+  "arm": "A2",
+  "env_name": "PongNoFrameskip-v4",
+  "seed": 44,
+  "learner": "linear",
+  "lucid_split_dir": "outputs/lucid_model_pong_44",
+  "representation": "sae_recon",
+  "sae_live_dims": 512,
+  "sae_config": {
+    "hidden_dim": 512,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 44
+  },
+  "val_acc": 0.9936609972769073,
+  "fidelity_soft": 99.30093810891705,
+  "fidelity_hard": 99.30093810891705,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 2456,
+    "concepts": 505,
+    "units": 6
+  },
+  "knob": {
+    "C": 0.1
+  },
+  "runtime_sec": 4384.6
+}

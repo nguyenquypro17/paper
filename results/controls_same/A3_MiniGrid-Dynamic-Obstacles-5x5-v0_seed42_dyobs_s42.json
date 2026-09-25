@@ -1,0 +1,111 @@
+{
+  "arm": "A3",
+  "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "seed": 42,
+  "learner": "dnf",
+  "lucid_split_dir": "outputs/lucid_model_dyobs_42",
+  "representation": "raw",
+  "val_acc": 1.0,
+  "fidelity_soft": 100.0,
+  "fidelity_hard": 60.0503214984624,
+  "coverage_offline": 100.0,
+  "fidelity_hard_pure": 71.09309477215544,
+  "coverage_pure": 60.0503214984624,
+  "complexity": {
+    "literals": 20,
+    "concepts": 18,
+    "units": 3
+  },
+  "knob": {
+    "l0_penalty": 0.0001,
+    "n_clauses_per_action": 10,
+    "tau": 0.5
+  },
+  "rules": {
+    "TurnLeft": [
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]",
+      "(f_21 \u2227 \u00acf_26 \u2227 f_40 \u2227 f_54 \u2227 \u00acf_57 \u2227 f_62 \u2227 f_96 \u2227 \u00acf_109) [bias=5.00]"
+    ],
+    "TurnRight": [
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]",
+      "(f_7 \u2227 \u00acf_40 \u2227 f_64 \u2227 \u00acf_98 \u2227 \u00acf_100 \u2227 f_122) [bias=5.00]"
+    ],
+    "Forward": [
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]",
+      "(\u00acf_25 \u2227 \u00acf_73 \u2227 \u00acf_88 \u2227 \u00acf_92 \u2227 \u00acf_96 \u2227 \u00acf_102) [bias=5.00]"
+    ],
+    "Pickup": [
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]"
+    ],
+    "Drop": [
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]"
+    ],
+    "Toggle": [
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]"
+    ],
+    "Done": [
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]",
+      "(True) [bias=-9.97]"
+    ]
+  },
+  "runtime_sec": 389.4
+}

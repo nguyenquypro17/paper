@@ -1,0 +1,136 @@
+{
+  "min_auc": 0.8,
+  "factors": [
+    "has_key",
+    "door_open",
+    "key_in_front",
+    "door_in_front",
+    "wall_ahead"
+  ],
+  "aligned_pos": {
+    "C23": "wall_ahead",
+    "C54": "key_in_front",
+    "C131": "key_in_front",
+    "C237": "key_in_front",
+    "C294": "key_in_front"
+  },
+  "aligned_neg": {},
+  "by_namer": {
+    "gemini-3.1-pro-preview": {
+      "concepts": {
+        "C23": {
+          "label": "key_or_door_in_agent_row",
+          "factor": "wall_ahead"
+        },
+        "C54": {
+          "label": "key_directly_in_front_of_agent",
+          "factor": "key_in_front"
+        },
+        "C131": {
+          "label": "key_directly_in_front",
+          "factor": "key_in_front"
+        },
+        "C237": {
+          "label": "key_is_adjacent_left_or_front_and_separated_from_door",
+          "factor": "key_in_front"
+        },
+        "C294": {
+          "label": "clear_path_to_closed_door_without_key",
+          "factor": "key_in_front"
+        }
+      },
+      "by_embedder": {
+        "sentence-transformers/all-MiniLM-L6-v2": {
+          "mrr": 0.49000000000000005,
+          "p": 0.3702629737026297,
+          "chance_mrr": 0.45666666666666667,
+          "ranks": {
+            "C23": 5,
+            "C54": 2,
+            "C131": 1,
+            "C237": 2,
+            "C294": 4
+          }
+        },
+        "BAAI/bge-base-en-v1.5": {
+          "mrr": 0.5566666666666668,
+          "p": 0.22627737226277372,
+          "chance_mrr": 0.45666666666666667,
+          "ranks": {
+            "C23": 5,
+            "C54": 1,
+            "C131": 1,
+            "C237": 3,
+            "C294": 4
+          }
+        },
+        "intfloat/e5-base-v2": {
+          "mrr": 0.7,
+          "p": 0.051894810518948106,
+          "chance_mrr": 0.45666666666666667,
+          "ranks": {
+            "C23": 4,
+            "C54": 1,
+            "C131": 1,
+            "C237": 1,
+            "C294": 4
+          }
+        },
+        "thenlper/gte-base": {
+          "mrr": 0.49000000000000005,
+          "p": 0.36406359364063595,
+          "chance_mrr": 0.45666666666666667,
+          "ranks": {
+            "C23": 5,
+            "C54": 2,
+            "C131": 1,
+            "C237": 2,
+            "C294": 4
+          }
+        }
+      }
+    }
+  },
+  "manifest": {
+    "time_utc": "2026-09-24T16:24:00+00:00",
+    "argv": [
+      "label_factor.py",
+      "--meta",
+      "experiments/vlm/doorkey_42/meta.json",
+      "--labels",
+      "experiments/vlm/doorkey_42/labels_gemini31_a.json",
+      "--env_name",
+      "MiniGrid-DoorKey-6x6-v0",
+      "--out",
+      "experiments/vlm/doorkey_42/label_factor_gemini31.json"
+    ],
+    "args": {
+      "meta": "experiments/vlm/doorkey_42/meta.json",
+      "labels": [
+        "experiments/vlm/doorkey_42/labels_gemini31_a.json"
+      ],
+      "env_name": "MiniGrid-DoorKey-6x6-v0",
+      "min_auc": 0.8,
+      "embedders": [
+        "sentence-transformers/all-MiniLM-L6-v2",
+        "BAAI/bge-base-en-v1.5",
+        "intfloat/e5-base-v2",
+        "thenlper/gte-base"
+      ],
+      "out": "experiments/vlm/doorkey_42/label_factor_gemini31.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "manifest": {
+    "time_utc": "2026-09-25T03:12:04+00:00",
+    "argv": [
+      "render_concepts.py",
+      "--model_path",
+      "outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt",
+      "--ppo_path",
+      "ppo_dynamic_obs_5x5.zip",
+      "--env_name",
+      "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "--n_episodes",
+      "2000",
+      "--seed",
+      "2000",
+      "--out_dir",
+      "experiments/vlm/dyobs_42"
+    ],
+    "args": {
+      "model_path": "outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt",
+      "ppo_path": "ppo_dynamic_obs_5x5.zip",
+      "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "n_episodes": 2000,
+      "seed": 2000,
+      "stride": 1,
+      "hard_threshold": 0.66,
+      "k": 8,
+      "m": 20,
+      "frac_naming": 0.3,
+      "min_test": 5,
+      "out_dir": "experiments/vlm/dyobs_42"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  },
+  "args": {
+    "model_path": "outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt",
+    "ppo_path": "ppo_dynamic_obs_5x5.zip",
+    "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+    "n_episodes": 2000,
+    "seed": 2000,
+    "stride": 1,
+    "hard_threshold": 0.66,
+    "k": 8,
+    "m": 20,
+    "frac_naming": 0.3,
+    "min_test": 5,
+    "out_dir": "experiments/vlm/dyobs_42"
+  },
+  "hard_threshold": 0.66,
+  "stats": {
+    "n_steps": 23762,
+    "n_stored": 23762,
+    "n_episodes": 2000,
+    "feat_mean_norm": 0.6254803047315328,
+    "soft_teacher_agreement": 1.0
+  },
+  "n_naming_states": 34,
+  "n_test_states": 78,
+  "concepts": {
+    "C32": {
+      "on_rate_N": 0.08823529411764706,
+      "n_on_rows": 3,
+      "n_off_rows": 8,
+      "n_test": 18
+    },
+    "C49": {
+      "on_rate_N": 0.38235294117647056,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C133": {
+      "on_rate_N": 0.08823529411764706,
+      "n_on_rows": 3,
+      "n_off_rows": 8,
+      "n_test": 18
+    },
+    "C146": {
+      "on_rate_N": 0.5294117647058824,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    }
+  },
+  "skipped": [],
+  "factor_control_n": {
+    "obstacle_ahead": 40,
+    "obstacle_left": 12,
+    "obstacle_right": 32
+  },
+  "concept_factor_auc": {
+    "C32": {
+      "obstacle_ahead": 0.55052790346908,
+      "obstacle_left": 0.44285714285714284,
+      "obstacle_right": 0.5358620689655172
+    },
+    "C49": {
+      "obstacle_ahead": 0.7745098039215687,
+      "obstacle_left": 0.9510204081632653,
+      "obstacle_right": 0.32022988505747124
+    },
+    "C133": {
+      "obstacle_ahead": 0.5501508295625943,
+      "obstacle_left": 0.44285714285714284,
+      "obstacle_right": 0.5349425287356322
+    },
+    "C146": {
+      "obstacle_ahead": 0.19230769230769232,
+      "obstacle_left": 0.2714285714285714,
+      "obstacle_right": 0.6901149425287356
+    }
+  }
+}

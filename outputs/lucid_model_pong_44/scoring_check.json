@@ -1,0 +1,16 @@
+{
+  "run_dir": "outputs/lucid_model_pong_44",
+  "split": "val",
+  "n_states": 49781,
+  "coverage_pct": 99.92969205118418,
+  "conflict_rate_pct": 5.160603443080693,
+  "conflict_rate_among_covered_pct": 5.1642343102963055,
+  "mean_actions_fired": 1.0509029549426487,
+  "multi_clause_same_action_pct": 100.0,
+  "fidelity_weighted_pct": 99.86541049798116,
+  "fidelity_unweighted_pct": 99.80916413892851,
+  "fidelity_drop_pct": 0.05624635905265052,
+  "tie_rate_unweighted_pct": 0.07834314296619192,
+  "agreement_weighted_vs_unweighted_pct": 99.90759526727064,
+  "fallback_action": "LEFT"
+}

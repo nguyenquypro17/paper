@@ -1,0 +1,68 @@
+=================== cartpole ===================
+Naming (gemini-3.1-pro-preview):   0%|          | 0/10 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):  10%|█         | 1/10 [02:12<19:53, 132.59s/it]Naming (gemini-3.1-pro-preview):  20%|██        | 2/10 [04:26<17:46, 133.25s/it]Naming (gemini-3.1-pro-preview):  30%|███       | 3/10 [06:40<15:36, 133.84s/it]Naming (gemini-3.1-pro-preview):  40%|████      | 4/10 [08:52<13:19, 133.17s/it]Naming (gemini-3.1-pro-preview):  50%|█████     | 5/10 [11:05<11:05, 133.00s/it]Naming (gemini-3.1-pro-preview):  60%|██████    | 6/10 [13:18<08:51, 132.93s/it]Naming (gemini-3.1-pro-preview):  70%|███████   | 7/10 [15:30<06:37, 132.64s/it]Naming (gemini-3.1-pro-preview):  80%|████████  | 8/10 [17:44<04:26, 133.04s/it]Naming (gemini-3.1-pro-preview):  90%|█████████ | 9/10 [19:58<02:13, 133.49s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 10/10 [22:11<00:00, 133.14s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 10/10 [22:11<00:00, 133.13s/it]
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+     C52: unparsed
+     C79: unparsed
+     C88: unparsed
+    C138: unparsed
+    C151: unparsed
+    C211: unparsed
+    C290: unparsed
+    C309: unparsed
+    C334: unparsed
+    C422: unparsed
+[done] 10 concepts, unparsed=10, distinct labels=1 -> experiments/vlm/cartpole_42/labels_gemini31_a.json
+Naming (gemini-3.1-pro-preview):   0%|          | 0/10 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):  10%|█         | 1/10 [02:12<19:51, 132.42s/it]Naming (gemini-3.1-pro-preview):  20%|██        | 2/10 [04:28<17:56, 134.52s/it]Naming (gemini-3.1-pro-preview):  30%|███       | 3/10 [06:52<16:13, 139.01s/it]Naming (gemini-3.1-pro-preview):  40%|████      | 4/10 [09:11<13:53, 138.87s/it]Naming (gemini-3.1-pro-preview):  50%|█████     | 5/10 [11:22<11:21, 136.21s/it]Naming (gemini-3.1-pro-preview):  60%|██████    | 6/10 [13:36<09:01, 135.25s/it]Naming (gemini-3.1-pro-preview):  70%|███████   | 7/10 [15:48<06:42, 134.26s/it]Naming (gemini-3.1-pro-preview):  80%|████████  | 8/10 [18:01<04:27, 133.92s/it]Naming (gemini-3.1-pro-preview):  90%|█████████ | 9/10 [20:13<02:13, 133.33s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 10/10 [22:26<00:00, 133.29s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 10/10 [22:26<00:00, 134.70s/it]
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+  [gemini] giving up: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+     C52: unparsed
+     C79: unparsed
+     C88: unparsed
+    C138: unparsed
+    C151: unparsed
+    C211: unparsed
+    C290: unparsed
+    C309: unparsed
+    C334: unparsed
+    C422: unparsed
+[done] 10 concepts, unparsed=10, distinct labels=1 -> experiments/vlm/cartpole_42/labels_gemini31_b.json
+Scoring (API):   0%|          | 0/80 [00:00<?, ?it/s]Scoring (API):   1%|▏         | 1/80 [00:39<51:54, 39.42s/it]Scoring (API):  19%|█▉        | 15/80 [01:01<03:41,  3.41s/it]Scoring (API):  28%|██▊       | 22/80 [01:13<02:36,  2.69s/it]Scoring (API):  52%|█████▎    | 42/80 [01:15<00:40,  1.07s/it]Scoring (API):  52%|█████▎    | 42/80 [01:30<00:40,  1.07s/it]Scoring (API):  78%|███████▊  | 62/80 [01:44<00:22,  1.26s/it]Scoring (API): 100%|██████████| 80/80 [01:44<00:00,  1.31s/it]
+[scoring] 80 pairs, failed/unparsable = 0  errors = {}
+[positive control] scorer AUC on ground-truth statements:
+  cart_pos         AUC=0.601  bacc=0.525  n=40  The cart is to the right of the centre of the screen.
+  pole_angle       AUC=0.510  bacc=0.525  n=40  The pole is leaning to the right.
+  mean AUC = 0.556  (ceiling for the labels)
+Concepts: 0it [00:00, ?it/s]Concepts: 0it [00:00, ?it/s]
+
+[gemini-3.1-pro-preview] concepts=0  AUC true=nan  distractor=nan  delta=+nan  p_perm=nan  bacc=nan  low_mass=nan
+[done] -> experiments/vlm/cartpole_42/predict_deepseek-flash.json
+Traceback (most recent call last):
+  File "/home/hieuquy/XRL/label_agreement.py", line 86, in <module>
+    main()
+  File "/home/hieuquy/XRL/label_agreement.py", line 67, in main
+    assert len(cids) >= 3, f"need >= 3 common concepts, got {len(cids)}"
+           ^^^^^^^^^^^^^^
+AssertionError: need >= 3 common concepts, got 0
+[aligned] positive: {}
+[aligned] negative only (not scored): {}
+[gemini-3.1-pro-preview] fewer than 2 aligned concepts with labels, skipped
+[done] -> experiments/vlm/cartpole_42/label_factor_gemini31.json

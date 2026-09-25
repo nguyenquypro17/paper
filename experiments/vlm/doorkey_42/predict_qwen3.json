@@ -1,0 +1,150 @@
+{
+  "env": "MiniGrid-DoorKey-6x6-v0",
+  "scorer": "Qwen/Qwen3-VL-8B-Instruct",
+  "by_namer": {
+    "OpenGVLab/InternVL3-8B-hf": {
+      "concepts": {
+        "C23": {
+          "label": "agent_near_key_and_door_in_front",
+          "n": 40,
+          "auc_true": 0.41375,
+          "bacc_true": 0.4,
+          "auc_distractors": {
+            "agent_facing_yellow_key_in_front": 0.24125,
+            "agent_facing_wall_with_key_and_door": 0.2925,
+            "agent_holding_key": 0.64875
+          }
+        },
+        "C54": {
+          "label": "key_visible",
+          "n": 40,
+          "auc_true": 0.56875,
+          "bacc_true": 0.575,
+          "auc_distractors": {
+            "agent_facing_yellow_key": 0.67875,
+            "key_in_front_of_door": 0.59375,
+            "agent_near_key_and_door_in_front": 0.59375
+          }
+        },
+        "C87": {
+          "label": "key_in_front_of_door",
+          "n": 40,
+          "auc_true": 0.41,
+          "bacc_true": 0.47500000000000003,
+          "auc_distractors": {
+            "agent_facing_yellow_key_in_front": 0.56875,
+            "agent_near_key_and_door_in_front": 0.3475,
+            "agent_facing_wall_with_key_and_door": 0.3925
+          }
+        },
+        "C92": {
+          "label": "key_in_front_of_door",
+          "n": 40,
+          "auc_true": 0.20375,
+          "bacc_true": 0.22499999999999998,
+          "auc_distractors": {
+            "agent_holding_key": 0.4775,
+            "key_visible": 0.27375,
+            "agent_facing_yellow_key": 0.2125
+          }
+        },
+        "C131": {
+          "label": "key_in_front_of_door",
+          "n": 40,
+          "auc_true": 0.77125,
+          "bacc_true": 0.65,
+          "auc_distractors": {
+            "agent_facing_yellow_key": 0.7875,
+            "key_visible": 0.41,
+            "agent_holding_key": 0.7775
+          }
+        },
+        "C170": {
+          "label": "agent_holding_key",
+          "n": 40,
+          "auc_true": 0.74625,
+          "bacc_true": 0.7,
+          "auc_distractors": {
+            "key_in_front_of_door": 0.50875,
+            "agent_near_key_and_door_in_front": 0.51,
+            "key_visible": 0.4825
+          }
+        },
+        "C237": {
+          "label": "agent_facing_wall_with_key_and_door",
+          "n": 40,
+          "auc_true": 0.5925,
+          "bacc_true": 0.55,
+          "auc_distractors": {
+            "agent_facing_yellow_key_in_front": 0.68875,
+            "agent_holding_key": 0.34375,
+            "agent_near_key_and_door_in_front": 0.55625
+          }
+        },
+        "C258": {
+          "label": "agent_facing_yellow_key",
+          "n": 40,
+          "auc_true": 0.47375,
+          "bacc_true": 0.475,
+          "auc_distractors": {
+            "agent_holding_key": 0.72375,
+            "agent_facing_yellow_key_in_front": 0.515,
+            "key_visible": 0.55875
+          }
+        },
+        "C294": {
+          "label": "agent_facing_yellow_key_in_front",
+          "n": 40,
+          "auc_true": 0.59125,
+          "bacc_true": 0.55,
+          "auc_distractors": {
+            "agent_facing_wall_with_key_and_door": 0.475,
+            "key_visible": 0.56875,
+            "agent_near_key_and_door_in_front": 0.57625
+          }
+        }
+      },
+      "summary": {
+        "n_concepts": 9,
+        "mean_auc_true": 0.5301388888888889,
+        "mean_auc_distractor": 0.51125,
+        "mean_bacc_true": 0.5111111111111111,
+        "delta": 0.018888888888888882,
+        "p_perm": 0.3461653834616538,
+        "low_mass_frac": 0.0
+      }
+    }
+  },
+  "factor_control": {
+    "door_in_front": {
+      "statement": "The door is in the cell directly in front of the agent.",
+      "n": 32,
+      "auc": 0.51953125,
+      "bacc": 0.53125
+    },
+    "door_open": {
+      "statement": "The door is open.",
+      "n": 40,
+      "auc": 0.53875,
+      "bacc": 0.55
+    },
+    "has_key": {
+      "statement": "The agent is carrying the key.",
+      "n": 40,
+      "auc": 0.98125,
+      "bacc": 0.85
+    },
+    "key_in_front": {
+      "statement": "The key is in the cell directly in front of the agent.",
+      "n": 40,
+      "auc": 0.785,
+      "bacc": 0.6
+    },
+    "wall_ahead": {
+      "statement": "A wall is in the cell directly in front of the agent.",
+      "n": 40,
+      "auc": 0.3575,
+      "bacc": 0.5
+    }
+  }
+}

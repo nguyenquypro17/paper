@@ -1,0 +1,29 @@
+Held-out: (99396, 512), factors=['ball_x', 'ball_y', 'player_y', 'rel_y', 'ball_vx', 'ball_vy'], concepts in rules=12
+     sae: D=512, alive=253
+     cnn: D=512, alive=496
+  random: D=512, alive=512
+     pca: D=512, alive=496
+  scheme (0.25, 0.75): skipped rare factors [('ball_vy>q0.75', 29)]
+  scheme (0.2, 0.8): skipped rare factors [('ball_vx<q0.20', 0), ('ball_vy>q0.80', 29)]
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/36 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.515
+
+Primary setting:
+     sae: compl=0.675 G1=1.2% G2=0.0% G2c=0.0% G3=92.5% U=6.3% dims=253
+     cnn: compl=0.801 G1=4.8% G2=1.8% G2c=3.2% G3=39.3% U=50.8% dims=496
+  random: compl=0.664 G1=1.0% G2=0.0% G2c=0.0% G3=92.9% U=6.1% dims=512
+     pca: compl=0.774 G1=5.6% G2=0.2% G2c=0.4% G3=79.6% U=14.1% dims=496
+  Concepts in rules by group: {'G1': 0, 'G2': 0, 'G2c': 0, 'G3': 12, 'U': 0}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+  (dims kept: best parent AUC >= 0.65)
+     sae: second=0.616 purity=0.070 best=0.688 | kept 19/253 (7.5%)
+     cnn: second=0.670 purity=0.039 best=0.718 | kept 301/496 (60.7%)
+  random: second=0.598 purity=0.091 best=0.685 | kept 109/1536 (7.1%)
+     pca: second=0.559 purity=0.144 best=0.709 | kept 101/496 (20.4%)
+  SAE vs    cnn: 2nd lower p=8.43e-08 (CLES=0.14) | purity higher p=2.01e-03 (CLES=0.70)
+  SAE vs random: 2nd lower p=8.75e-01 (CLES=0.58) | purity higher p=6.49e-01 (CLES=0.47)
+  SAE vs    pca: 2nd lower p=9.98e-01 (CLES=0.71) | purity higher p=9.96e-01 (CLES=0.30)
+
+Saved to experiments/e2/results_pong_43

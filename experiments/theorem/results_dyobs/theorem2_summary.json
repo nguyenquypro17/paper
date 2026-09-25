@@ -1,0 +1,272 @@
+{
+  "env_name": "",
+  "env_short": "unknown",
+  "model_path": "./outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt",
+  "data_path": "./held_out_dyobs_data.pt",
+  "split": "all",
+  "n_states": 23921,
+  "tau": 0.66,
+  "theta": 0.66,
+  "eps": 1e-08,
+  "b_max": 5.0,
+  "D": 200,
+  "n_actions": 3,
+  "n_clauses_per_action": 10,
+  "fallback_action": 2,
+  "action_names": [
+    "a0",
+    "a1",
+    "a2"
+  ],
+  "rules": {
+    "n_clauses_total": 30,
+    "n_nonuniversal_clauses": 30,
+    "n_universal_clauses": 0,
+    "n_contradictory_clauses": 0,
+    "n_literals": 40,
+    "n_concepts": 4
+  },
+  "binarization_cleanliness_all": 99.99970737009322,
+  "binarization_cleanliness_rule": 100.0,
+  "rule_concepts_near_theta_pct": 0.0,
+  "trigger_rate": 100.0,
+  "trigger_rate_nonuniversal": 100.0,
+  "tie_rate": 0.0,
+  "gamma_on_trig": {
+    "mean": 9.933073043823242,
+    "median": 9.93307113647461,
+    "p5": 9.93307113647461,
+    "p95": 9.93307113647461
+  },
+  "delta_total_on_trig": {
+    "mean": 0.4586178958415985,
+    "median": 0.6763426661491394,
+    "p5": 0.005911469459533691,
+    "p95": 0.6766229271888733
+  },
+  "fidelity_coverage_pairwise": 100.0,
+  "fidelity_coverage_simple": 100.0,
+  "covered_agreement_pairwise": 100.0,
+  "covered_agreement_simple": 100.0,
+  "overall_soft_hard_agreement": 100.0,
+  "uncovered_disagreement_rate": NaN,
+  "theorem_bound_holds": true,
+  "checks": {
+    "max_forward_diff": 0.0,
+    "lemma1_violations": 0,
+    "lemma1_max_excess": 0.0,
+    "lemma2_violations": 0,
+    "lemma2_max_excess": 2.9976021664879227e-15,
+    "float32_soft_argmax_mismatch": 0,
+    "dbar_violations": 0,
+    "dbar_max_excess": -0.04950293112256782,
+    "theorem_violations": 0,
+    "float32_soft_argmax_mismatch_pct": 0.0
+  },
+  "delta_decomposition": {
+    "mean_drag_active_per_true_clause": 0.00139442630147765,
+    "mean_drag_inactive_per_true_clause": -1.7564715215364615e-06,
+    "false_clauses_pos_violation": 478420,
+    "false_clauses_neg_violation": 0,
+    "mean_delta_false_pos": 0.023096810755935348,
+    "mean_delta_false_neg": 0.0,
+    "mean_lstar_pos": 0.00016677489603552658,
+    "mean_lstar_neg": 0.0,
+    "structural_bound_lstar_pos": 0.7756000000000001,
+    "structural_bound_lstar_neg": 0.5644,
+    "mean_dstar_true_on_trig": 9.277326171286404e-05,
+    "mean_dstar_false_on_trig": 0.0,
+    "mean_dother_true_on_trig": 0.0,
+    "mean_dother_false_on_trig": 0.4585250914096832
+  },
+  "teacher": {
+    "AF_soft": 100.0,
+    "AF_hard": 100.0,
+    "hard_error": 0.0,
+    "imitation_error": 0.0,
+    "discretization_error": 0.0,
+    "triangle_middle": 0.0,
+    "triangle_bound": 0.0,
+    "triangle_holds": true
+  },
+  "corollary": {
+    "clean_eps": 0.05,
+    "clean_state_rate": 100.0,
+    "actual_disagreement": 0.0,
+    "bound_theorem": 0.0,
+    "bound_statewise": 0.0,
+    "bound_global": 100.0,
+    "not_clean": 0.0,
+    "clean_but_tie_or_fallback": 0.0,
+    "clean_valid_uncertified_statewise": 0.0,
+    "clean_valid_uncertified_global": 100.0,
+    "mean_dirty_rule_concepts_per_state": 0.0,
+    "structural_drag_U": {
+      "mean": -1.5376214644142021e-06,
+      "max": -1.5223191772763335e-06,
+      "universal_mean": NaN
+    },
+    "active_drag_A": {
+      "mean": 0.06839104115881763,
+      "max": 0.10258656170309378
+    },
+    "Dbar_global_per_action": [
+      8.812447813625996,
+      8.812447813791122,
+      8.812447814342262
+    ],
+    "Dbar_global_pair_max": 17.624895628133384,
+    "gamma_min_positive_empirical": 9.93307113647461,
+    "global_condition_holds_on_data": false,
+    "checks": {
+      "dbar_violations": 0,
+      "dbar_max_excess": -0.04950293112256782,
+      "certS_disagree": 0,
+      "certG_disagree": 0,
+      "certG_not_in_certS": 0,
+      "certS_not_in_cert": 0,
+      "dbar_violations_grid": 0
+    },
+    "eps_grid": [
+      {
+        "eps_bar": 0.05,
+        "clean_state_rate": 100.0,
+        "bound_statewise": 0.0,
+        "bound_global": 100.0,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.02,
+        "clean_state_rate": 99.93729359140504,
+        "bound_statewise": 0.06270640859496268,
+        "bound_global": 100.0,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.01,
+        "clean_state_rate": 99.93729359140504,
+        "bound_statewise": 0.06270640859496268,
+        "bound_global": 100.0,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.005,
+        "clean_state_rate": 95.25103465574182,
+        "bound_statewise": 4.748965344258181,
+        "bound_global": 4.748965344258181,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.002,
+        "clean_state_rate": 77.71414238535178,
+        "bound_statewise": 22.285857614648222,
+        "bound_global": 22.285857614648222,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.001,
+        "clean_state_rate": 58.81861126207098,
+        "bound_statewise": 41.18138873792902,
+        "bound_global": 41.18138873792902,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 0.0001,
+        "clean_state_rate": 0.0,
+        "bound_statewise": 100.0,
+        "bound_global": 100.0,
+        "dbar_violations": 0
+      },
+      {
+        "eps_bar": 1e-05,
+        "clean_state_rate": 0.0,
+        "bound_statewise": 100.0,
+        "bound_global": 100.0,
+        "dbar_violations": 0
+      }
+    ],
+    "best_statewise": {
+      "eps_bar": 0.05,
+      "bound": 0.0
+    },
+    "best_global": {
+      "eps_bar": 0.005,
+      "bound": 4.748965344258181
+    },
+    "e_minus_bmax": 0.006737946999085467
+  },
+  "invariance": {
+    "range": [
+      0.5,
+      0.9
+    ],
+    "selectors_in_range": 0,
+    "tau_invariant": true,
+    "states_theta_sensitive": 0,
+    "states_theta_sensitive_pct": 0.0,
+    "theta_invariant": true
+  },
+  "theta_sweep": [
+    {
+      "theta": 0.5,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    },
+    {
+      "theta": 0.6,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    },
+    {
+      "theta": 0.66,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    },
+    {
+      "theta": 0.7,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    },
+    {
+      "theta": 0.8,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    },
+    {
+      "theta": 0.9,
+      "coverage_pairwise": 100.0,
+      "coverage_simple": 100.0,
+      "agreement": 100.0,
+      "trigger_rate": 100.0,
+      "tie_rate": 0.0,
+      "violations": 0,
+      "AF_hard": 100.0
+    }
+  ],
+  "fragile_concepts": []
+}

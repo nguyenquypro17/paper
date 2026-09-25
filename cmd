@@ -13,21 +13,8 @@ python feature_collect.py \
     --env_name MiniGrid-DoorKey-6x6-v0 \
     --n_episodes 2000 \
     --save_dir ./stage1_outputs_doorkey
-python train_joint.py \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --stage1_path ./stage1_outputs_doorkey/stage1_outputs.pt \
-    --hidden_dim 300 \
-    --k 50 \
-    --n_clauses_per_action 20 \
-    --n_epochs 600 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --seed 42 \
-    --threshold 0.66 \
-    --entropy_weight 0.005 \
-    --bimodal_ramp 120 \
-    --save_dir ./outputs/lucid_model_doorkey2
+
+## Stage 2: SAE + Logic training
 python train_joint.py \
     --features_path ./stage1_outputs_doorkey/collected_data.pt \
     --stage1_path ./stage1_outputs_doorkey/stage1_outputs.pt \
@@ -43,84 +30,10 @@ python train_joint.py \
     --entropy_weight 0.015 \
     --bimodal_ramp 120 \
     --save_dir ./outputs/lucid_model_doorkey_42
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_doorkey_42/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --hard_threshold 0.66 \
-    --threshold 0.66 \
-    --env_name MiniGrid-DoorKey-6x6-v0 \
-    --ppo_path ./ppo_doorkey_6x6 \
-    --multi-seed \
-    --episodes 1000
-
-python train_joint.py \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --stage1_path ./stage1_outputs_doorkey/stage1_outputs.pt \
-    --hidden_dim 300 \
-    --k 50 \
-    --n_clauses_per_action 15 \
-    --n_epochs 600 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --seed 43 \
-    --threshold 0.66 \
-    --entropy_weight 0.015 \
-    --bimodal_ramp 120 \
-    --save_dir ./outputs/lucid_model_doorkey_43
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_doorkey_43/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --hard_threshold 0.66 \
-    --threshold 0.66 \
-    --env_name MiniGrid-DoorKey-6x6-v0 \
-    --ppo_path ./ppo_doorkey_6x6 \
-    --multi-seed \
-    --episodes 1000
-python train_joint.py \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --stage1_path ./stage1_outputs_doorkey/stage1_outputs.pt \
-    --hidden_dim 300 \
-    --k 50 \
-    --n_clauses_per_action 15 \
-    --n_epochs 600 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --seed 44 \
-    --threshold 0.66 \
-    --entropy_weight 0.015 \
-    --bimodal_ramp 120 \
-    --save_dir ./outputs/lucid_model_doorkey_44
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_doorkey_44/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --hard_threshold 0.66 \
-    --threshold 0.66 \
-    --env_name MiniGrid-DoorKey-6x6-v0 \
-    --ppo_path ./ppo_doorkey_6x6 \
-    --multi-seed \
-    --episodes 1000
-## Stage 2: SAE + Logic training
-python train_joint.py \
-    --features_path ./stage1_outputs_doorkey/collected_data.pt \
-    --stage1_path ./stage1_outputs_doorkey/stage1_outputs.pt \
-    --hidden_dim 300 \
-    --k 50 \
-    --n_clauses_per_action 20 \
-    --n_epochs 600 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --seed 42 \
-    --threshold 0.66 \
-    --entropy_weight 0.09 \
-    --bimodal_ramp 120 \
-    --save_dir ./outputs/lucid_model_doorkey
 
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_doorkey/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_doorkey_42/sae_logic_joint_model.pt \
     --features_path ./stage1_outputs_doorkey/collected_data.pt \
     --hard_threshold 0.66 \
     --threshold 0.66 \
@@ -593,10 +506,10 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --env_name PixelCartPole-v0 \
     --data_path stage1_outputs_cartpole/collected_data.pt \
     --n_eval_episodes 200 \
-    --max_depth 8 \
+    --max_depth 4 \
     --multi-seed \
     --save_dir ./experiments/soft_dt/results_cartpole \
-    --epoch 1000
+    --epoch 500
 
 # BoxingNoFrameskip-v4:
 
@@ -737,7 +650,7 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --env_name BoxingNoFrameskip-v4 \
     --data_path stage1_outputs_boxing/collected_data.pt \
     --n_eval_episodes 100 \
-    --max_depth 8 \
+    --max_depth 6 \
     --multi-seed \
     --epochs 200 \
     --save_dir experiments/soft_dt/results_boxing/

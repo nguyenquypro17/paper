@@ -74,7 +74,7 @@ class RulesAgent:
             obs_tensor = torch.as_tensor(obs).float().to(self.device)
 
             # PPO CNN feature extractor (frozen, same as training)
-            features = self.ppo_model.policy.features_extractor(obs_tensor)
+            features = self.ppo_model.policy.extract_features(obs_tensor, self.ppo_model.policy.features_extractor)
 
             # Normalize using Stage 1 stats stored in the logic model
             features_norm = self.logic_model.normalize_input(features)

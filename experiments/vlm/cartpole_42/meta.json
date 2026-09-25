@@ -1,0 +1,182 @@
+{
+  "manifest": {
+    "time_utc": "2026-09-25T03:12:56+00:00",
+    "argv": [
+      "render_concepts.py",
+      "--model_path",
+      "outputs/lucid_model_cartpole_42/sae_logic_joint_model.pt",
+      "--ppo_path",
+      "ppo_pixel_cartpole.zip",
+      "--env_name",
+      "PixelCartPole",
+      "--n_episodes",
+      "20",
+      "--stride",
+      "5",
+      "--seed",
+      "2000",
+      "--out_dir",
+      "experiments/vlm/cartpole_42"
+    ],
+    "args": {
+      "model_path": "outputs/lucid_model_cartpole_42/sae_logic_joint_model.pt",
+      "ppo_path": "ppo_pixel_cartpole.zip",
+      "env_name": "PixelCartPole",
+      "n_episodes": 20,
+      "seed": 2000,
+      "stride": 5,
+      "hard_threshold": 0.66,
+      "k": 8,
+      "m": 20,
+      "frac_naming": 0.3,
+      "min_test": 5,
+      "out_dir": "experiments/vlm/cartpole_42"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  },
+  "args": {
+    "model_path": "outputs/lucid_model_cartpole_42/sae_logic_joint_model.pt",
+    "ppo_path": "ppo_pixel_cartpole.zip",
+    "env_name": "PixelCartPole",
+    "n_episodes": 20,
+    "seed": 2000,
+    "stride": 5,
+    "hard_threshold": 0.66,
+    "k": 8,
+    "m": 20,
+    "frac_naming": 0.3,
+    "min_test": 5,
+    "out_dir": "experiments/vlm/cartpole_42"
+  },
+  "hard_threshold": 0.66,
+  "stats": {
+    "n_steps": 10000,
+    "n_stored": 2000,
+    "n_episodes": 20,
+    "feat_mean_norm": 93.93740343551636,
+    "soft_teacher_agreement": 0.9974
+  },
+  "n_naming_states": 574,
+  "n_test_states": 1338,
+  "concepts": {
+    "C52": {
+      "on_rate_N": 0.5017421602787456,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C79": {
+      "on_rate_N": 0.5209059233449478,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C88": {
+      "on_rate_N": 0.44773519163763065,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C138": {
+      "on_rate_N": 0.48257839721254353,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C151": {
+      "on_rate_N": 0.49477351916376305,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C211": {
+      "on_rate_N": 0.45993031358885017,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C290": {
+      "on_rate_N": 0.4721254355400697,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C309": {
+      "on_rate_N": 0.2804878048780488,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C334": {
+      "on_rate_N": 0.5017421602787456,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C422": {
+      "on_rate_N": 0.42857142857142855,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    }
+  },
+  "skipped": [],
+  "factor_control_n": {
+    "pole_angle": 40,
+    "cart_pos": 40
+  },
+  "concept_factor_auc": {
+    "C52": {
+      "pole_angle": 0.7577001918549738,
+      "cart_pos": 0.38634628220531303
+    },
+    "C79": {
+      "pole_angle": 0.7582030860961507,
+      "cart_pos": 0.42994126284875184
+    },
+    "C88": {
+      "pole_angle": 0.22685619413578254,
+      "cart_pos": 0.5985709518088372
+    },
+    "C138": {
+      "pole_angle": 0.22737550494631234,
+      "cart_pos": 0.6361467093845948
+    },
+    "C151": {
+      "pole_angle": 0.7568596635041058,
+      "cart_pos": 0.4079835802963556
+    },
+    "C211": {
+      "pole_angle": 0.23659067254306887,
+      "cart_pos": 0.6022553731144039
+    },
+    "C290": {
+      "pole_angle": 0.7168251230421873,
+      "cart_pos": 0.4793745828327326
+    },
+    "C309": {
+      "pole_angle": 0.23300036882559147,
+      "cart_pos": 0.5616519823788546
+    },
+    "C334": {
+      "pole_angle": 0.7476740457321844,
+      "cart_pos": 0.4103631023895341
+    },
+    "C422": {
+      "pole_angle": 0.25989016220664957,
+      "cart_pos": 0.5794032839407288
+    }
+  }
+}

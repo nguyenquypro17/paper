@@ -1,0 +1,2491 @@
+{
+  "primary": {
+    "scheme": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "t_high": 0.75,
+    "t_low": 0.65,
+    "t_gap": 0.1
+  },
+  "concepts": {
+    "1": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5040990306076393,
+      "best_factor": "rel_y",
+      "second_factor": "player_y",
+      "purity": 0.00014074599842561764,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.0032570484783501514
+    },
+    "2": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7534858339069261,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.14936013737664888,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "3": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5936506080638115,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 0.013020966696053127,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0
+    },
+    "4": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6500727474765381,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.1474669974548235,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.22392148036618414
+    },
+    "5": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.56455040853665,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.009300140449235883,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.06791417540867438
+    },
+    "7": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5855149615009154,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.006241647689922303,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0854523796526702
+    },
+    "8": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6705963638949681,
+      "best_factor": "rel_y",
+      "second_factor": "player_x",
+      "purity": 0.0008187407241320166,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.0
+    },
+    "9": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6196005787360727,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.02000240976578216,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.11843145619705368
+    },
+    "10": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5374786939544968,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.013943323192063595,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "12": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.547787881884132,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.005361072119972055,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.048560637294786685
+    },
+    "15": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7077437751512555,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.0084219681115284,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.10634925912150682
+    },
+    "16": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5165489805923268,
+      "best_factor": "rel_y",
+      "second_factor": "player_x",
+      "purity": 0.00043112681014467746,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.02464095447153633
+    },
+    "18": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5499024934795693,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.007315784673210035,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.04553887880935297
+    },
+    "21": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6063833858828176,
+      "best_factor": "player_x",
+      "second_factor": "enemy_x",
+      "purity": 0.048250301660217154,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.13284426523130838
+    },
+    "22": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.547668918918919,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.001283728370495063,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.000582837903911094
+    },
+    "24": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5228701578668584,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.004262734684134184,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "26": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5721917229729729,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.018459760039448603,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.06675018592976384
+    },
+    "31": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5010423000086859,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 4.1758048457407604e-05,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.0023112949452040363
+    },
+    "33": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5859530012029286,
+      "best_factor": "enemy_x",
+      "second_factor": "enemy_y",
+      "purity": 0.020196857329722873,
+      "best_child": "enemy_x_mid",
+      "nmi_max": 0.0
+    },
+    "34": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6369004569396303,
+      "best_factor": "enemy_y",
+      "second_factor": "player_y",
+      "purity": 0.01999536969868254,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.09854678953105815
+    },
+    "36": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5295085317257586,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.0011761895810904477,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.02849608255964384
+    },
+    "37": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500180415858554,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 1.067259523979125e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.00042411944779231813
+    },
+    "39": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5146240725428248,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0019544183786165403,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.008535812675615668
+    },
+    "42": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.551869280384163,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.004336893358691918,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "43": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.501129158342743,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_x",
+      "purity": 2.5827131200473197e-05,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.0010090024263999203
+    },
+    "44": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5433516075689208,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.008247867144808851,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.008659265218280372
+    },
+    "45": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5423035857216445,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 0.0099395414227057,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.04526507706516933
+    },
+    "46": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5670309406231101,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.010019308634408364,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.07657744019398313
+    },
+    "47": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5022804263732749,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 7.376395018976467e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.003067034382439263
+    },
+    "51": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5279557181996802,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.00433388451433403,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.03019123604220547
+    },
+    "52": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7886616691187003,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.13515999222971886,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "53": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5013579461065139,
+      "best_factor": "enemy_x",
+      "second_factor": "enemy_y",
+      "purity": 2.3890159542627742e-05,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.001742050850853539
+    },
+    "55": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7274345396786431,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.07513009715758201,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.17499677962523363
+    },
+    "57": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6079481835747523,
+      "best_factor": "enemy_y",
+      "second_factor": "player_y",
+      "purity": 0.09999827296698138,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.09956166310255826
+    },
+    "60": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.528462862518198,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.0026580757739681493,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.025465443794787056
+    },
+    "61": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.843651961570973,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.19029705008340847,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "64": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5914416895770326,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.024342252824197108,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "68": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5045005640606467,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0002357645698765065,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "69": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6132145012291188,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.037363067118370674,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0004200317960607395
+    },
+    "70": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6078465730291289,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.008028429252497471,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.07743702487503286
+    },
+    "74": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5353495795505703,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.009512580486793598,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.010205776917748544
+    },
+    "77": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5120740829418169,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.006056404812505356,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.004833454693624773
+    },
+    "78": {
+      "group": "G1",
+      "in_rules": true,
+      "auc_max": 0.7652395390651492,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.11469231658060797,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.18289184362261665
+    },
+    "79": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6494501199647156,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.013373853426643878,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "80": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5150421527046645,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 0.004583185833524683,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.013835544759160908
+    },
+    "83": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.7526737028357922,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.12893345796088007,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "86": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5942078089953275,
+      "best_factor": "player_y",
+      "second_factor": "enemy_y",
+      "purity": 0.010024618726210965,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.06953196757642402
+    },
+    "89": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5593905521216782,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.005842250781750824,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.06947902799385085
+    },
+    "90": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5987846693630643,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.049780905665909536,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0832291117289403
+    },
+    "93": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5450412541761984,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.0030338239878926476,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.04402776011341706
+    },
+    "99": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5932969980172265,
+      "best_factor": "player_x",
+      "second_factor": "enemy_x",
+      "purity": 0.027652722563065057,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.09211870019484987
+    },
+    "101": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.500170655744699,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 2.1596680044644323e-05,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0003954824242244193
+    },
+    "102": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5945478822913179,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 0.012979138199407325,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "103": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5418689429057184,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.004541658809712135,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.07265018597987569
+    },
+    "104": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5665827977507495,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.01202505093616646,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "105": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5507514035441388,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.007157967094271966,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.034232127815931136
+    },
+    "106": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5377728934422256,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.008955622887640513,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.020746910551012503
+    },
+    "109": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5004059356817464,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 2.2303968191472734e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0009525532692699902
+    },
+    "111": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6720922188217133,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.07578145774858713,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "113": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5481432329565695,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.009492516002209572,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.01610577808191561
+    },
+    "114": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6675904296283535,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.13212988345543286,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.03357244860301713
+    },
+    "117": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6992355403477012,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.06722007572562883,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.04794085629657867
+    },
+    "118": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6448157675255753,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.0369059492924807,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.00010615879816434184
+    },
+    "119": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006215560412862,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 6.236711772134029e-06,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0010580312898393089
+    },
+    "121": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5907210130610174,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.005072345146544421,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "124": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5375793426610211,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.01919399572731606,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.038367836989534235
+    },
+    "126": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5321455874152935,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.008222358162314647,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "128": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8245861529635286,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.18907361682714163,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "130": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6016794451649707,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.004496214307158741,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "132": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.50076726342711,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 9.206930880101272e-05,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.0005921222825536806
+    },
+    "135": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5796434985200835,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.0011832957794097876,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "136": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5304737632241531,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.01459725663826783,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "139": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6385401411744082,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.014963389169184493,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.06969560902323339
+    },
+    "141": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5105637108567007,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 0.002490355884704587,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.0008020849919747689
+    },
+    "144": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002480718055117,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 1.3630202783665446e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.000582837903911094
+    },
+    "145": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5821666293573383,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.005034654752596457,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.08513365858312272
+    },
+    "149": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5264928781642325,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.01177429263005536,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.00553665653188429
+    },
+    "151": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5462667326779357,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.014329081521669229,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.05852029457868124
+    },
+    "153": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6069673593923989,
+      "best_factor": "player_y",
+      "second_factor": "player_x",
+      "purity": 0.0064238225992452325,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.09743005850978839
+    },
+    "158": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5141427990176882,
+      "best_factor": "rel_y",
+      "second_factor": "player_y",
+      "purity": 0.0018180560447360605,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.01921168450958144
+    },
+    "160": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5648835552129545,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.011209803421453834,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.06367983641666444
+    },
+    "161": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7756859759490428,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 0.07121700064632563,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "167": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5005186955933426,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 1.92601725139685e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0012161234571526746
+    },
+    "168": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002931757701502,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 1.5860185014315853e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.00042411944779231813
+    },
+    "169": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5768319215401677,
+      "best_factor": "player_y",
+      "second_factor": "player_x",
+      "purity": 0.010723446580969243,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0584796118535712
+    },
+    "170": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.514507047500136,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.013606032274441238,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.014291950603717594
+    },
+    "176": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5370523159244202,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0002235556882935752,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.02316044207921998
+    },
+    "177": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5096982526807486,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.004297069546605359,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.0010241890382018685
+    },
+    "178": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5767975677539704,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.020414160578020812,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "181": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5045519524836045,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 0.0001171022884302042,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.009014739097127626
+    },
+    "182": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5877755561707978,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.029897382000972694,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.045516268594408486
+    },
+    "184": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5492301684667196,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.010803137037714405,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "186": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5751735629064452,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.016746093544783625,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "187": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6484080759708826,
+      "best_factor": "player_x",
+      "second_factor": "enemy_x",
+      "purity": 0.004332287652748068,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "188": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5544618440720356,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.007453897860133285,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.053768769087080316
+    },
+    "189": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5524369060999285,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.007307609162050865,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.052861278143277644
+    },
+    "190": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5353132585558891,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.004849589137156607,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.03981361675990915
+    },
+    "191": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7050622084582062,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.006416311525017204,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.10664213536710081
+    },
+    "193": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5277421557146411,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.003334292969308539,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.013443100366349518
+    },
+    "194": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5521921777296768,
+      "best_factor": "enemy_y",
+      "second_factor": "player_y",
+      "purity": 0.027947680162392352,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.014767517532914894
+    },
+    "195": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.6929804547178763,
+      "best_factor": "enemy_y",
+      "second_factor": "player_x",
+      "purity": 0.06327545097601239,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.11928586780492449
+    },
+    "197": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.509487110741651,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.0007033731299250778,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.0019052434766536534
+    },
+    "199": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.642110854356579,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.015241716498572644,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.1246353939878805
+    },
+    "202": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5627204972190103,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.032513040939420534,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.06034268929580637
+    },
+    "206": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6045271555362478,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0006244860154425158,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.08070577869621656
+    },
+    "208": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6156895740045373,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.014781403764240642,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "210": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6618767199776825,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 0.023814225128053867,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.0
+    },
+    "211": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5730456448892203,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.02584486620765336,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0971970169051311
+    },
+    "212": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5106913521084512,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.0009410430111701507,
+      "best_child": "enemy_y>q0.67",
+      "nmi_max": 0.009415840032372143
+    },
+    "217": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5326835174521359,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.014887080835301991,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.0372140582107263
+    },
+    "219": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5740094269770435,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.0014457107808393266,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.064995669044646
+    },
+    "220": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5182771318741017,
+      "best_factor": "player_y",
+      "second_factor": "player_x",
+      "purity": 0.008389583254034827,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.024151026186787303
+    },
+    "221": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6459211573923214,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.010149911911287557,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.13369443594098276
+    },
+    "226": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6423144407466883,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.02522640119078401,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.00015920367781419452
+    },
+    "229": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6262423571080412,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.12457033417744101,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.13424352238145726
+    },
+    "231": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.598149109281462,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.022932000558104848,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "233": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.623329926424317,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.02431715321523109,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.06044974901655427
+    },
+    "237": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6926057924446124,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.025113714995624647,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "239": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5004906352660097,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 2.6233839812705995e-06,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0011340718206891203
+    },
+    "240": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5107061711473997,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.0006198815361453391,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.010923400573107079
+    },
+    "242": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5519431832142179,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.025269247066030842,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.04399579688069732
+    },
+    "244": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5176054879984541,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.004121973837068582,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.00805957418872252
+    },
+    "246": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5746070314190272,
+      "best_factor": "enemy_y",
+      "second_factor": "player_x",
+      "purity": 0.002732198836367994,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.001188918537177084
+    },
+    "248": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6607869872915653,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.047219981224835395,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.10346847277305188
+    },
+    "249": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5585784657603434,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.0162300652459737,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "250": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5017365026385819,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.00010272372918240791,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0036230823999653687
+    },
+    "251": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5482870379126592,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.0052492765158312915,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.07880275836553888
+    },
+    "253": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5433462324496677,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.006561146348827873,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.03714916353388202
+    },
+    "254": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.556969289006918,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.016731555778701557,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.03203253144745055
+    },
+    "255": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5993228168118785,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 0.0019002802066099278,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.12315699786441432
+    },
+    "256": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5022551982319245,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 8.373988049570347e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.004246113472459371
+    },
+    "257": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5665270256462654,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.0071070792684547746,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.07301627896860417
+    },
+    "258": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6174000876611003,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.015113087151891968,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "260": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.720278095085417,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.09919598585915435,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.03741126402820773
+    },
+    "262": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5637761249005884,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.009904170311834548,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0676508506844569
+    },
+    "264": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5798464768990126,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.007398518254362885,
+      "best_child": "rel_y>0",
+      "nmi_max": 0.0
+    },
+    "265": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5609937389109063,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.031138254363155538,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.06056116309917742
+    },
+    "273": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5964222522344408,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.001998134256990136,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.07098462594877501
+    },
+    "277": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5453384227255512,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.01126738746159106,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.04292866554797225
+    },
+    "278": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5070734797297297,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.0004984738309420367,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.01136794274679973
+    },
+    "280": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5215128039733443,
+      "best_factor": "player_y",
+      "second_factor": "rel_y",
+      "purity": 0.0017165071936725562,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.012869899220063347
+    },
+    "281": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5129052332802231,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_x",
+      "purity": 0.000695623709194626,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.004049873764679412
+    },
+    "282": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7370234573065834,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.09939646349826459,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.20762285496963967
+    },
+    "284": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.530244446304526,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.008801762552016035,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.010069521179919386
+    },
+    "287": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5704097271891284,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.008353295568823249,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.08413464240795678
+    },
+    "289": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.634752122768877,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.039061998024764955,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "293": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6168186573627926,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.04745879901289085,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "295": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5478500473912185,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.005793563122288736,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.07611135262557077
+    },
+    "297": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5589086922650341,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.010502324842257993,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.05720078274734494
+    },
+    "298": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5002480718055117,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 1.3630202783665446e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.000582837903911094
+    },
+    "299": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.605630990494275,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.007194897673369449,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.1056530955107037
+    },
+    "300": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5044732042039434,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_x",
+      "purity": 0.00010231517360170805,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.0030086257540599113
+    },
+    "302": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6200289293656842,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.10285962182511543,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "303": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6230963509233153,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.009887965198882909,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "307": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5498179927426536,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.007785814134745439,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "309": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5006089035226197,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 3.602000893410118e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0014266848103967513
+    },
+    "314": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5753536134231365,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.004922919801012338,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.00037117572776923855
+    },
+    "325": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.542954686695269,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.026219718263666092,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.015004834333949805
+    },
+    "327": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7119144044967747,
+      "best_factor": "enemy_x",
+      "second_factor": "enemy_y",
+      "purity": 0.04718373479592819,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "331": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5721232318471806,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.04111882669804212,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.002464189310011667
+    },
+    "334": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.551878994739603,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.025329283908535616,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.05012242781421855
+    },
+    "336": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6512854750227692,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.04985952112363656,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "337": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7168327228065912,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.0026040267644262816,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "339": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6739934027662875,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.07364886851858043,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "340": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5168849558976808,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.0032694463897565695,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "341": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.608009817770398,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.035464418258357,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "344": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5035920625834992,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.00015115129418341589,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.006736147716721063
+    },
+    "345": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5142577653711369,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.012568584125963622,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.010377491785824396
+    },
+    "346": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5520518622738869,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.010390608480244423,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.050653668139470705
+    },
+    "348": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6082712668321878,
+      "best_factor": "player_y",
+      "second_factor": "player_x",
+      "purity": 0.00547540198872476,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.09819376538038718
+    },
+    "350": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5678491806881134,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.027159252039897774,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.052694621807101515
+    },
+    "356": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.567310148929815,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.011804457650020805,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.06806487204563809
+    },
+    "358": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6875631023033798,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.06396736811942683,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "363": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6327438450826939,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.04590738736418365,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "364": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5157029581644973,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.0015265677027787028,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.020851132550957857
+    },
+    "366": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7211322896521973,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.07518235310044696,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "367": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5251132296719674,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.002406706214283294,
+      "best_child": "enemy_y>q0.67",
+      "nmi_max": 0.003703406210133462
+    },
+    "368": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5284907312030015,
+      "best_factor": "rel_y",
+      "second_factor": "player_x",
+      "purity": 0.0007246839057041266,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.020788253878521703
+    },
+    "370": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.8103115099102253,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.08354582091470075,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "371": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5679605398453201,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.00019014875841227852,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "375": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5218252534326278,
+      "best_factor": "player_y",
+      "second_factor": "enemy_y",
+      "purity": 0.010672580517887775,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.021027674791102954
+    },
+    "378": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6155613472128186,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.013221508651461655,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0003397502013850261
+    },
+    "381": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.6512690882824038,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_y",
+      "purity": 0.060290466298151824,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0867658408299537
+    },
+    "384": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5854138342057332,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.015802225693453797,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.000847007425029596
+    },
+    "385": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5023003021965631,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 8.541467810563308e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0010053006883230932
+    },
+    "386": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.503571774590578,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 7.366527704111281e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0036750746994353815
+    },
+    "388": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5026187293556863,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 9.379831388700577e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.004557151476536431
+    },
+    "392": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5580940204944925,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.003119445156418932,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.0
+    },
+    "393": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5001919877127864,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 1.0265415578691872e-06,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0004448353897030603
+    },
+    "394": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5864775469633604,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.017603103398919906,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.08135101324222291
+    },
+    "395": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6958752629359934,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 0.027989490083023427,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.09909154543335583
+    },
+    "397": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.508007180688677,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 0.00013057158288531934,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.015317200909766519
+    },
+    "398": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5677209406048239,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.016796028441900646,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.06246185543411899
+    },
+    "401": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5261855681392495,
+      "best_factor": "rel_y",
+      "second_factor": "player_y",
+      "purity": 0.0012536629948873834,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.0021433200473937528
+    },
+    "405": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8347853171994525,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.22261606434185033,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.08294850962066191
+    },
+    "406": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5222593275633569,
+      "best_factor": "player_y",
+      "second_factor": "player_x",
+      "purity": 0.000827225823321176,
+      "best_child": "player_y<q0.33",
+      "nmi_max": 0.021571353691136254
+    },
+    "409": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6182214493450159,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.032266757011297775,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "410": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5409496023979624,
+      "best_factor": "rel_y",
+      "second_factor": "enemy_y",
+      "purity": 0.004047132597361447,
+      "best_child": "rel_y<q0.33",
+      "nmi_max": 0.07038006477916678
+    },
+    "411": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.6945722587813343,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.05976436740640312,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "412": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5189579541075459,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.00016471232552450754,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.003975835807719528
+    },
+    "415": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5509108631387737,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.01138947911169974,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.04899782069211308
+    },
+    "417": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5642359635785339,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.030727625710064266,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "418": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5140084979574693,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.002169676193735537,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.015385225071639875
+    },
+    "419": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5902515173706709,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.03740802257714948,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "420": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5999161472554638,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.01927751396088384,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "421": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5886626823826371,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.0010606751695385608,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "422": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5674977010319813,
+      "best_factor": "player_x",
+      "second_factor": "player_y",
+      "purity": 0.013533912157124295,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.07866652107892426
+    },
+    "423": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5851723829045148,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.0149487504947321,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0
+    },
+    "425": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.51895428463313,
+      "best_factor": "rel_y",
+      "second_factor": "player_x",
+      "purity": 0.0004994068857596679,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.024276227368837534
+    },
+    "426": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5829825949853882,
+      "best_factor": "enemy_y",
+      "second_factor": "player_y",
+      "purity": 0.004453583859290289,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.00042411944779231813
+    },
+    "427": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.586887668918919,
+      "best_factor": "player_x",
+      "second_factor": "rel_y",
+      "purity": 0.016201412920233027,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.1473875896090152
+    },
+    "429": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5365456433756519,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.019112690539863975,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.03932478010298254
+    },
+    "430": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5853948210049735,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.005925687252461342,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.08650390989213866
+    },
+    "434": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5014433268684317,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 7.930299801395257e-05,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.002475774283188889
+    },
+    "435": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.6387515305739792,
+      "best_factor": "enemy_y",
+      "second_factor": "player_x",
+      "purity": 0.018695157099375526,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.1035949186773282
+    },
+    "443": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5133923922228689,
+      "best_factor": "enemy_x",
+      "second_factor": "enemy_y",
+      "purity": 0.0018629779824561599,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0015318695519421033
+    },
+    "445": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5560063604812567,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.016826074183796558,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0005927928625506103
+    },
+    "447": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6174043149135505,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.013668988094190038,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "450": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.584947714442628,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.00442743177695859,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.08808807815323458
+    },
+    "451": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5194253382520664,
+      "best_factor": "player_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0060116382914741084,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.034279157482627075
+    },
+    "452": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5223985981905731,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.00849239608574015,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0023327827106052776
+    },
+    "453": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5043868257991925,
+      "best_factor": "player_y",
+      "second_factor": "enemy_x",
+      "purity": 0.00012091132831837381,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0006062366804642587
+    },
+    "455": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5846291412491473,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.026426963462637842,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.0007413925695698238
+    },
+    "456": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5571318696221201,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.0070109875276284095,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.06358705091090906
+    },
+    "457": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8572097330785412,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.16820869163928087,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0
+    },
+    "458": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6189364351708561,
+      "best_factor": "enemy_x",
+      "second_factor": "rel_x",
+      "purity": 0.051527170636372355,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.11040853287726003
+    },
+    "461": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5794953507692194,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.010720445282349056,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "463": {
+      "group": "U",
+      "in_rules": false,
+      "auc_max": 0.7531905564832413,
+      "best_factor": "enemy_x",
+      "second_factor": "player_x",
+      "purity": 0.04130017048443979,
+      "best_child": "enemy_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "465": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5079458289264027,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.001258790950379618,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.01436231380631074
+    },
+    "466": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.52754038254235,
+      "best_factor": "rel_x",
+      "second_factor": "rel_y",
+      "purity": 0.0084204204844609,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.02798333374015024
+    },
+    "467": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.506538390246424,
+      "best_factor": "enemy_x",
+      "second_factor": "player_y",
+      "purity": 1.1487323994363585e-05,
+      "best_child": "enemy_x<q0.33",
+      "nmi_max": 0.003075715344884271
+    },
+    "473": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5966786361937231,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.0239722256386683,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "474": {
+      "group": "U",
+      "in_rules": true,
+      "auc_max": 0.7110725334497869,
+      "best_factor": "enemy_y",
+      "second_factor": "enemy_x",
+      "purity": 0.06847587405916267,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.08125257317820325
+    },
+    "480": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5057974975193088,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.00023137376182258418,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.002945943929131428
+    },
+    "481": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.6223832000656193,
+      "best_factor": "player_y",
+      "second_factor": "rel_x",
+      "purity": 0.008539141842713538,
+      "best_child": "player_y>q0.67",
+      "nmi_max": 0.0
+    },
+    "482": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5512391861849922,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.023137575981536096,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.05405908439117216
+    },
+    "485": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5215076097568926,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_x",
+      "purity": 0.0070626642502417125,
+      "best_child": "enemy_y>0",
+      "nmi_max": 0.0058028042915543865
+    },
+    "488": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5025892835590906,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.00015750367509481666,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0032587575686340645
+    },
+    "492": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5694152850208081,
+      "best_factor": "rel_x",
+      "second_factor": "player_y",
+      "purity": 0.016542214908899844,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.06705005231185997
+    },
+    "495": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5337508795844694,
+      "best_factor": "rel_x",
+      "second_factor": "player_x",
+      "purity": 0.006693544409430263,
+      "best_child": "rel_x_mid",
+      "nmi_max": 0.0
+    },
+    "496": {
+      "group": "G3",
+      "in_rules": true,
+      "auc_max": 0.5105344558894163,
+      "best_factor": "enemy_y",
+      "second_factor": "rel_y",
+      "purity": 0.001446360798406543,
+      "best_child": "enemy_y>q0.67",
+      "nmi_max": 0.00905841272475916
+    },
+    "502": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5272381756756757,
+      "best_factor": "player_x",
+      "second_factor": "rel_x",
+      "purity": 0.011704863908506224,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.015077405544878538
+    },
+    "503": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5361507875346226,
+      "best_factor": "player_x",
+      "second_factor": "enemy_x",
+      "purity": 0.004764639873117926,
+      "best_child": "player_x>q0.67",
+      "nmi_max": 0.0019456697636405281
+    },
+    "504": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5455262693290526,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_y",
+      "purity": 0.005015708439738087,
+      "best_child": "rel_x<q0.33",
+      "nmi_max": 0.0
+    },
+    "506": {
+      "group": "G1",
+      "in_rules": false,
+      "auc_max": 0.8006499070040504,
+      "best_factor": "rel_x",
+      "second_factor": "enemy_x",
+      "purity": 0.1278311730404954,
+      "best_child": "rel_x>q0.67",
+      "nmi_max": 0.0
+    },
+    "507": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5615170233231341,
+      "best_factor": "player_x",
+      "second_factor": "enemy_y",
+      "purity": 0.017414790709814332,
+      "best_child": "player_x_mid",
+      "nmi_max": 0.028948671891447744
+    },
+    "510": {
+      "group": "G3",
+      "in_rules": false,
+      "auc_max": 0.5060164656840648,
+      "best_factor": "rel_y",
+      "second_factor": "rel_x",
+      "purity": 0.0005441308754933205,
+      "best_child": "rel_y>q0.67",
+      "nmi_max": 0.004867271071435698
+    }
+  },
+  "in_rule_groups": {
+    "G1": 1,
+    "G2": 0,
+    "G2c": 0,
+    "G3": 35,
+    "U": 7
+  },
+  "dead_concepts_in_rules": []
+}

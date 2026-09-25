@@ -1,0 +1,121 @@
+{
+  "arm": "A4",
+  "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "seed": 42,
+  "learner": "dnf",
+  "lucid_split_dir": "outputs/lucid_model_dyobs_42",
+  "representation": "sae_recon_frozen",
+  "sae_live_dims": 98,
+  "sae_config": {
+    "hidden_dim": 200,
+    "k": 20,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 42
+  },
+  "val_acc": 1.0,
+  "fidelity_soft": 100.0,
+  "fidelity_hard": 20.995247414034107,
+  "coverage_offline": 100.0,
+  "fidelity_hard_pure": 48.53228962818004,
+  "coverage_pure": 20.995247414034107,
+  "complexity": {
+    "literals": 32,
+    "concepts": 17,
+    "units": 3
+  },
+  "knob": {
+    "l0_penalty": 0.0001,
+    "n_clauses_per_action": 10,
+    "tau": 0.5
+  },
+  "rules": {
+    "TurnLeft": [
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(\u00acf_1 \u2227 f_4 \u2227 \u00acf_10 \u2227 f_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_94 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_133 \u2227 \u00acf_173 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]"
+    ],
+    "TurnRight": [
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]",
+      "(\u00acf_1 \u2227 \u00acf_10 \u2227 \u00acf_65 \u2227 \u00acf_95 \u2227 \u00acf_116 \u2227 \u00acf_121 \u2227 f_133 \u2227 f_177) [bias=5.00]"
+    ],
+    "Forward": [
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]",
+      "(f_1 \u2227 \u00acf_4 \u2227 \u00acf_21 \u2227 \u00acf_52 \u2227 \u00acf_64 \u2227 \u00acf_65 \u2227 \u00acf_77 \u2227 f_95 \u2227 \u00acf_107 \u2227 \u00acf_177 \u2227 \u00acf_197) [bias=5.00]"
+    ],
+    "Pickup": [
+      "(True) [bias=-12.88]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]"
+    ],
+    "Drop": [
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]"
+    ],
+    "Toggle": [
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.88]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]"
+    ],
+    "Done": [
+      "(True) [bias=-12.88]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]",
+      "(True) [bias=-12.87]"
+    ]
+  },
+  "runtime_sec": 494.7
+}

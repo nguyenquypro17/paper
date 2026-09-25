@@ -1,0 +1,86 @@
+{
+  "TurnLeft": [
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]",
+    "(f_131) [bias=5.00]"
+  ],
+  "TurnRight": [
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]",
+    "(f_29) [bias=5.00]"
+  ],
+  "Forward": [
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]",
+    "(f_138) [bias=5.00]"
+  ],
+  "Pickup": [
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]"
+  ],
+  "Drop": [
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]"
+  ],
+  "Toggle": [
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]"
+  ],
+  "Done": [
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]",
+    "(True) [bias=-11.81]"
+  ]
+}

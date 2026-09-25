@@ -145,7 +145,7 @@ class ConceptIGWrapper(torch.nn.Module):
 
     def forward(self, x):
         x = x.contiguous()
-        features = self.ppo_cnn(x)
+        features = self.ppo_cnn(x.float() / 255.0)
         features = self.logic_model.normalize_input(features) 
         z_sparse, _ = self.logic_model.sae.encode(features)
         z_normed = self.logic_model.normalize_z(z_sparse)
@@ -194,7 +194,7 @@ def collect_top_k_frames(ppo_cnn, logic_model, env_name, used_concepts, num_epis
         obs_tensor = torch.as_tensor(obs).float().to(device)
         
         with torch.no_grad():
-            features = ppo_cnn(obs_tensor)
+            features = ppo_cnn(obs_tensor / 255.0)
             logits, feats = logic_model(features, normalize_input=True, return_features=True)
             z_bin = feats['z_binary'][0].cpu().numpy()
             feat_np = features[0].cpu().numpy()

@@ -1,0 +1,33 @@
+{
+  "arm": "A1",
+  "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "seed": 44,
+  "learner": "tree",
+  "lucid_split_dir": "outputs/lucid_model_dyobs_44",
+  "representation": "sae_recon",
+  "sae_live_dims": 95,
+  "sae_config": {
+    "hidden_dim": 200,
+    "k": 20,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 44
+  },
+  "val_acc": 0.9760795278036657,
+  "fidelity_soft": 98.04305283757338,
+  "fidelity_hard": 98.04305283757338,
+  "coverage_offline": 100.0,
+  "complexity": {
+    "literals": 4,
+    "concepts": 4,
+    "units": 5,
+    "depth": 4
+  },
+  "knob": {
+    "max_depth": null,
+    "ccp_alpha": 0.03
+  },
+  "runtime_sec": 87.1
+}

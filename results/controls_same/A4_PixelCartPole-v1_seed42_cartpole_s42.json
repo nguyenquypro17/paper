@@ -1,0 +1,81 @@
+{
+  "arm": "A4",
+  "env_name": "PixelCartPole-v1",
+  "seed": 42,
+  "learner": "dnf",
+  "lucid_split_dir": "outputs/lucid_model_cartpole_42",
+  "representation": "sae_recon_frozen",
+  "sae_live_dims": 345,
+  "sae_config": {
+    "hidden_dim": 512,
+    "k": 50,
+    "lambda_sparsity": 0.005,
+    "lr": 0.001,
+    "n_epochs": 200,
+    "batch_size": 256,
+    "seed": 42
+  },
+  "val_acc": 0.9748888888888889,
+  "fidelity_soft": 97.36,
+  "fidelity_hard": 80.82000000000001,
+  "coverage_offline": 61.660000000000004,
+  "fidelity_hard_pure": 80.82000000000001,
+  "coverage_pure": 61.660000000000004,
+  "complexity": {
+    "literals": 48,
+    "concepts": 22,
+    "units": 5
+  },
+  "knob": {
+    "l0_penalty": 0.0001,
+    "n_clauses_per_action": 20,
+    "tau": 0.5
+  },
+  "rules": {
+    "Left": [
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.27]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.18]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.26]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.29]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.27]",
+      "(\u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.32]",
+      "(\u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.29]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.32]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.26]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.31]",
+      "(\u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.33]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.27]",
+      "(\u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.30]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.19]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.20]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.23]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.20]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_182 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.32]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.34]",
+      "(\u00acf_66 \u2227 \u00acf_79 \u2227 \u00acf_151 \u2227 \u00acf_182 \u2227 \u00acf_236 \u2227 \u00acf_327 \u2227 \u00acf_334 \u2227 \u00acf_490) [bias=3.54]"
+    ],
+    "Right": [
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.72]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.76]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.73]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.70]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.75]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.70]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.73]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.73]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.73]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.75]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.74]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.72]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.72]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.75]",
+      "(\u00acf_68 \u2227 \u00acf_69 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.75]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.75]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.71]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.74]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.76]",
+      "(\u00acf_68 \u2227 \u00acf_76 \u2227 \u00acf_86 \u2227 \u00acf_88 \u2227 \u00acf_138 \u2227 \u00acf_205 \u2227 \u00acf_211 \u2227 \u00acf_257 \u2227 \u00acf_270 \u2227 \u00acf_309 \u2227 \u00acf_422 \u2227 \u00acf_444 \u2227 \u00acf_459) [bias=4.76]"
+    ]
+  },
+  "runtime_sec": 1883.1
+}

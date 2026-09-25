@@ -1,0 +1,86 @@
+{
+    "TurnLeft": [
+        "(f_132) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]",
+        "(f_132) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]",
+        "(f_130) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]",
+        "(f_130) [bias=5.00]",
+        "(f_132 \u2227 f_190) [bias=5.00]"
+    ],
+    "TurnRight": [
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]",
+        "(f_127) [bias=5.00]"
+    ],
+    "Forward": [
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]",
+        "(f_17) [bias=5.00]"
+    ],
+    "Pickup": [
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]"
+    ],
+    "Drop": [
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]"
+    ],
+    "Toggle": [
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]"
+    ],
+    "Done": [
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]",
+        "(True) [bias=-12.00]"
+    ]
+}

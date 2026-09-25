@@ -1,0 +1,16 @@
+{
+  "run_dir": "outputs/lucid_model_boxing_44",
+  "split": "val",
+  "n_states": 35744,
+  "coverage_pct": 99.62511190689347,
+  "conflict_rate_pct": 24.004028648164727,
+  "conflict_rate_among_covered_pct": 24.094355518112888,
+  "mean_actions_fired": 1.252825649059982,
+  "multi_clause_same_action_pct": 72.22222222222221,
+  "fidelity_weighted_pct": 98.55640107430618,
+  "fidelity_unweighted_pct": 98.29341987466428,
+  "fidelity_drop_pct": 0.26298119964189937,
+  "tie_rate_unweighted_pct": 0.9512085944494181,
+  "agreement_weighted_vs_unweighted_pct": 99.46284691136974,
+  "fallback_action": "Action_4"
+}

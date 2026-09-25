@@ -14,3 +14,4 @@ ppo_doorkey*
 concept_models
 concept_visualizations/*
 backup/
+*.pt

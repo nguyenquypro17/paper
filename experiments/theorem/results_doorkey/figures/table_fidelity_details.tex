@@ -1,0 +1,14 @@
+\begin{table}[tp]
+\centering
+\caption{Details of the fidelity certificate (selector threshold $\tau=0.66$, concept threshold $\theta=0.66$). Cleanliness is the fraction of concept activations with $\min(c,1-c)<0.05$; $\gamma$ and $\Delta_{\text{total}}$ are medians over $\mathcal{X}_{\mathrm{trig}}$; coverage and covered agreement in \%. \emph{Violations}: (state, clause) pairs breaking Lemma~\ref{lem:clause_error} / (state, action) pairs breaking Lemma~\ref{lem:score_perturbation} / clean (state, clause) pairs with $\Delta>\bar\Delta$ -- implementation checks, all must be $0$. \emph{Sel.}: selectors with $p$ or $n$ in $(0.5,0.9]$ (0 $\Rightarrow$ identical rules for every $\tau\in[0.5,0.9]$). \emph{$\theta$-sens.}: states with a rule-concept activation in $(0.5,0.9]$ (the only states whose hard action can change for $\theta\in[0.5,0.9]$). Last column: $1-\mathrm{AF}_{\mathrm{hard}} \le (1-\mathrm{AF}_{\mathrm{soft}})+(1-\Pr[\mathcal{X}_{\mathrm{cert}}])$.}
+\label{tab:fidelity_details}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrccccccccrc}
+\toprule
+\textbf{Env.} & $N$ & \textbf{Clean.} & $\gamma$ & $\Delta_{\text{total}}$ & \textbf{Cov.} $\Delta_{\text{total}}<\gamma$ & \textbf{Cov.} pairwise & \textbf{Cov. agr.} & \textbf{Violations} & \textbf{Sel.} & $\theta$\textbf{-sens.} & \textbf{Teacher} \\
+\midrule
+\textbf{unknown} & 25253 & 99.86 & 8.31 & 0.29 & 99.63 & 99.92 & 100.00 & 0/0/0 & 0 & 389 & $0.09 \le 0.09$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

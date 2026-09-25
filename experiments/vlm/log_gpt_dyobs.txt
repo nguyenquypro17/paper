@@ -1,0 +1,29 @@
+=================== dyobs (gpt-5.5-2026-04-23) ===================
+[budget] gpt-5.5-2026-04-23: 5.0 USD cap, prices 5.0/30.0 per 1M tokens, ledger experiments/vlm/spend_gpt-5.5-2026-04-23.json
+Naming (gpt-5.5-2026-04-23):   0%|          | 0/4 [00:00<?, ?it/s]Naming (gpt-5.5-2026-04-23):  25%|██▌       | 1/4 [00:47<02:22, 47.57s/it]Naming (gpt-5.5-2026-04-23):  50%|█████     | 2/4 [01:43<01:45, 52.73s/it]Naming (gpt-5.5-2026-04-23):  75%|███████▌  | 3/4 [02:34<00:51, 51.55s/it]Naming (gpt-5.5-2026-04-23): 100%|██████████| 4/4 [03:11<00:00, 45.94s/it]Naming (gpt-5.5-2026-04-23): 100%|██████████| 4/4 [03:11<00:00, 47.85s/it]
+     C32: blue_ball_right_no_goal_ahead_left
+     C49: blue_ball_not_only_on_right
+    C133: goal_absent_or_right_of_agent
+    C146: goal_visible_balls_on_right
+[done] 4 concepts, unparsed=0, distinct labels=4 -> experiments/vlm/dyobs_42/labels_gpt55_a.json
+[budget] deepseek-flash: 7.0 USD cap, prices 0.3/1.5 per 1M tokens, ledger experiments/vlm/spend_deepseek-flash.json
+Scoring (API):   0%|          | 0/464 [00:00<?, ?it/s]Scoring (API):   0%|          | 1/464 [00:25<3:14:51, 25.25s/it]Scoring (API):   0%|          | 2/464 [00:28<1:36:24, 12.52s/it]Scoring (API):   1%|          | 3/464 [01:18<3:47:42, 29.64s/it]Scoring (API):   2%|▏         | 10/464 [01:50<1:08:23,  9.04s/it]Scoring (API):  12%|█▏        | 55/464 [02:02<08:46,  1.29s/it]  Scoring (API):  12%|█▏        | 57/464 [02:29<13:15,  1.96s/it]Scoring (API):  18%|█▊        | 83/464 [02:36<07:04,  1.11s/it]Scoring (API):  20%|██        | 95/464 [02:39<05:28,  1.12it/s]Scoring (API):  21%|██        | 96/464 [02:50<07:12,  1.18s/it]Scoring (API):  22%|██▏       | 101/464 [03:16<11:14,  1.86s/it]Scoring (API):  24%|██▍       | 113/464 [03:43<11:46,  2.01s/it]Scoring (API):  27%|██▋       | 127/464 [03:57<09:12,  1.64s/it]Scoring (API):  30%|██▉       | 137/464 [04:18<09:37,  1.77s/it]Scoring (API):  42%|████▏     | 196/464 [04:18<02:21,  1.89it/s]Scoring (API):  42%|████▏     | 196/464 [04:30<02:21,  1.89it/s]Scoring (API):  44%|████▍     | 204/464 [05:01<04:46,  1.10s/it]Scoring (API):  48%|████▊     | 225/464 [05:33<04:53,  1.23s/it]Scoring (API):  49%|████▉     | 227/464 [05:37<04:59,  1.26s/it]Scoring (API):  49%|████▉     | 227/464 [05:50<04:59,  1.26s/it]Scoring (API):  55%|█████▍    | 255/464 [06:39<05:53,  1.69s/it]Scoring (API):  60%|██████    | 280/464 [07:25<05:20,  1.74s/it]Scoring (API):  78%|███████▊  | 360/464 [07:52<01:30,  1.15it/s]Scoring (API):  79%|███████▉  | 367/464 [07:55<01:21,  1.19it/s]Scoring (API):  79%|███████▉  | 367/464 [08:10<01:21,  1.19it/s]Scoring (API):  79%|███████▉  | 368/464 [08:17<01:49,  1.14s/it]Scoring (API):  81%|████████  | 376/464 [08:20<01:30,  1.02s/it]Scoring (API):  83%|████████▎ | 384/464 [08:30<01:24,  1.06s/it]Scoring (API):  83%|████████▎ | 384/464 [08:40<01:24,  1.06s/it]Scoring (API):  85%|████████▌ | 395/464 [08:42<01:14,  1.09s/it]Scoring (API):  86%|████████▋ | 401/464 [10:00<03:09,  3.00s/it]Scoring (API): 100%|██████████| 464/464 [10:00<00:00,  1.29s/it]
+[scoring] 548 pairs, failed/unparsable = 0  errors = {}
+[positive control] scorer AUC on ground-truth statements:
+  obstacle_ahead   AUC=0.762  bacc=0.675  n=40  A blue ball is in the cell directly in front of the agent.
+  obstacle_left    AUC=0.708  bacc=0.667  n=12  A blue ball is in the cell directly to the left of the agent.
+  obstacle_right   AUC=0.889  bacc=0.812  n=32  A blue ball is in the cell directly to the right of the agent.
+  mean AUC = 0.787  (ceiling for the labels)
+Concepts:   0%|          | 0/4 [00:00<?, ?it/s]Concepts: 100%|██████████| 4/4 [00:00<00:00, 743.31it/s]
+
+[gpt-5.5-2026-04-23] concepts=4  AUC true=0.686  distractor=0.434  delta=+0.253  p_perm=0.0174  bacc=0.623  low_mass=0.00
+     C32  0.586 vs 0.436  blue_ball_right_no_goal_ahead_left
+     C49  0.764 vs 0.365  blue_ball_not_only_on_right
+    C133  0.716 vs 0.424  goal_absent_or_right_of_agent
+    C146  0.679 vs 0.509  goal_visible_balls_on_right
+[done] -> experiments/vlm/dyobs_42/predict_deepseek-flash_gpt55.json
+[aligned] positive: {'C49': 'obstacle_left'}
+[aligned] negative only (not scored): {'C146': 'obstacle_ahead'}
+[gpt-5.5-2026-04-23] fewer than 2 aligned concepts with labels, skipped
+[done] -> experiments/vlm/dyobs_42/label_factor_gpt55.json
+{"usd": 5.659767900000005, "calls": 464, "budget": 7.0, "price_in": 0.3, "price_out": 1.5}{"usd": 0.57981, "calls": 4, "budget": 5.0, "price_in": 5.0, "price_out": 30.0}

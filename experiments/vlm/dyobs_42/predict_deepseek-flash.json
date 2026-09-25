@@ -1,0 +1,99 @@
+{
+  "env": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+  "scorer": "deepseek-flash",
+  "by_namer": {
+    "gemini-3.1-pro-preview": {
+      "concepts": {},
+      "summary": {
+        "n_concepts": 0,
+        "mean_auc_true": NaN,
+        "mean_auc_distractor": NaN,
+        "mean_bacc_true": NaN,
+        "delta": NaN,
+        "p_perm": NaN,
+        "low_mass_frac": NaN,
+        "scorer_is_namer": false
+      }
+    }
+  },
+  "factor_control": {
+    "obstacle_ahead": {
+      "statement": "A blue ball is in the cell directly in front of the agent.",
+      "n": 40,
+      "auc": 0.7625,
+      "bacc": 0.675
+    },
+    "obstacle_left": {
+      "statement": "A blue ball is in the cell directly to the left of the agent.",
+      "n": 12,
+      "auc": 0.7083333333333334,
+      "bacc": 0.6666666666666666
+    },
+    "obstacle_right": {
+      "statement": "A blue ball is in the cell directly to the right of the agent.",
+      "n": 32,
+      "auc": 0.888671875,
+      "bacc": 0.8125
+    }
+  },
+  "manifest": {
+    "time_utc": "2026-09-25T03:31:23+00:00",
+    "argv": [
+      "vlm_predict.py",
+      "--test_dir",
+      "experiments/vlm/dyobs_42/test",
+      "--labels",
+      "experiments/vlm/dyobs_42/labels_gemini31_a.json",
+      "--env_name",
+      "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "--model",
+      "deepseek-flash",
+      "--workers",
+      "32",
+      "--cache",
+      "experiments/vlm/dyobs_42/cache_deepseek-flash.json",
+      "--out",
+      "experiments/vlm/dyobs_42/predict_deepseek-flash.json"
+    ],
+    "args": {
+      "test_dir": "experiments/vlm/dyobs_42/test",
+      "labels": [
+        "experiments/vlm/dyobs_42/labels_gemini31_a.json"
+      ],
+      "env_name": "MiniGrid-Dynamic-Obstacles-5x5-v0",
+      "model": "deepseek-flash",
+      "load_4bit": false,
+      "n_distractors": 3,
+      "n_perm": 10000,
+      "seed": 0,
+      "workers": 32,
+      "thinking_budget": 128,
+      "cache": "experiments/vlm/dyobs_42/cache_deepseek-flash.json",
+      "only_control": false,
+      "allow_same_model": false,
+      "out": "experiments/vlm/dyobs_42/predict_deepseek-flash.json"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    },
+    "model_id": "deepseek-flash",
+    "generation": {
+      "temperature": 0.0,
+      "thinking": "API default"
+    },
+    "api_model_version": "deepseek-flash",
+    "n_scored_pairs": 84,
+    "prompt_head": "ENVIRONMENT: {env}\n\nThe image shows one state:",
+    "prompt_question": "Statement: \"{label}\"\n\nIs the statement true in this state?\nReply with ONLY an integer from 0 to 100: your probability that the statement is true in this state."
+  }
+}

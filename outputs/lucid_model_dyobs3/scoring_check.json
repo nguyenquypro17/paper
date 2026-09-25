@@ -1,0 +1,16 @@
+{
+  "run_dir": "outputs/lucid_model_dyobs3",
+  "split": "val",
+  "n_states": 3577,
+  "coverage_pct": 100.0,
+  "conflict_rate_pct": 0.0,
+  "conflict_rate_among_covered_pct": 0.0,
+  "mean_actions_fired": 1.0,
+  "multi_clause_same_action_pct": 100.0,
+  "fidelity_weighted_pct": 100.0,
+  "fidelity_unweighted_pct": 100.0,
+  "fidelity_drop_pct": 0.0,
+  "tie_rate_unweighted_pct": 0.0,
+  "agreement_weighted_vs_unweighted_pct": 100.0,
+  "fallback_action": "Action_2"
+}

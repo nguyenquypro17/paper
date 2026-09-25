@@ -1,0 +1,42 @@
+Using device: cuda
+Loading Logic Model from outputs/lucid_model_doorkey_42/sae_logic_joint_model.pt...
+Loading offline dataset from held_out_doorkey_data.pt...
+[Warning] Mismatch: env_name 'MiniGrid-DoorKey-6x6-v0' implies 7 actions, but config requires 6. Falling back to default labels.
+
+[+] Rules Extracted at tau=0.5 (Saved to experiments/lucid/eval_doorkey_42/extracted_rules_tau_0.5.json)
+
+[+] Computing Offline Metrics on dataset (25160 samples)...
+
+======================================================================
+LUCID COMPREHENSIVE EVALUATION (Extraction Tau: 0.5 | Eval Hard Threshold: 0.66)
+======================================================================
+
+--- 1. COMPLEXITY METRICS ---
+Conjunctive Rule Count: 6
+Binarized Concepts    : 12
+Total Literals        : 16
+
+--- 2. OFFLINE DATASET METRICS ---
+LUCID SOFT - Action Fidelity (vs PPO): 99.9960%
+LUCID HARD - Rule Completeness       : 100.0000%
+LUCID HARD - Action Fidelity         : 99.9046%
+Fallback Action                      : 'Action_2'
+
+--- 3. LIVE ENVIRONMENT METRICS ---
+MiniGrid observation shape: (3, 7, 7), using 3 input channels
+Mode: SINGLE-SEED (Seed 42, 100 episodes)
+Playing 100 eps (Seed 42):   0%|          | 0/100 [00:00<?, ?it/s]Playing 100 eps (Seed 42):   1%|          | 1/100 [00:00<00:11,  8.81it/s]Playing 100 eps (Seed 42):   8%|▊         | 8/100 [00:00<00:02, 40.69it/s]Playing 100 eps (Seed 42):  14%|█▍        | 14/100 [00:00<00:01, 48.68it/s]Playing 100 eps (Seed 42):  21%|██        | 21/100 [00:00<00:01, 54.36it/s]Playing 100 eps (Seed 42):  28%|██▊       | 28/100 [00:00<00:01, 57.91it/s]Playing 100 eps (Seed 42):  35%|███▌      | 35/100 [00:00<00:01, 58.28it/s]Playing 100 eps (Seed 42):  42%|████▏     | 42/100 [00:00<00:00, 59.66it/s]Playing 100 eps (Seed 42):  49%|████▉     | 49/100 [00:00<00:00, 61.48it/s]Playing 100 eps (Seed 42):  56%|█████▌    | 56/100 [00:01<00:00, 60.31it/s]Playing 100 eps (Seed 42):  63%|██████▎   | 63/100 [00:01<00:00, 62.29it/s]Playing 100 eps (Seed 42):  70%|███████   | 70/100 [00:01<00:00, 63.29it/s]Playing 100 eps (Seed 42):  77%|███████▋  | 77/100 [00:01<00:00, 62.33it/s]Playing 100 eps (Seed 42):  84%|████████▍ | 84/100 [00:01<00:00, 63.73it/s]Playing 100 eps (Seed 42):  91%|█████████ | 91/100 [00:01<00:00, 65.16it/s]Playing 100 eps (Seed 42):  98%|█████████▊| 98/100 [00:01<00:00, 63.62it/s]                                                                           Playing 100 eps (Seed 42):   0%|          | 0/100 [00:00<?, ?it/s]Playing 100 eps (Seed 42):   8%|▊         | 8/100 [00:00<00:01, 75.32it/s]Playing 100 eps (Seed 42):  16%|█▌        | 16/100 [00:00<00:01, 76.69it/s]Playing 100 eps (Seed 42):  24%|██▍       | 24/100 [00:00<00:01, 73.30it/s]Playing 100 eps (Seed 42):  33%|███▎      | 33/100 [00:00<00:00, 76.58it/s]Playing 100 eps (Seed 42):  41%|████      | 41/100 [00:00<00:00, 75.97it/s]Playing 100 eps (Seed 42):  49%|████▉     | 49/100 [00:00<00:00, 75.33it/s]Playing 100 eps (Seed 42):  57%|█████▋    | 57/100 [00:00<00:00, 74.20it/s]Playing 100 eps (Seed 42):  65%|██████▌   | 65/100 [00:00<00:00, 75.42it/s]Playing 100 eps (Seed 42):  74%|███████▍  | 74/100 [00:00<00:00, 77.21it/s]Playing 100 eps (Seed 42):  82%|████████▏ | 82/100 [00:01<00:00, 76.61it/s]Playing 100 eps (Seed 42):  91%|█████████ | 91/100 [00:01<00:00, 79.46it/s]Playing 100 eps (Seed 42):  99%|█████████▉| 99/100 [00:01<00:00, 78.03it/s]                                                                           
+>>> LIVE RESULTS (SINGLE SEED) <<<
+SOFT Success Rate   : 100.0000
+HARD Success Rate   : 100.0000
+----------------------------------------
+SOFT Average Reward :  0.9679
+HARD Average Reward :  0.9677
+----------------------------------------
+SOFT Trigger Rate   : 100.0000
+HARD Trigger Rate   : 100.0000
+----------------------------------------
+
+======================================================================
+[+] All metrics saved to experiments/lucid/eval_doorkey_42/metrics_tau_0.5_hard_0.66.json
+

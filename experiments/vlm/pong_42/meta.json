@@ -1,0 +1,198 @@
+{
+  "manifest": {
+    "time_utc": "2026-09-25T03:12:48+00:00",
+    "argv": [
+      "render_concepts.py",
+      "--model_path",
+      "outputs/lucid_model_pong_42/sae_logic_joint_model.pt",
+      "--ppo_path",
+      "pong_sb3_290.zip",
+      "--env_name",
+      "PongNoFrameskip-v4",
+      "--n_episodes",
+      "6",
+      "--stride",
+      "4",
+      "--seed",
+      "2000",
+      "--out_dir",
+      "experiments/vlm/pong_42"
+    ],
+    "args": {
+      "model_path": "outputs/lucid_model_pong_42/sae_logic_joint_model.pt",
+      "ppo_path": "pong_sb3_290.zip",
+      "env_name": "PongNoFrameskip-v4",
+      "n_episodes": 6,
+      "seed": 2000,
+      "stride": 4,
+      "hard_threshold": 0.66,
+      "k": 8,
+      "m": 20,
+      "frac_naming": 0.3,
+      "min_test": 5,
+      "out_dir": "experiments/vlm/pong_42"
+    },
+    "versions": {
+      "python": "3.11.15",
+      "numpy": "2.4.6",
+      "torch": "2.6.0+cu124",
+      "transformers": "5.17.0",
+      "google-genai": "2.25.0",
+      "stable-baselines3": "2.9.0",
+      "gymnasium": "1.3.0",
+      "minigrid": "3.1.0",
+      "scikit-learn": "1.9.0",
+      "sentence-transformers": "6.1.0",
+      "captum": "0.9.0"
+    }
+  },
+  "args": {
+    "model_path": "outputs/lucid_model_pong_42/sae_logic_joint_model.pt",
+    "ppo_path": "pong_sb3_290.zip",
+    "env_name": "PongNoFrameskip-v4",
+    "n_episodes": 6,
+    "seed": 2000,
+    "stride": 4,
+    "hard_threshold": 0.66,
+    "k": 8,
+    "m": 20,
+    "frac_naming": 0.3,
+    "min_test": 5,
+    "out_dir": "experiments/vlm/pong_42"
+  },
+  "hard_threshold": 0.66,
+  "stats": {
+    "n_steps": 9958,
+    "n_stored": 2490,
+    "n_episodes": 6,
+    "feat_mean_norm": 6.6241924738304565,
+    "soft_teacher_agreement": 0.9990962040570396
+  },
+  "n_naming_states": 745,
+  "n_test_states": 1737,
+  "concepts": {
+    "C12": {
+      "on_rate_N": 0.0953020134228188,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C52": {
+      "on_rate_N": 0.14630872483221477,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C62": {
+      "on_rate_N": 0.2134228187919463,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C71": {
+      "on_rate_N": 0.17315436241610738,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C108": {
+      "on_rate_N": 0.23087248322147652,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C111": {
+      "on_rate_N": 0.15838926174496645,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C120": {
+      "on_rate_N": 0.15436241610738255,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C228": {
+      "on_rate_N": 0.22013422818791947,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C242": {
+      "on_rate_N": 0.13154362416107382,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C270": {
+      "on_rate_N": 0.22281879194630871,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C281": {
+      "on_rate_N": 0.13288590604026845,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C300": {
+      "on_rate_N": 0.2348993288590604,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C310": {
+      "on_rate_N": 0.21879194630872484,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C322": {
+      "on_rate_N": 0.15570469798657718,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C359": {
+      "on_rate_N": 0.17718120805369128,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C386": {
+      "on_rate_N": 0.09261744966442953,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    },
+    "C435": {
+      "on_rate_N": 0.20939597315436242,
+      "n_on_rows": 8,
+      "n_off_rows": 8,
+      "n_test": 40
+    }
+  },
+  "skipped": [],
+  "factor_control_n": {},
+  "concept_factor_auc": {
+    "C12": {},
+    "C52": {},
+    "C62": {},
+    "C71": {},
+    "C108": {},
+    "C111": {},
+    "C120": {},
+    "C228": {},
+    "C242": {},
+    "C270": {},
+    "C281": {},
+    "C300": {},
+    "C310": {},
+    "C322": {},
+    "C359": {},
+    "C386": {},
+    "C435": {}
+  }
+}

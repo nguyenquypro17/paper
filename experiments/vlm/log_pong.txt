@@ -1,0 +1,40 @@
+=================== pong ===================
+Naming (gemini-3.1-pro-preview):   0%|          | 0/17 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):   6%|▌         | 1/17 [02:11<34:59, 131.24s/it]Naming (gemini-3.1-pro-preview):  12%|█▏        | 2/17 [04:26<33:22, 133.50s/it]Naming (gemini-3.1-pro-preview):  18%|█▊        | 3/17 [06:39<31:07, 133.39s/it]Naming (gemini-3.1-pro-preview):  24%|██▎       | 4/17 [08:56<29:14, 134.95s/it]Naming (gemini-3.1-pro-preview):  29%|██▉       | 5/17 [11:11<26:55, 134.65s/it]Naming (gemini-3.1-pro-preview):  35%|███▌      | 6/17 [13:24<24:37, 134.31s/it]Naming (gemini-3.1-pro-preview):  41%|████      | 7/17 [15:37<22:17, 133.79s/it]Naming (gemini-3.1-pro-preview):  47%|████▋     | 8/17 [17:48<19:56, 132.99s/it]Naming (gemini-3.1-pro-preview):  53%|█████▎    | 9/17 [20:01<17:43, 132.93s/it]Naming (gemini-3.1-pro-preview):  59%|█████▉    | 10/17 [22:16<15:34, 133.54s/it]Naming (gemini-3.1-pro-preview):  65%|██████▍   | 11/17 [24:30<13:21, 133.57s/it]Naming (gemini-3.1-pro-preview):  71%|███████   | 12/17 [26:40<11:02, 132.59s/it]Naming (gemini-3.1-pro-preview):  76%|███████▋  | 13/17 [29:51<10:01, 150.44s/it]Naming (gemini-3.1-pro-preview):  82%|████████▏ | 14/17 [32:04<07:15, 145.15s/it]Naming (gemini-3.1-pro-preview):  88%|████████▊ | 15/17 [34:18<04:43, 141.69s/it]Naming (gemini-3.1-pro-preview):  94%|█████████▍| 16/17 [36:30<02:18, 138.87s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 17/17 [38:41<00:00, 136.41s/it]Naming (gemini-3.1-pro-preview): 100%|██████████| 17/17 [38:41<00:00, 136.56s/it]
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+  [gemini] giving up: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+  [gemini] giving up: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at
+     C12: unparsed
+     C52: unparsed
+     C62: unparsed
+     C71: unparsed
+    C108: unparsed
+    C111: unparsed
+    C120: unparsed
+    C228: unparsed
+    C242: unparsed
+    C270: unparsed
+    C281: unparsed
+    C300: unparsed
+    C310: unparsed
+    C322: unparsed
+    C359: unparsed
+    C386: unparsed
+    C435: unparsed
+[done] 17 concepts, unparsed=17, distinct labels=1 -> experiments/vlm/pong_42/labels_gemini31_a.json
+Naming (gemini-3.1-pro-preview):   0%|          | 0/17 [00:00<?, ?it/s]Direct use of automatic function calling (AFC) in Models.generate_content is not recommended. Instead, we recommend to use AFC in Chat.send_message. Similarly, direct use of AFC in Models.generate_content_stream is not recommended. Instead, we recommend to use AFC in Chat.send_message_stream.
+Naming (gemini-3.1-pro-preview):   6%|▌         | 1/17 [02:12<35:19, 132.47s/it]Naming (gemini-3.1-pro-preview):  12%|█▏        | 2/17 [04:24<33:06, 132.44s/it]Naming (gemini-3.1-pro-preview):  18%|█▊        | 3/17 [06:40<31:13, 133.82s/it]Naming (gemini-3.1-pro-preview):  24%|██▎       | 4/17 [08:53<28:57, 133.66s/it]Naming (gemini-3.1-pro-preview):  29%|██▉       | 5/17 [11:06<26:40, 133.40s/it]Naming (gemini-3.1-pro-preview):  35%|███▌      | 6/17 [13:19<24:23, 133.09s/it]Naming (gemini-3.1-pro-preview):  41%|████      | 7/17 [15:31<22:07, 132.76s/it]Naming (gemini-3.1-pro-preview):  47%|████▋     | 8/17 [17:42<19:49, 132.20s/it]

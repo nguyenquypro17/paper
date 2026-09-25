@@ -1,0 +1,78 @@
+Held-out: (25160, 128), factors=['has_key', 'door_open', 'key_in_front', 'door_in_front', 'wall_ahead', 'agent_dir'], concepts in rules=11
+     sae: D=300, alive=159
+     cnn: D=128, alive=67
+  random: D=300, alive=298
+     pca: D=128, alive=67
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/12 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.513
+
+Primary setting:
+     sae: compl=0.844 G1=25.2% G2=6.9% G2c=11.9% G3=27.0% U=28.9% dims=159
+     cnn: compl=0.876 G1=11.9% G2=59.7% G2c=13.4% G3=10.4% U=4.5% dims=67
+  random: compl=0.814 G1=16.7% G2=2.4% G2c=1.7% G3=47.5% U=31.8% dims=298
+     pca: compl=0.844 G1=4.5% G2=3.0% G2c=3.0% G3=62.7% U=26.9% dims=67
+  Concepts in rules by group: {'G1': 5, 'G2': 3, 'G2c': 2, 'G3': 0, 'U': 1}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+     sae: second=0.658 purity=0.072 best=0.759
+     cnn: second=0.796 purity=0.109 best=0.944
+  random: second=0.611 purity=0.033 best=0.658
+     pca: second=0.582 purity=0.032 best=0.636
+  SAE vs    cnn: 2nd lower p=3.67e-11 (CLES=0.23) | purity higher p=9.81e-01 (CLES=0.41)
+  SAE vs random: 2nd lower p=1.00e+00 (CLES=0.64) | purity higher p=1.66e-08 (CLES=0.64)
+  SAE vs    pca: 2nd lower p=1.00e+00 (CLES=0.72) | purity higher p=5.51e-05 (CLES=0.66)
+
+Saved to experiments/e2/results_doorkey
+Held-out: (24403, 128), factors=['obstacle_ahead', 'obstacle_left', 'obstacle_right', 'agent_dir', 'goal_dist'], concepts in rules=4
+     sae: D=200, alive=91
+     cnn: D=128, alive=72
+  random: D=200, alive=169
+     pca: D=128, alive=72
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/12 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.521
+
+Primary setting:
+     sae: compl=0.805 G1=28.6% G2=30.8% G2c=0.0% G3=28.6% U=12.1% dims=91
+     cnn: compl=0.872 G1=18.1% G2=68.1% G2c=0.0% G3=9.7% U=4.2% dims=72
+  random: compl=0.843 G1=23.7% G2=9.8% G2c=0.0% G3=47.8% U=18.6% dims=170
+     pca: compl=0.887 G1=29.2% G2=13.9% G2c=0.0% G3=29.2% U=27.8% dims=72
+  Concepts in rules by group: {'G1': 2, 'G2': 2, 'G2c': 0, 'G3': 0, 'U': 0}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+     sae: second=0.660 purity=0.075 best=0.808
+     cnn: second=0.788 purity=0.046 best=0.896
+  random: second=0.603 purity=0.051 best=0.660
+     pca: second=0.621 purity=0.074 best=0.743
+  SAE vs    cnn: 2nd lower p=2.60e-08 (CLES=0.25) | purity higher p=1.45e-01 (CLES=0.55)
+  SAE vs random: 2nd lower p=1.00e+00 (CLES=0.63) | purity higher p=1.02e-01 (CLES=0.54)
+  SAE vs    pca: 2nd lower p=8.16e-01 (CLES=0.54) | purity higher p=4.41e-01 (CLES=0.51)
+
+Saved to experiments/e2/results_dyobs
+Held-out: (25000, 512), factors=['cart_pos', 'cart_vel', 'pole_angle', 'pole_ang_vel'], concepts in rules=9
+     sae: D=512, alive=291
+     cnn: D=512, alive=308
+  random: D=512, alive=512
+     pca: D=512, alive=322
+
+Ordering SAE >= all baselines (completeness & %G1) holds in 0/36 grid settings
+Sanity (shuffled factors): mean AUC=0.500 (expect ~0.5), max folded=0.511
+
+Primary setting:
+     sae: compl=0.709 G1=6.9% G2=0.0% G2c=0.0% G3=77.3% U=15.8% dims=291
+     cnn: compl=0.739 G1=48.1% G2=1.9% G2c=0.0% G3=37.7% U=12.3% dims=308
+  random: compl=0.667 G1=2.9% G2=0.0% G2c=0.0% G3=81.8% U=15.2% dims=512
+     pca: compl=0.738 G1=4.7% G2=0.3% G2c=0.0% G3=88.8% U=6.2% dims=322
+  Concepts in rules by group: {'G1': 5, 'G2': 0, 'G2c': 0, 'G3': 0, 'U': 4}
+
+Threshold-free polysemanticity [post-hoc] (median 2nd-best AUC / purity):
+     sae: second=0.502 purity=0.001 best=0.503
+     cnn: second=0.581 purity=0.136 best=0.757
+  random: second=0.533 purity=0.021 best=0.565
+     pca: second=0.531 purity=0.007 best=0.540
+  SAE vs    cnn: 2nd lower p=1.41e-24 (CLES=0.26) | purity higher p=1.00e+00 (CLES=0.22)
+  SAE vs random: 2nd lower p=5.30e-36 (CLES=0.27) | purity higher p=1.00e+00 (CLES=0.31)
+  SAE vs    pca: 2nd lower p=2.29e-26 (CLES=0.25) | purity higher p=1.00e+00 (CLES=0.39)
+
+Saved to experiments/e2/results_cartpole

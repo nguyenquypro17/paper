@@ -1,0 +1,10 @@
+{
+    "Rule Set Cardinality": 3,
+    "Binarized Concepts": 2,
+    "Total Literals": 5,
+    "Tree Depth": 2,
+    "Action Fidelity (DAgger Dataset)": 1.0,
+    "Action Fidelity (Offline Test)": 1.0,
+    "Test Set Size": 7154,
+    "Train Set Size": 28615
+}

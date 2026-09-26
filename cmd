@@ -97,7 +97,7 @@ python experiments/dt/sa_dt_baseline.py \
 python experiments/dt/viper_baseline.py \
     --ppo_path ppo_doorkey_6x6.zip \
     --env_name MiniGrid-DoorKey-6x6-v0 \
-    --max_depth 8 \
+    --max_depth 4 \
     --save_dir experiments/dt/results_doorkey_6x6 \
     --data_path stage1_outputs_doorkey/collected_data.pt \
     --n_dagger_iters 75 \
@@ -130,6 +130,8 @@ python feature_collect.py \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
     --n_episodes 3000 \
     --save_dir ./stage1_outputs_dyobs
+
+## Stage 2: SAE + Logic training
 python train_joint.py \
     --features_path ./stage1_outputs_dyobs/collected_data.pt \
     --stage1_path ./stage1_outputs_dyobs/stage1_outputs.pt \
@@ -148,6 +150,8 @@ python train_joint.py \
     --entropy_weight 0.0 \
     --bimodal_ramp 60 \
     --save_dir ./outputs/lucid_model_dyobs_42
+
+## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
     --model_path ./outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt \
     --features_path ./stage1_outputs_dyobs/collected_data.pt \
@@ -157,91 +161,6 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
     --episodes 1000 \
     --multi-seed
-
-python train_joint.py \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --stage1_path ./stage1_outputs_dyobs/stage1_outputs.pt \
-    --hidden_dim 200 \
-    --k 20 \
-    --n_clauses_per_action 10 \
-    --n_epochs 300 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --seed 43 \
-    --threshold 0.66 \
-    --l0_penalty 4.5 \
-    --bimodal_max 0.4 \
-    --entropy_weight 0.0 \
-    --bimodal_ramp 60 \
-    --save_dir ./outputs/lucid_model_dyobs_43
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_dyobs_43/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --threshold 0.66 \
-    --hard_threshold 0.66 \
-    --ppo_path ppo_dynamic_obs_5x5.zip \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --episodes 1000 \
-    --multi-seed
-python train_joint.py \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --stage1_path ./stage1_outputs_dyobs/stage1_outputs.pt \
-    --hidden_dim 200 \
-    --k 20 \
-    --n_clauses_per_action 10 \
-    --n_epochs 300 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --seed 44 \
-    --threshold 0.66 \
-    --l0_penalty 4.5 \
-    --bimodal_max 0.4 \
-    --entropy_weight 0.0 \
-    --bimodal_ramp 60 \
-    --save_dir ./outputs/lucid_model_dyobs_44
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_dyobs_44/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --threshold 0.66 \
-    --hard_threshold 0.66 \
-    --ppo_path ppo_dynamic_obs_5x5.zip \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --episodes 1000 \
-    --multi-seed
-
-## Stage 2: SAE + Logic training
-python train_joint.py \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --stage1_path ./stage1_outputs_dyobs/stage1_outputs.pt \
-    --hidden_dim 200 \
-    --k 20 \
-    --n_clauses_per_action 10 \
-    --n_epochs 300 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --seed 42 \
-    --threshold 0.5 \
-    --l0_penalty 4.5 \
-    --bimodal_max 0.4 \
-    --entropy_weight 0.06 \
-    --bimodal_ramp 60 \
-    --save_dir ./outputs/lucid_model_dyobs
-
-## Stage 3: Evaluation & Fidelity Metrics
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_dyobs/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_dyobs/collected_data.pt \
-    --threshold 0.66 \
-    --hard_threshold 0.5 \
-    --ppo_path ppo_dynamic_obs_5x5.zip \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --multi-seed \
-    --episodes 1000
     
 ## Step 4: Semantic Concept Grounding (VLM)
 python auto_label_concepts.py \
@@ -298,7 +217,7 @@ python experiments/dt/sa_dt_baseline.py \
 python experiments/dt/viper_baseline.py \
     --ppo_path ppo_dynamic_obs_5x5.zip \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --max_depth 4 \
+    --max_depth 2 \
     --seed 42 \
     --save_dir experiments/dt/results_dynamic_obs_5x5 \
     --data_path stage1_outputs_dyobs/collected_data.pt \
@@ -316,7 +235,7 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --max_depth 2 \
     --multi-seed \
     --save_dir experiments/soft_dt/results_dynamic_obs_5x5/ \
-    --epochs 1000
+    --epochs 300
 
 # PixelCartPole-v0:
 
@@ -332,100 +251,26 @@ python feature_collect.py \
     --env_name PixelCartPole-v0 \
     --n_episodes 100 \
     --save_dir ./stage1_outputs_cartpole
-python train_joint.py \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --stage1_path ./stage1_outputs_cartpole/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 30 \
-    --n_epochs 1000 \
-    --threshold 0.66 \
-    --entropy_weight 0.0005 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --save_dir ./outputs/lucid_model_cartpole
-python train_joint.py \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --stage1_path ./stage1_outputs_cartpole/stage1_outputs.pt \
-    --env_name PixelCartPole-v0 \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 30 \
-    --n_epochs 900 \
-    --threshold 0.66 \
-    --entropy_weight 0.0004 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --save_dir ./outputs/lucid_model_cartpole2
-python train_joint.py \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --stage1_path ./stage1_outputs_cartpole/stage1_outputs.pt \
-    --env_name PixelCartPole-v0 \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 20 \
-    --n_epochs 900 \
-    --seed 43 \
-    --threshold 0.66 \
-    --entropy_weight 0.005 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --save_dir ./outputs/lucid_model_cartpole_43
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_cartpole_43/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --threshold 0.66 \
-    --hard_threshold 0.66 \
-    --ppo_path ppo_pixel_cartpole.zip \
-    --env_name PixelCartPole-v0 \
-    --multi-seed \
-    --episodes 200
-python train_joint.py \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --stage1_path ./stage1_outputs_cartpole/stage1_outputs.pt \
-    --env_name PixelCartPole-v0 \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 20 \
-    --n_epochs 900 \
-    --seed 44 \
-    --threshold 0.66 \
-    --entropy_weight 0.005 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --no_ica_init \
-    --save_dir ./outputs/lucid_model_cartpole_44
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_cartpole_44/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_cartpole/collected_data.pt \
-    --threshold 0.66 \
-    --hard_threshold 0.66 \
-    --ppo_path ppo_pixel_cartpole.zip \
-    --env_name PixelCartPole-v0 \
-    --multi-seed \
-    --episodes 200
+
 ## Stage 2: SAE + Logic training
 python train_joint.py \
     --features_path ./stage1_outputs_cartpole/collected_data.pt \
     --stage1_path ./stage1_outputs_cartpole/stage1_outputs.pt \
     --env_name PixelCartPole-v0 \
     --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 30 \
-    --n_epochs 1000 \
+    --n_clauses_per_action 20 \
+    --n_epochs 900 \
     --threshold 0.66 \
-    --entropy_weight 0.0001 \
+    --entropy_weight 0.005 \
     --bimodal_ramp 200 \
     --max_grad_norm 5.0 \
     --save_training_data \
     --no_ica_init \
-    --save_dir ./outputs/lucid_model_cartpole2
+    --save_dir ./outputs/lucid_model_cartpole_42
 
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_cartpole/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_cartpole_42/sae_logic_joint_model.pt \
     --features_path ./stage1_outputs_cartpole/collected_data.pt \
     --threshold 0.66 \
     --hard_threshold 0.66 \
@@ -526,75 +371,7 @@ python feature_collect.py \
     --env_name BoxingNoFrameskip-v4 \
     --n_episodes 300 \
     --save_dir ./stage1_outputs_boxing
-python train_joint.py \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --stage1_path ./stage1_outputs_boxing/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --no_ica_init \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_boxing
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_boxing/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path boxing_sb3_290.zip \
-    --env_name BoxingNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed
 
-python train_joint.py \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --stage1_path ./stage1_outputs_boxing/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --no_ica_init \
-    --seed 43 \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_boxing_43
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_boxing_43/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path boxing_sb3_290.zip \
-    --env_name BoxingNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed
-python train_joint.py \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --stage1_path ./stage1_outputs_boxing/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --no_ica_init \
-    --seed 44 \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_boxing_44
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_boxing_44/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_boxing/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path boxing_sb3_290.zip \
-    --env_name BoxingNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed
 ## Stage 2: SAE + Logic training
 python train_joint.py \
     --features_path ./stage1_outputs_boxing/collected_data.pt \
@@ -609,11 +386,11 @@ python train_joint.py \
     --bimodal_ramp 200 \
     --max_grad_norm 5.0 \
     --save_training_data \
-    --save_dir ./outputs/lucid_model_boxing
+    --save_dir ./outputs/lucid_model_boxing_42
 
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_boxing/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_boxing_42/sae_logic_joint_model.pt \
     --features_path ./stage1_outputs_boxing/collected_data.pt \
     --threshold 0.66 \
     --ppo_path boxing_sb3_290.zip \
@@ -671,84 +448,14 @@ python feature_collect.py \
     --env_name PongNoFrameskip-v4 \
     --n_episodes 300 \
     --save_dir ./stage1_outputs_pong
-python train_joint.py \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --stage1_path ./stage1_outputs_pong/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --env_name PongNoFrameskip-v4 \
-    --no_ica_init \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_pong
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_pong/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path pong_sb3_290.zip \
-    --env_name PongNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed
 
-python train_joint.py \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --stage1_path ./stage1_outputs_pong/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --env_name PongNoFrameskip-v4 \
-    --no_ica_init \
-    --seed 43 \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_pong_43
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_pong_43/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path pong_sb3_290.zip \
-    --env_name PongNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed
-python train_joint.py \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --stage1_path ./stage1_outputs_pong/stage1_outputs.pt \
-    --hidden_dim 512 --k 50 \
-    --n_clauses_per_action 10 \
-    --env_name PongNoFrameskip-v4 \
-    --no_ica_init \
-    --seed 44 \
-    --n_epochs 600 \
-    --threshold 0.5 \
-    --entropy_weight 0.3 \
-    --l0_penalty 100.0 \
-    --bimodal_ramp 200 \
-    --max_grad_norm 5.0 \
-    --save_training_data \
-    --save_dir ./outputs/lucid_model_pong_44
-python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_pong_44/sae_logic_joint_model.pt \
-    --features_path ./stage1_outputs_pong/collected_data.pt \
-    --threshold 0.66 \
-    --ppo_path pong_sb3_290.zip \
-    --env_name PongNoFrameskip-v4 \
-    --episodes 100 \
-    --multi-seed    
 ## Stage 2: SAE + Logic training
 python train_joint.py \
     --features_path ./stage1_outputs_pong/collected_data.pt \
     --stage1_path ./stage1_outputs_pong/stage1_outputs.pt \
     --hidden_dim 512 --k 50 \
     --n_clauses_per_action 10 \
+    --env_name PongNoFrameskip-v4 \
     --no_ica_init \
     --n_epochs 600 \
     --threshold 0.5 \
@@ -757,11 +464,11 @@ python train_joint.py \
     --bimodal_ramp 200 \
     --max_grad_norm 5.0 \
     --save_training_data \
-    --save_dir ./outputs/lucid_model_pong
+    --save_dir ./outputs/lucid_model_pong_42
 
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
-    --model_path ./outputs/lucid_model_pong/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_pong_42/sae_logic_joint_model.pt \
     --features_path ./stage1_outputs_pong/collected_data.pt \
     --threshold 0.66 \
     --ppo_path pong_sb3_290.zip \
@@ -798,5 +505,5 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --n_eval_episodes 100 \
     --max_depth 6 \
     --multi-seed \
-    --epochs 200 \
+    --epochs 300 \
     --save_dir experiments/soft_dt/results_pong/

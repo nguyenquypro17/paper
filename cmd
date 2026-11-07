@@ -41,24 +41,8 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --ppo_path ./ppo_doorkey_6x6 \
     --multi-seed \
     --episodes 1000
-    
-## Step 4: Semantic Concept Grounding (VLM)
-python auto_label_concepts.py \
-    --model_path ./outputs/lucid_model_doorkey/sae_logic_joint_model.pt \
-    --ppo_path ./ppo_doorkey_6x6.zip \
-    --env_name MiniGrid-DoorKey-6x6-v0 \
-    --episodes 100 \
-    --top_k 8
 
-python gemini_concept_labeler.py \
-    --img_dir ./concept_grounding/MiniGrid_DoorKey_6x6_v0 \
-    --env_name "MiniGrid DoorKey 6x6" \
-    --top_k 8 \
-    --rules_path ./outputs/lucid_model_doorkey/learned_rules.json \
-    --model_name gemini-2.5-pro \
-    --api_key YOUR_API_KEY
-
-## Step 5: Verify Theorem
+## Step 4: Verify Theorem
 python collect_with_observations.py \
     --model_path ppo_doorkey_6x6.zip \
     --env_name MiniGrid-DoorKey-6x6-v0 \
@@ -67,7 +51,7 @@ python collect_with_observations.py \
     --seed 42
 
 python experiments/theorem/verify_fidelity.py \
-    --model_path ./outputs/lucid_model_doorkey/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_doorkey_42/sae_logic_joint_model.pt \
     --data_path ./held_out_doorkey_data.pt \
     --output_dir ./experiments/theorem/results_doorkey
 
@@ -75,16 +59,7 @@ python experiments/theorem/plot_fidelity_results.py \
     --results_file ./experiments/theorem/results_doorkey/theorem2_analytics.pt \
     --output_folder ./experiments/theorem/results_doorkey/figures
 
-## Step 6: Ablation Studies (Threshold Sensitivity)
-Analyze how the binarization threshold $\tau$ affects the model's performance on held-out data. This helps verify the "Schelling optimality" of $\tau = 0.5$.
-python experiments/tau/run_tau_ablation.py \
-    --model_path ./outputs/lucid_model_doorkey/sae_logic_joint_model.pt \
-    --features_path ./held_out_doorkey_data.pt \
-    --env_name MiniGrid-DoorKey-6x6-v0 \
-    --output_dir ./experiments/tau/results_doorkey \
-    --episodes 1000
-
-## Step 7: Baseline Comparisons (Decision Trees)
+## Step 5: Baseline Comparisons (Decision Trees)
 python experiments/dt/sa_dt_baseline.py \
     --ppo_path ppo_doorkey_6x6.zip \
     --env_name MiniGrid-DoorKey-6x6-v0 \
@@ -161,24 +136,8 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
     --episodes 1000 \
     --multi-seed
-    
-## Step 4: Semantic Concept Grounding (VLM)
-python auto_label_concepts.py \
-    --model_path ./outputs/lucid_model_dyobs/sae_logic_joint_model.pt \
-    --ppo_path ppo_dynamic_obs_5x5.zip \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --episodes 50 \
-    --top_k 8
 
-python gemini_concept_labeler.py \
-    --img_dir ./concept_grounding/MiniGrid_Dynamic_Obstacles_5x5_v0 \
-    --env_name "MiniGrid-Dynamic-Obstacles-5x5-v0" \
-    --top_k 8 \
-    --model_name gemini-2.5-pro \
-    --rules_path ./outputs/lucid_model_dyobs/learned_rules.json \
-    --api_key YOUR_API_KEY
-
-## Step 5: Verify fidelity (Theorem)
+## Step 4: Verify fidelity (Theorem)
 python collect_with_observations.py \
     --model_path ppo_dynamic_obs_5x5.zip \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
@@ -186,7 +145,7 @@ python collect_with_observations.py \
     --save_path held_out_dyobs_data.pt  
 
 python experiments/theorem/verify_fidelity.py \
-    --model_path ./outputs/lucid_model_dyobs/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt \
     --data_path ./held_out_dyobs_data.pt \
     --output_dir ./experiments/theorem/results_dyobs
 
@@ -194,16 +153,7 @@ python experiments/theorem/plot_fidelity_results.py \
     --results_file ./experiments/theorem/results_dyobs/theorem2_analytics.pt \
     --output_folder ./experiments/theorem/results_dyobs/figures
 
-## Step 6: Ablation Studies (Threshold Sensitivity)
-Analyze how the binarization threshold $\tau$ affects the model's performance on held-out data. This helps verify the "Schelling optimality" of $\tau = 0.5$.
-python experiments/tau/run_tau_ablation.py \
-    --model_path ./outputs/lucid_model_dyobs/sae_logic_joint_model.pt \
-    --features_path ./held_out_dyobs_data.pt \
-    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
-    --output_dir ./experiments/tau/results_dyobs \
-    --episodes 1000
-
-## Step 7: Baseline Comparisons (Decision Trees)
+## Step 5: Baseline Comparisons (Decision Trees)
 python experiments/dt/sa_dt_baseline.py \
     --ppo_path ppo_dynamic_obs_5x5.zip \
     --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
@@ -278,25 +228,8 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --env_name PixelCartPole-v0 \
     --multi-seed \
     --episodes 200
-    
-## Step 4: Semantic Concept Grounding (VLM)
-python auto_label_concepts.py \
-    --model_path ./outputs/lucid_model_cartpole/sae_logic_joint_model.pt \
-    --ppo_path ./ppo_pixel_cartpole.zip \
-    --env_name PixelCartPole-v0 \
-    --episodes 30 \
-    --top_k 6
 
-python gemini_concept_labeler.py \
-    --img_dir ./concept_grounding/PixelCartPole_v0 \
-    --env_name "PixelCartPole-v0" \
-    --top_k 6 \
-    --model_name gemini-2.5-pro \
-    --rules_path ./outputs/lucid_model_cartpole/learned_rules.json \
-    --model_name gemini-2.5-pro \
-    --api_key YOUR_API_KEY
-
-## Step 5: Verify fidelity (Theorem)
+## Step 4: Verify fidelity (Theorem)
 python collect_with_observations.py \
     --model_path ppo_pixel_cartpole.zip \
     --env_name PixelCartPole-v0 \
@@ -306,7 +239,7 @@ python collect_with_observations.py \
     --seed 42
 
 python experiments/theorem/verify_fidelity.py \
-    --model_path ./outputs/lucid_model_cartpole/sae_logic_joint_model.pt \
+    --model_path ./outputs/lucid_model_cartpole_42/sae_logic_joint_model.pt \
     --data_path ./held_out_cartpole_data.pt \
     --output_dir ./experiments/theorem/results_cartpole
 
@@ -314,18 +247,7 @@ python experiments/theorem/plot_fidelity_results.py \
     --results_file ./experiments/theorem/results_cartpole/theorem2_analytics.pt \
     --output_folder ./experiments/theorem/results_cartpole/figures
 
-## Step 6: Ablation Studies (Threshold Sensitivity)
-Analyze how the binarization threshold $\tau$ affects the model's performance on held-out data. This helps verify the "Schelling optimality" of $\tau = 0.5$.
-python experiments/tau/run_tau_ablation.py \
-    --model_path ./outputs/lucid_model_cartpole/sae_logic_joint_model.pt \
-    --features_path ./held_out_cartpole_data.pt \
-    --env_name PixelCartPole-v0 \
-    --ppo_path ./ppo_pixel_cartpole.zip \
-    --output_dir ./experiments/tau/results_cartpole \
-    --episodes 200 \
-    --seed 42
-
-## Step 7: Baseline Comparisons (Decision Trees)
+## Step 5: Baseline Comparisons (Decision Trees)
 python experiments/dt/viper_baseline.py \
     --ppo_path ppo_pixel_cartpole.zip \
     --env_name PixelCartPole-v0 \
@@ -398,7 +320,23 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --episodes 100 \
     --multi-seed
 
-## Step 7: Baseline Comparisons (Decision Trees)
+## Step 4: Verify fidelity (Theorem)
+python collect_with_observations.py \
+    --model_path boxing_sb3_290.zip \
+    --env_name BoxingNoFrameskip-v4 \
+    --n_episodes 100 \
+    --save_path held_out_boxing_data.pt
+
+python experiments/theorem/verify_fidelity.py \
+    --model_path ./outputs/lucid_model_boxing_42/sae_logic_joint_model.pt \
+    --data_path ./held_out_boxing_data.pt \
+    --output_dir ./experiments/theorem/results_boxing
+
+python experiments/theorem/plot_fidelity_results.py \
+    --results_file ./experiments/theorem/results_boxing/theorem2_analytics.pt \
+    --output_folder ./experiments/theorem/results_boxing/figures
+
+## Step 5: Baseline Comparisons (Decision Trees)
 python experiments/dt/sa_dt_baseline.py \
     --ppo_path boxing_sb3_290.zip \
     --env_name BoxingNoFrameskip-v4 \
@@ -476,7 +414,23 @@ python experiments/lucid/evaluate_lucid_metrics.py \
     --episodes 100 \
     --multi-seed
 
-## Step 7: Baseline Comparisons (Decision Trees)
+## Step 4: Verify fidelity (Theorem)
+python collect_with_observations.py \
+    --model_path pong_sb3_290.zip \
+    --env_name PongNoFrameskip-v4 \
+    --n_episodes 100 \
+    --save_path held_out_pong_data.pt
+
+python experiments/theorem/verify_fidelity.py \
+    --model_path ./outputs/lucid_model_pong_42/sae_logic_joint_model.pt \
+    --data_path ./held_out_pong_data.pt \
+    --output_dir ./experiments/theorem/results_pong
+
+python experiments/theorem/plot_fidelity_results.py \
+    --results_file ./experiments/theorem/results_pong/theorem2_analytics.pt \
+    --output_folder ./experiments/theorem/results_pong/figures
+
+## Step 5: Baseline Comparisons (Decision Trees)
 python experiments/dt/sa_dt_baseline.py \
     --ppo_path pong_sb3_290.zip \
     --env_name PongNoFrameskip-v4 \

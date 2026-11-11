@@ -30,7 +30,6 @@ python train_joint.py \
     --entropy_weight 0.015 \
     --bimodal_ramp 120 \
     --save_dir ./outputs/lucid_model_doorkey_42
-
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
     --model_path ./outputs/lucid_model_doorkey_42/sae_logic_joint_model.pt \
@@ -126,6 +125,34 @@ python train_joint.py \
     --bimodal_ramp 60 \
     --save_dir ./outputs/lucid_model_dyobs_42
 
+python train_joint.py \
+    --features_path ./stage1_outputs_dqn/dqn_dyobs/collected_data.pt \
+    --stage1_path ./stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --hidden_dim 200 \
+    --k 20 \
+    --n_clauses_per_action 10 \
+    --n_epochs 300 \
+    --max_grad_norm 5.0 \
+    --save_training_data \
+    --no_ica_init \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --seed 42 \
+    --threshold 0.66 \
+    --l0_penalty 20.0 \
+    --bimodal_max 1.5 \
+    --entropy_weight 0.05 \
+    --bimodal_ramp 60 \
+    --save_dir ./outputs/lucid_model_dyobs_dqn_421
+python experiments/lucid/evaluate_lucid_metrics.py \
+    --model_path ./outputs/lucid_model_dyobs_dqn_421/sae_logic_joint_model.pt \
+    --features_path ./stage1_outputs_dqn/dqn_dyobs/collected_data.pt \
+    --threshold 0.66 \
+    --hard_threshold 0.66 \
+    --ppo_path dqn_dynamic_obs_5x5.zip \
+    --algo dqn \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --episodes 1000 \
+    --multi-seed
 ## Stage 3: Evaluation & Fidelity Metrics
 python experiments/lucid/evaluate_lucid_metrics.py \
     --model_path ./outputs/lucid_model_dyobs_42/sae_logic_joint_model.pt \
@@ -278,6 +305,44 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --save_dir ./experiments/soft_dt/results_cartpole \
     --epoch 500
 
+## Extend for DQN_LUCID:
+D=./stage1_outputs_dqn/dqn_cartpole; T=dqn_pixel_cartpole.zip; SEED=42
+
+python feature_collect.py --features_path $D/collected_data.pt --env_name PixelCartPole-v0 --save_dir $D
+
+python -c "import torch; d=torch.load('$D/collected_data.pt', mmap=True, weights_only=False); torch.save({'features': d['features'].clone(), 'actions': d['actions'].clone()}, '$D/features_only.pt')"
+
+python compute_margin_weights.py --algo dqn --model_path $T --env_name PixelCartPole-v0 \
+    --features_path $D/features_only.pt --out $D/margin_weights_w100.pt --wmax 100
+
+python -u train_joint.py \
+    --features_path $D/features_only.pt \
+    --stage1_path $D/stage1_outputs.pt \
+    --sample_weights $D/margin_weights_w100.pt \
+    --hidden_dim 512 --k 50 \
+    --n_clauses_per_action 20 \
+    --env_name PixelCartPole-v0 \
+    --no_ica_init \
+    --n_epochs 250 \
+    --threshold 0.5 \
+    --entropy_weight 0.1 \
+    --l0_penalty 20.0 \
+    --bimodal_max 3.0 \
+    --bimodal_ramp 100 \
+    --bias_max 1.0 \
+    --max_grad_norm 5.0 \
+    --seed $SEED \
+    --save_training_data \
+    --save_dir ./outputs/lucid_model_cartpole_dqn_$SEED
+python -u experiments/lucid/evaluate_lucid_metrics.py \
+    --model_path ./outputs/lucid_model_cartpole_dqn_$SEED/sae_logic_joint_model.pt \
+    --features_path $D/features_only.pt \
+    --threshold 0.66 --hard_threshold 0.66 \
+    --ppo_path $T --algo dqn \
+    --env_name PixelCartPole-v0 \
+    --episodes 100 --multi-seed \
+    --save_dir ./outputs/lucid_model_cartpole_dqn_$SEED/eval
+
 # BoxingNoFrameskip-v4:
 
 ## Stage 1: Train & Test PPO Model + Rollout data
@@ -370,6 +435,53 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --epochs 200 \
     --save_dir experiments/soft_dt/results_boxing/
 
+## Extend for DQN_LUCID:
+D=./stage1_outputs_dqn/dqn_boxing; T=teachers/boxing_dqn_sb3_290.zip; SEED=42
+
+python -c "import torch; d=torch.load('$D/collected_data.pt', mmap=True, weights_only=False); torch.save({'features': d['features'].clone(), 'actions': d['actions'].clone()}, '$D/features_only.pt')"
+for cfg in "1000 7" "800 11" "800 12"; do set -- $cfg
+  python feature_collect.py --model_path $T --algo dqn --env_name BoxingNoFrameskip-v4 \
+      --n_episodes $1 --seed $2 --save_dir ${D}_tmp
+  python -c "
+import torch
+a=torch.load('$D/features_only.pt', mmap=True, weights_only=False); b=torch.load('${D}_tmp/collected_data.pt', mmap=True, weights_only=False)
+torch.save({'features': torch.cat([a['features'], b['features']]), 'actions': torch.cat([a['actions'], b['actions']])}, '$D/features_only.pt')
+print('total', len(a['actions'])+len(b['actions']))"
+  rm -rf ${D}_tmp
+done
+
+python feature_collect.py --features_path $D/features_only.pt --env_name BoxingNoFrameskip-v4 --save_dir $D
+
+python compute_margin_weights.py --algo dqn --model_path $T --env_name BoxingNoFrameskip-v4 \
+    --features_path $D/features_only.pt --out $D/margin_weights_w500.pt --wmax 500
+
+python -u train_joint.py \
+    --features_path $D/features_only.pt \
+    --stage1_path $D/stage1_outputs.pt \
+    --sample_weights $D/margin_weights_w500.pt \
+    --hidden_dim 512 --k 50 \
+    --n_clauses_per_action 10 \
+    --env_name BoxingNoFrameskip-v4 \
+    --no_ica_init \
+    --n_epochs 400 \
+    --threshold 0.5 \
+    --entropy_weight 0.3 \
+    --l0_penalty 50.0 \
+    --bimodal_max 15.0 \
+    --bimodal_ramp 150 \
+    --bias_max 1.5 \
+    --max_grad_norm 5.0 \
+    --seed $SEED \
+    --save_training_data \
+    --save_dir ./outputs/lucid_model_boxing_dqn_$SEED
+python -u experiments/lucid/evaluate_lucid_metrics.py \
+    --model_path ./outputs/lucid_model_boxing_dqn_$SEED/sae_logic_joint_model.pt \
+    --features_path $D/features_only.pt \
+    --threshold 0.66 --hard_threshold 0.66 \
+    --ppo_path $T --algo dqn \
+    --env_name BoxingNoFrameskip-v4 \
+    --episodes 100 --multi-seed \
+    --save_dir ./outputs/lucid_model_boxing_dqn_$SEED/eval
 
 # PongNoFrameskip-v4:
 
@@ -461,3 +573,40 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --multi-seed \
     --epochs 300 \
     --save_dir experiments/soft_dt/results_pong/
+
+## Extend for DQN_LUCID:
+D=./stage1_outputs_dqn/dqn_pong; T=teachers/hf/dqn_pong/dqn-PongNoFrameskip-v4.zip; SEED=42
+
+python feature_collect.py --features_path $D/collected_data.pt --env_name PongNoFrameskip-v4 --save_dir $D
+
+python -c "import torch; d=torch.load('$D/collected_data.pt', mmap=True, weights_only=False); torch.save({'features': d['features'].clone(), 'actions': d['actions'].clone()}, '$D/features_only.pt')"
+
+python compute_margin_weights.py --algo dqn --model_path $T --env_name PongNoFrameskip-v4 \
+    --features_path $D/features_only.pt --out $D/margin_weights_w100.pt --wmax 100
+
+python -u train_joint.py \
+    --features_path $D/features_only.pt \
+    --stage1_path $D/stage1_outputs.pt \
+    --sample_weights $D/margin_weights_w100.pt \
+    --hidden_dim 512 --k 50 \
+    --n_clauses_per_action 10 \
+    --env_name PongNoFrameskip-v4 \
+    --no_ica_init \
+    --n_epochs 250 \
+    --threshold 0.5 \
+    --entropy_weight 0.3 \
+    --l0_penalty 100.0 \
+    --bimodal_ramp 100 \
+    --bias_max 1.5 \
+    --max_grad_norm 5.0 \
+    --seed $SEED \
+    --save_training_data \
+    --save_dir ./outputs/lucid_model_pong_dqn_$SEED
+python -u experiments/lucid/evaluate_lucid_metrics.py \
+    --model_path ./outputs/lucid_model_pong_dqn_$SEED/sae_logic_joint_model.pt \
+    --features_path $D/collected_data.pt \
+    --threshold 0.66 --hard_threshold 0.66 \
+    --ppo_path $T --algo dqn \
+    --env_name PongNoFrameskip-v4 \
+    --episodes 100 --multi-seed \
+    --save_dir ./outputs/lucid_model_pong_dqn_$SEED/eval

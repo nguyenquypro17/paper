@@ -214,6 +214,63 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --save_dir experiments/soft_dt/results_dynamic_obs_5x5/ \
     --epochs 300
 
+## Extend for DQN_LUCID
+python feature_collect.py --algo dqn \
+    --model_path dqn_dynamic_obs_5x5.zip \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --n_episodes 5000 --seed 0 \
+    --save_dir stage1_outputs_dqn/dqn_dyobs
+
+python train_joint.py \
+    --data_path stage1_outputs_dqn/dqn_dyobs/features_only.pt \
+    --norm_stats stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --save_dir ./outputs/lucid_model_dyobs_dqn_42 \
+    --hidden_dim 200 --k 20 --n_actions 7 --n_clauses_per_action 10 \
+    --bias_max 1.0 --l0_penalty 10.0 --entropy_weight 0.12 \
+    --bimodal_max 6.0 --bimodal_warmup 30 --bimodal_ramp 60 \
+    --beta_action 5.0 --alpha_recon 1.0 --lambda_sparsity 0.005 \
+    --sae_lr 1e-3 --bottleneck_lr 1e-3 --logic_lr 3e-3 \
+    --max_grad_norm 5.0 --batch_size 256 --n_epochs 300 --seed 42
+
+python experiments/lucid/evaluate_lucid_metrics.py --algo dqn \
+    --model_path outputs/lucid_model_dyobs_dqn_42/sae_logic_joint_model.pt \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --teacher_path dqn_dynamic_obs_5x5.zip \
+    --data_path stage1_outputs_dqn/dqn_dyobs/features_only.pt \
+    --norm_stats stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --save_dir outputs/lucid_model_dyobs_dqn_42/eval \
+    --tau 0.66 --hard_threshold 0.66 \
+    --max_steps 100 --episodes 1000 --multi-seed
+
+## Baselines for DQN
+python experiments/dt/sa_dt_baseline.py --algo dqn \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --teacher_path dqn_dynamic_obs_5x5.zip \
+    --norm_stats stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_dyobs/features_only.pt \
+    --save_dir experiments/dt/results/dyobs_dqn_sadt \
+    --max_depth 4 --min_samples_leaf 1 \
+    --max_steps 100 --n_eval_episodes 1000 --multi-seed --seed 42
+
+python experiments/dt/viper_baseline.py --algo dqn \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --teacher_path dqn_dynamic_obs_5x5.zip \
+    --norm_stats stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_dyobs/features_only.pt \
+    --save_dir experiments/dt/results/dyobs_dqn_viper \
+    --max_depth 8 --min_samples_leaf 1 \
+    --n_dagger_iters 75 --episodes_per_iter 50 \
+    --max_steps 100 --n_eval_episodes 1000 --multi-seed --seed 42
+
+python experiments/soft_dt/soft_dt_baseline.py --algo dqn \
+    --env_name MiniGrid-Dynamic-Obstacles-5x5-v0 \
+    --teacher_path dqn_dynamic_obs_5x5.zip \
+    --norm_stats stage1_outputs_dqn/dqn_dyobs/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_dyobs/features_only.pt \
+    --save_dir experiments/soft_dt/results/dyobs_dqn_softdt \
+    --max_depth 4 --l1_lambda 0.001 --epochs 150 --batch_size 512 \
+    --n_actions 3 --max_steps 100 --n_eval_episodes 1000 --multi-seed --seed 42
+
 # PixelCartPole-v0:
 
 ## Stage 1: Train & Test PPO Model + Rollout data
@@ -305,7 +362,7 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --save_dir ./experiments/soft_dt/results_cartpole \
     --epoch 500
 
-## Extend for DQN_LUCID:
+## Extend for DQN_LUCID
 D=./stage1_outputs_dqn/dqn_cartpole; T=dqn_pixel_cartpole.zip; SEED=42
 
 python feature_collect.py --features_path $D/collected_data.pt --env_name PixelCartPole-v0 --save_dir $D
@@ -342,6 +399,32 @@ python -u experiments/lucid/evaluate_lucid_metrics.py \
     --env_name PixelCartPole-v0 \
     --episodes 100 --multi-seed \
     --save_dir ./outputs/lucid_model_cartpole_dqn_$SEED/eval
+
+## Baselines for DQN
+python experiments/dt/sa_dt_baseline.py --algo dqn \
+    --env_name PixelCartPole-v0 --teacher_path dqn_pixel_cartpole.zip \
+    --norm_stats stage1_outputs_dqn/dqn_cartpole/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_cartpole/features_only.pt \
+    --save_dir experiments/dt/results/cartpole_dqn_sadt \
+    --max_depth 4 --min_samples_leaf 1 \
+    --max_steps 500 --n_eval_episodes 200 --multi-seed --seed 42
+
+python experiments/dt/viper_baseline.py --algo dqn \
+    --env_name PixelCartPole-v0 --teacher_path dqn_pixel_cartpole.zip \
+    --norm_stats stage1_outputs_dqn/dqn_cartpole/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_cartpole/features_only.pt \
+    --save_dir experiments/dt/results/cartpole_dqn_viper \
+    --max_depth 4 --min_samples_leaf 1 \
+    --n_dagger_iters 20 --episodes_per_iter 10 \
+    --max_steps 500 --n_eval_episodes 200 --multi-seed --seed 42
+
+python experiments/soft_dt/soft_dt_baseline.py --algo dqn \
+    --env_name PixelCartPole-v0 --teacher_path dqn_pixel_cartpole.zip \
+    --norm_stats stage1_outputs_dqn/dqn_cartpole/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_cartpole/features_only.pt \
+    --save_dir experiments/soft_dt/results/cartpole_dqn_softdt \
+    --max_depth 6 --l1_lambda 0.001 --epochs 150 --batch_size 512 \
+    --n_actions 2 --max_steps 500 --n_eval_episodes 200 --multi-seed --seed 42
 
 # BoxingNoFrameskip-v4:
 
@@ -435,7 +518,7 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --epochs 200 \
     --save_dir experiments/soft_dt/results_boxing/
 
-## Extend for DQN_LUCID:
+## Extend for DQN_LUCID
 D=./stage1_outputs_dqn/dqn_boxing; T=teachers/boxing_dqn_sb3_290.zip; SEED=42
 
 python -c "import torch; d=torch.load('$D/collected_data.pt', mmap=True, weights_only=False); torch.save({'features': d['features'].clone(), 'actions': d['actions'].clone()}, '$D/features_only.pt')"
@@ -482,6 +565,32 @@ python -u experiments/lucid/evaluate_lucid_metrics.py \
     --env_name BoxingNoFrameskip-v4 \
     --episodes 100 --multi-seed \
     --save_dir ./outputs/lucid_model_boxing_dqn_$SEED/eval
+
+## Baselines for DQN
+python experiments/dt/sa_dt_baseline.py --algo dqn \
+    --env_name BoxingNoFrameskip-v4 --teacher_path teachers/boxing_dqn_sb3_290.zip \
+    --norm_stats stage1_outputs_dqn/dqn_boxing/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_boxing/features_only.pt \
+    --save_dir experiments/dt/results/boxing_dqn_sadt \
+    --max_depth 8 --min_samples_leaf 1 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/dt/viper_baseline.py --algo dqn \
+    --env_name BoxingNoFrameskip-v4 --teacher_path teachers/boxing_dqn_sb3_290.zip \
+    --norm_stats stage1_outputs_dqn/dqn_boxing/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_boxing/features_only.pt \
+    --save_dir experiments/dt/results/boxing_dqn_viper \
+    --max_depth 10 --min_samples_leaf 1 \
+    --n_dagger_iters 10 --episodes_per_iter 5 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/soft_dt/soft_dt_baseline.py --algo dqn \
+    --env_name BoxingNoFrameskip-v4 --teacher_path teachers/boxing_dqn_sb3_290.zip \
+    --norm_stats stage1_outputs_dqn/dqn_boxing/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_boxing/features_only.pt \
+    --save_dir experiments/soft_dt/results/boxing_dqn_softdt \
+    --max_depth 4 --l1_lambda 0.001 --epochs 100 --batch_size 512 \
+    --n_actions 18 --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
 
 # PongNoFrameskip-v4:
 
@@ -574,7 +683,7 @@ python experiments/soft_dt/soft_dt_baseline.py \
     --epochs 300 \
     --save_dir experiments/soft_dt/results_pong/
 
-## Extend for DQN_LUCID:
+## Extend for DQN_LUCID
 D=./stage1_outputs_dqn/dqn_pong; T=teachers/hf/dqn_pong/dqn-PongNoFrameskip-v4.zip; SEED=42
 
 python feature_collect.py --features_path $D/collected_data.pt --env_name PongNoFrameskip-v4 --save_dir $D
@@ -610,3 +719,113 @@ python -u experiments/lucid/evaluate_lucid_metrics.py \
     --env_name PongNoFrameskip-v4 \
     --episodes 100 --multi-seed \
     --save_dir ./outputs/lucid_model_pong_dqn_$SEED/eval
+
+## Baselines for DQN
+python experiments/dt/sa_dt_baseline.py --algo dqn \
+    --env_name PongNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_pong/dqn-PongNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_dqn/dqn_pong/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_pong/features_only.pt \
+    --save_dir experiments/dt/results/pong_dqn_sadt \
+    --max_depth 4 --min_samples_leaf 1 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/dt/viper_baseline.py --algo dqn \
+    --env_name PongNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_pong/dqn-PongNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_dqn/dqn_pong/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_pong/features_only.pt \
+    --save_dir experiments/dt/results/pong_dqn_viper \
+    --max_depth 8 --min_samples_leaf 1 \
+    --n_dagger_iters 10 --episodes_per_iter 5 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/soft_dt/soft_dt_baseline.py --algo dqn \
+    --env_name PongNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_pong/dqn-PongNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_dqn/dqn_pong/stage1_outputs.pt \
+    --data_path  stage1_outputs_dqn/dqn_pong/features_only.pt \
+    --save_dir experiments/soft_dt/results/pong_dqn_softdt \
+    --max_depth 4 --l1_lambda 0.001 --epochs 100 --batch_size 512 \
+    --n_actions 6 --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+# EnduroNoFrameskip-v4
+
+## Extend for DQN_LUCID
+D=./stage1_outputs_enduro/dqn_enduro; T=teachers/hf/dqn_enduro/dqn-EnduroNoFrameskip-v4.zip; ENV=EnduroNoFrameskip-v4; SEED=42
+
+python feature_collect.py --model_path $T --algo dqn --env_name $ENV --n_episodes 37 --seed 0 --save_dir $D
+python -c "import torch; d=torch.load('$D/collected_data.pt', mmap=True, weights_only=False); torch.save({'features': d['features'].clone(), 'actions': d['actions'].clone()}, '$D/features_only.pt')"
+for s in 7 8; do
+  python feature_collect.py --model_path $T --algo dqn --env_name $ENV --n_episodes 30 --seed $s --save_dir ${D}_tmp
+  python -c "
+import torch
+a=torch.load('$D/features_only.pt', mmap=True, weights_only=False); b=torch.load('${D}_tmp/collected_data.pt', mmap=True, weights_only=False)
+torch.save({'features': torch.cat([a['features'], b['features']]), 'actions': torch.cat([a['actions'], b['actions']])}, '$D/features_only.pt')
+print('total', len(a['actions'])+len(b['actions']))"
+  rm -rf ${D}_tmp
+done
+
+python feature_collect.py --features_path $D/features_only.pt --env_name $ENV --save_dir $D
+
+python compute_margin_weights.py --algo dqn --model_path $T --env_name $ENV \
+    --features_path $D/features_only.pt --out $D/margin_weights_w100.pt --wmax 100
+
+python -u train_joint.py \
+    --features_path $D/features_only.pt \
+    --stage1_path $D/stage1_outputs.pt \
+    --sample_weights $D/margin_weights_w100.pt \
+    --hidden_dim 512 --k 50 \
+    --n_clauses_per_action 20 \
+    --n_actions 9 \
+    --env_name $ENV \
+    --no_ica_init \
+    --n_epochs 300 \
+    --threshold 0.5 \
+    --entropy_weight 0.3 \
+    --l0_penalty 20.0 \
+    --bimodal_max 25.0 \
+    --bimodal_ramp 120 \
+    --bias_max 1.0 \
+    --max_grad_norm 5.0 \
+    --seed $SEED \
+    --save_training_data \
+    --save_dir ./outputs/lucid_model_enduro_dqn_$SEED
+
+python -u experiments/lucid/evaluate_lucid_metrics.py \
+    --model_path ./outputs/lucid_model_enduro_dqn_$SEED/sae_logic_joint_model.pt \
+    --features_path $D/features_only.pt \
+    --threshold 0.66 --hard_threshold 0.66 \
+    --ppo_path $T --algo dqn \
+    --env_name $ENV \
+    --episodes 50 --multi-seed \
+    --save_dir ./outputs/lucid_model_enduro_dqn_$SEED/eval
+
+## Baselines for DQN
+python experiments/dt/sa_dt_baseline.py --algo dqn \
+    --env_name EnduroNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_enduro/dqn-EnduroNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_enduro/dqn_enduro/stage1_outputs.pt \
+    --data_path  stage1_outputs_enduro/dqn_enduro/features_only.pt \
+    --save_dir experiments/dt/results/enduro_dqn_sadt \
+    --max_depth 6 --min_samples_leaf 1 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/dt/viper_baseline.py --algo dqn \
+    --env_name EnduroNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_enduro/dqn-EnduroNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_enduro/dqn_enduro/stage1_outputs.pt \
+    --data_path  stage1_outputs_enduro/dqn_enduro/features_only.pt \
+    --save_dir experiments/dt/results/enduro_dqn_viper \
+    --max_depth 8 --min_samples_leaf 1 \
+    --n_dagger_iters 10 --episodes_per_iter 5 \
+    --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
+
+python experiments/soft_dt/soft_dt_baseline.py --algo dqn \
+    --env_name EnduroNoFrameskip-v4 \
+    --teacher_path teachers/hf/dqn_enduro/dqn-EnduroNoFrameskip-v4.zip \
+    --norm_stats stage1_outputs_enduro/dqn_enduro/stage1_outputs.pt \
+    --data_path  stage1_outputs_enduro/dqn_enduro/features_only.pt \
+    --save_dir experiments/soft_dt/results/enduro_dqn_softdt \
+    --max_depth 4 --l1_lambda 0.001 --epochs 100 --batch_size 512 \
+    --n_actions 9 --max_steps 27000 --n_eval_episodes 50 --multi-seed --seed 42
